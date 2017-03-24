@@ -1,0 +1,83 @@
+
+<jsp:root version="2.0"
+    xmlns:jsp="http://java.sun.com/JSP/Page" 
+     xmlns:c="http://java.sun.com/jsp/jstl/core">
+    
+                    <article>
+                        <h4>Agregar caja chica</h4>
+                    </article>
+    
+                    <article>    
+                        
+                        
+                        <form class="ancho9" 
+                                action="../UocCertificacion/Controlador/Agregar" 
+                                method="post" 
+                                id="uocc_form" 
+                                name='uocc_form'
+                                >
+                                                        
+                            <input  TYPE="hidden"
+                                        name="presupuesto_id"  
+                                        id="uocc_presupuesto_id"
+                                        value="0"
+                                        />                              
+
+                            <input  TYPE="hidden"
+                                        name="llamado"  
+                                        id="uocc_llamado"
+                                        value="Caja chica"
+                                        />                                                          
+
+                            <div class = "SinEnfoque" 
+                                 id="pdsa_i8">                                
+                                <label for="certificado">certificado:</label> 
+                                <div class ="textbox">
+                                    <input TYPE="text" 
+                                           name="certificado" 
+                                           id="uocc_certificado"
+                                           class="right-aling"                                            
+                                           value ="0"
+                                           />                                
+                                </div>            
+                            </div>    
+
+
+                            <input  TYPE="hidden"
+                                        name="tipo"  
+                                        id="uocl_tipo"
+                                        value="CA"
+                                        />                                   
+                            
+                        </form>	                                    
+                        
+                    </article>                       
+    
+    
+    
+                    <article class = "botones-footer">
+    
+                        <div id="busqueda_footer">
+
+                            <div class ="commandbutton">
+                                <a href="javascript:void(0);" 
+                                   id ="uocc_agregar"
+                                   class="botonEnlace" >Agregar</a>
+                            </div>                                
+                            
+                            <div class ="commandbutton">
+                                <a href="javascript:void(0);" 
+                                   id ="uocc_cerrar"
+                                   class="botonEnlace" >Cerrar</a>
+                            </div>                                
+                        
+                     
+                        </div> 
+                               
+                    </article>
+    
+    
+</jsp:root>
+                
+
+

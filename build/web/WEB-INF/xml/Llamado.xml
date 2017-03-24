@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<root>
+    
+    <table 
+        name="llamados">            
+                    
+            <id name="id"/>
+            <column name="cc"/>
+            <column name="llamado"/>            
+            <column name="pac"/>
+            <column name="monto"/>
+            
+            
+            
+    </table>
+    
+</root>

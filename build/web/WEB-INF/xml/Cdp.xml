@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<root>
+    
+    <table 
+        name="cdp">            
+                    
+            <id name="id"/>
+            <column name="estructura_id"/>                        
+            <column name="unr"/>                        
+            <column name="pac_numero"/>                        
+            <column name="cc"/>                        
+            <column name="descripcion"/>                        
+            <column name="certificacion_actual"/>                        
+            <column name="fecha"/>                        
+            <column name="cdp_numero"/>                        
+    </table>
+    
+</root>

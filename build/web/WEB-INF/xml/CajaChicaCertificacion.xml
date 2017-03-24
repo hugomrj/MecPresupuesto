@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<root>
+    
+    <table 
+        name="cajachica_certificacion">            
+                    
+            <id name="id"/>
+            <column name="uoc_id"/>                                
+            <column name="monto_certificacion"/>
+            <column name="direccion"/>
+            <column name="monto_disponible"/>            
+            <column name="mes"/>
+                        
+    </table>
+    
+</root>
+
+
+
+
+
+

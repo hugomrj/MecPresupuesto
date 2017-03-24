@@ -1,0 +1,59 @@
+
+<jsp:root version="2.0"
+    xmlns:jsp="http://java.sun.com/JSP/Page" 
+     xmlns:c="http://java.sun.com/jsp/jstl/core">
+    
+    
+        <table class="tableA"
+               id="ccld_tabla">
+            
+                <thead>
+                    <tr>
+                       
+                        <th>cc</th>
+                        <th>llamado</th>
+                        <th>proveedor</th>
+                        <th>pac</th>
+                        <th>monto</th>
+                        <th>certificacion</th>
+                        <th>tip certi</th>
+
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <c:forEach items="${lista}" var ="lista" >
+                         
+                        <tr>                            
+                            <td>
+                                <id
+                                    data-linea_id ="${lista.id}">
+                                    ${lista.cc}
+                                </id>
+                            </td>
+                            <td> ${lista.llamado} </td>         
+                            <td>  ${lista.proveedor} </td>         
+                            <td>  ${lista.pac} </td>        
+
+                            <td class="right-aling">
+                                ${lista.monto} 
+                            </td>         
+                            <td class="right-aling">
+                                ${lista.certificado}
+                            </td>                                                        
+                            
+                            <td>  ${lista.detalle_tipo} </td>   
+                            
+                                
+                        </tr>  
+                    </c:forEach>
+                </tbody>
+                
+        </table>
+
+
+    
+</jsp:root>
+                
+
+

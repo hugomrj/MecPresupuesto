@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Document   : colores
+    Created on : 09-oct-2013, 12:20:48
+    Author     : hugo
+-->
+
+
+
+<jsp:root version="2.0"
+        xmlns:jsp="http://java.sun.com/JSP/Page"
+          xmlns:c="http://java.sun.com/jsp/jstl/core"
+          >
+
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=2.0" />
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+
+
+        <style type="text/css" >
+            @import "../css/Basic.css" ;
+            @import "../css/Media.css" ;
+            @import "../css/themes/SteelBlue.css";
+        </style>
+
+        
+        
+        
+        <style type="text/css" >
+            
+.divflotante{
+    float: left;
+    margin-right: 2em; 
+}            
+        </style>
+        
+                
+        <script type="text/javascript">
+            <jsp:include page="../js/ajax/libreria.js" />
+            <jsp:include page="../js/utilidad/funciones.js"/> 
+                
+                
+            <jsp:include page="../js/componente/Certificacion/Detalle.js"/>
+            <jsp:include page="../js/componente/PlanDetalle/Sub_Agregar.js"/>
+            <jsp:include page="../js/componente/PlanDetalle/Sub_Registro.js"/>                
+                
+                
+            <jsp:include page="../js/componente/Reactivacion/Busqueda.js"/>                                
+            <jsp:include page="../js/componente/Llamado/Busqueda.js"/>                                
+                
+                
+        </script>
+
+
+
+    <jsp:element name="html">
+        <jsp:attribute name="lang">ES</jsp:attribute>
+
+
+        <head>            
+        </head>
+        
+        
+        <body>
+                      
+            <header>
+                <div></div>
+            </header>
+
+            <nav1>
+                <div></div>
+            </nav1>
+
+            <div id="wrapper">
+                
+                <aside>
+                    <div></div>
+                </aside>
+
+                <section>                  
+                    
+                    
+                    <br/>                    
+                    <article>
+                        <h4>Certificaciones</h4>  
+                    </article>
+                    <br/>
+                    
+                    
+                    <article>                   
+
+                        
+                        
+                        
+<div id="contenedor">
+  
+    <div 
+      id="lbl_tp"
+      class="divflotante">  tp:x
+    </div>
+      
+    <div 
+      id="lbl_pg"
+      class="divflotante"> pg:x
+    </div>
+      
+    <div 
+      id="lbl_sp"
+      class="divflotante"> sp:x
+    </div>    
+    
+    <div 
+      id="lbl_py"
+      class="divflotante"> py:x
+    </div>    
+    
+    <div 
+      id="lbl_py"
+      class="divflotante"> py:x
+    </div>    
+        
+
+    <div 
+      id="lbl_obj"
+      class="divflotante"> obj:x
+    </div>    
+    
+    <div 
+      id="lbl_ff"
+      class="divflotante"> ff:x
+    </div>        
+    
+    <div 
+      id="lbl_of"
+      class="divflotante"> of:x
+    </div>            
+    
+    <div 
+      id="lbl_dpt"
+      class="divflotante"> dpt:x
+    </div>                
+    
+    <div 
+      id="lbl_prd"
+      class="divflotante"> prod:x
+    </div>                
+    
+    
+  
+</div>                        
+                        
+                        
+                        
+                        
+                    </article>
+                                           
+                    <br/><br/><br/><br/>
+                    <article>
+                        <div id="tab_body">                            
+                        </div>
+                    </article>                      
+                    
+                    
+                    
+            <br/>      
+            
+                    <article class = "botones-footer">
+
+                        <div class ="commandbutton">
+                            <a href="javascript:void(0);"
+                            id = "cd_agregar" 
+                            class="botonEnlace">Agregar</a>
+                        </div>
+
+                    </article>                    
+                    
+
+                </section>
+                
+                
+            </div>
+
+            
+            <br/>  
+            <footer1>
+                <div></div>
+            </footer1>
+           
+
+
+
+            <div id="capa1">
+                <div id="capa_oscura">
+                    <div id="capa_clara">                        
+                    </div>
+                </div>     
+            </div>            
+            
+            
+            <div id="capa2">
+                <div id="capa_oscura_segunda">
+                    <div id="capa_clara_segunda">                        
+                    </div>
+                </div>                    
+            </div>            
+            
+            
+            
+        </body>
+        
+        
+        
+        
+        
+
+    </jsp:element>
+
+</jsp:root>

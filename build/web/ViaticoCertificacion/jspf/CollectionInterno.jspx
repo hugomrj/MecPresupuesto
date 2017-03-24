@@ -1,0 +1,71 @@
+
+<jsp:root version="2.0"
+    xmlns:jsp="http://java.sun.com/JSP/Page" 
+     xmlns:c="http://java.sun.com/jsp/jstl/core">
+    
+    
+        <table class="tableA"
+               id="vcmes_tabla">
+            
+                <thead>
+                    <tr>
+                       
+                        <th>id</th>
+                        <th style="width: 250px;">direccion</th>
+                        <th style="width: 15px;">tp</th>
+                        <th style="width: 15px;">pg</th>
+                        <th style="width: 15px;">sp</th>
+                        <th style="width: 15px;">py</th>
+                        <th style="width: 15px;">obj</th>
+                        <th style="width: 15px;">ff</th>
+                        <th style="width: 15px;">of</th>
+                        <th style="width: 15px;">dpt</th>
+                        <th>disponible</th>
+                        <th>monto</th>
+                        <th>saldo</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    
+                    
+                    
+                    <c:forEach items="${lista}" var ="lista" >
+                         
+                        <tr
+                            data-registro_id ="${lista.id}"
+                            >
+                            <td>${lista.id}</td>
+                            <td> ${lista.descripcion} </td>         
+                            <td> ${lista.tp} </td>         
+                            <td> ${lista.pg} </td>         
+                            <td> ${lista.sp} </td>         
+                            <td> ${lista.py} </td>         
+                            <td> ${lista.obj} </td>         
+                            <td> ${lista.ff} </td>         
+                            <td> ${lista.of} </td>         
+                            <td> ${lista.dpt} </td>         
+                            
+                            <td class="right-aling">
+                                ${lista.monto_disponible}
+                            </td>
+                            <td class="right-aling">
+                                ${lista.monto_certificacion}
+                            </td>
+                            <td class="right-aling">
+                                ${lista.diferencia}
+                            </td>
+
+                        </tr>  
+                    </c:forEach>
+                </tbody>
+                
+        </table>
+
+
+    
+</jsp:root>
+                
+
+

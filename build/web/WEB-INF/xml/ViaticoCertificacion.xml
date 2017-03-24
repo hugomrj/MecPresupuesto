@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<root>
+    
+    <table 
+        name="viatico_certificacion">            
+                    
+            <id name="id"/>
+            <column name="presupuesto_id"/>
+                                   
+            <column name="monto_certificacion"/>                        
+            <column name="monto_disponible"/>                        
+            
+            <column name="persona"/>            
+            <column name="direccion"/>                              
+            <column name="categoria_funcionario"/>            
+            <column name="destino"/>            
+            <column name="certificacion_numeracion"/>    
+                    
+            <column name="dias"/>            
+            <column name="terminal_pasaje"/>            
+            <column name="terminal_alojamiento"/>            
+            <column name="terminal_alimentacion"/>    
+                    
+            <column name="fecha_inicio"/>            
+            <column name="fecha_fin"/>            
+            
+            
+    </table>
+    
+</root>

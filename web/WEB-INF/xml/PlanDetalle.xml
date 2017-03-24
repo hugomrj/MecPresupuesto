@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<root>
+    
+    <table 
+        name="plan_detalle">            
+                    
+            <id name="id"/>
+            <column name="plan_id"/>
+            <column name="cc"/>
+            <column name="llamado"/>
+            <column name="proveedor"/>
+            <column name="pac"/>
+            <column name="monto"/>
+            <column name="certificado"/>
+            <column name="detalle_tipo" property = "tipo"/> 
+            
+    </table>
+    
+</root>

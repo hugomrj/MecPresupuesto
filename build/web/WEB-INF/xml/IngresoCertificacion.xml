@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<root>
+    
+    <table 
+        name="ingresos_certificacion">            
+                    
+            <id name="id"/>
+            <column name="plan_id"/>
+            <column name="direccion"/>                        
+            <column name="pf1"/>
+            <column name="pf2"/>
+            <column name="pf3"/>
+            <column name="pf4"/>
+            <column name="pf5"/>
+            <column name="pf6"/>
+            <column name="pf7"/>
+            <column name="pf8"/>
+            <column name="pf9"/>
+            <column name="pf10"/>
+            <column name="pf11"/>
+            <column name="pf12"/>
+            
+            
+    </table>
+    
+</root>

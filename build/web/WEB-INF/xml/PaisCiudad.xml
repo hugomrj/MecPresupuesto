@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<root>
+    
+    <table 
+        name="pais_ciudad">            
+                    
+            <id name="id"/>
+            <column name="pais"/>
+            <column name="ciudad"/>
+         
+            <column name="c1"/>            
+            <column name="c2"/>            
+            <column name="c3"/>            
+            <column name="c4"/>            
+            <column name="c5"/>            
+            
+    </table>
+    
+</root>
+
+

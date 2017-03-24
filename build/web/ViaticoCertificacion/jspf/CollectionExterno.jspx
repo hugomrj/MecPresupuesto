@@ -1,0 +1,48 @@
+
+<jsp:root version="2.0"
+    xmlns:jsp="http://java.sun.com/JSP/Page" 
+     xmlns:c="http://java.sun.com/jsp/jstl/core">
+    
+    
+        <table class="tableA"
+               id="vcmes_tabla">
+ 
+                <thead>
+                    <tr>
+                       
+                        <th>cedula</th>
+                        <th style="width: 150px;">nombres</th>
+                        <th>categoria</th>
+                        <th style="width: 30px;">certificacion</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    
+                    
+                    
+                    <c:forEach items="${lista}" var ="lista" >
+                         
+                        <tr
+                            data-registro_id ="${lista.id}"
+                            >
+                            <td>${lista.cedula}</td>
+                            <td> ${lista.nombres} </td>         
+                            <td> ${lista.categoria_funcionario} </td>                     
+                            <td class="right-aling">
+                                ${lista.monto_certificacion}
+                            </td>
+
+                        </tr>  
+                    </c:forEach>
+                </tbody>
+                
+        </table>
+
+
+    
+</jsp:root>
+                
+
+

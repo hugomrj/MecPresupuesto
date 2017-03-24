@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<root>
+
+    <table 
+        name="reactivacion">            
+             
+                    
+            <id name="id"/>
+            <column name="cc"/>            
+            <column name="llamado"/>
+            <column name="contrato"/>
+            <column name="proveedor"/>
+            <column name="pac"/>
+            <column name="monto"/>
+            
+            
+            
+    </table>
+    
+    
+</root>    

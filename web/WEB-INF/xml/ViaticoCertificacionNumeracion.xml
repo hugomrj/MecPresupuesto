@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<root>
+    
+    <table 
+        name="viatico_certificacion_numeracion">            
+                    
+            <id name="id"/>            
+            <column name="fecha"/>            
+            <column name="codigo_interno"/>      
+            <column name="mes"/>      
+            <column name="plan_financiero_id"/>      
+            <column name="tipo_viatico"/>            
+            <column name="dolar"/>                     
+            <column name="anteriores"/>            
+                              
+    </table>
+    
+</root>
+
+

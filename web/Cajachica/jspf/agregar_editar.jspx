@@ -1,0 +1,219 @@
+
+<jsp:root version="2.0"
+    xmlns:jsp="http://java.sun.com/JSP/Page" 
+    xmlns:c="http://java.sun.com/jsp/jstl/core">
+    
+    
+    <article>
+        
+        
+            <article>
+                <h4>Edicion</h4>
+            </article>            
+        
+        
+        <form class="ancho9" 
+            action="../CajaChicaDistribucion/Controlador/InsertUpdate" 
+            method="post" 
+            id="pafa_form" 
+            name='pafa_form'
+            >
+
+            
+            
+            <input  TYPE="hidden"
+                        name="id_tabla"  
+                        id="id_tabla"
+                        value="0"
+                        />                
+            
+            
+            
+            <input  TYPE="hidden"
+                        name="uoc_id"  
+                        id="pafa_uoc_id"
+                        value="0"
+                        />                 
+            
+
+            <br/>
+            <div style="width: 100%;"> 
+                
+                
+                    <div style="display: inline-block; padding-right: 3em;"> 
+
+                           <div class = "SinEnfoque">
+                               <label for="pf1">enero:</label> 
+                               <input TYPE="text" 
+                                       name="pf1" 
+                                       id="pafa_pf1"     
+                                       class="right-aling"
+                                       />
+                           </div> 
+
+
+                           <div class = "SinEnfoque">
+                               <label for="pf2">febrero:</label> 
+                               <input TYPE="text" 
+                                       name="pf2" 
+                                       id="pafa_pf2"
+                                       class="right-aling"
+                                       />                                
+                           </div>            
+
+
+                           <div class = "SinEnfoque">
+                               <label for="pf3">marzo:</label> 
+                               <input TYPE="text" 
+                                       name="pf3" 
+                                       id="pafa_pf3"
+                                       class="right-aling"
+                                       />
+                           </div>            
+
+
+                           <div class = "SinEnfoque">
+                               <label for="pf4">abril:</label> 
+                               <input TYPE="text" 
+                                       name="pf4" 
+                                       id="pafa_pf4"
+                                       class="right-aling"
+                                       />
+                           </div>                             
+
+                    </div>
+                
+                
+
+                    <div style="display: inline-block; padding-right: 3em;"> 
+
+                           <div class = "SinEnfoque">
+                               <label for="pf5">mayo:</label> 
+                               <input TYPE="text" 
+                                       name="pf5" 
+                                       id="pafa_pf5"
+                                       class="right-aling"
+                                       />                                
+                           </div> 
+
+
+                           <div class = "SinEnfoque">
+                               <label for="pf6">junio:</label> 
+                               <input TYPE="text" 
+                                       name="pf6" 
+                                       id="pafa_pf6"
+                                       class="right-aling"
+                                       />                                
+                           </div>            
+
+
+                           <div class = "SinEnfoque">
+                               <label for="pf7">julio:</label> 
+                               <input TYPE="text" 
+                                       name="pf7" 
+                                       id="pafa_pf7"
+                                       class="right-aling"
+                                       />
+                           </div>            
+
+
+                           <div class = "SinEnfoque">
+                               <label for="pf8">agosto:</label> 
+                               <input TYPE="text" 
+                                       name="pf8" 
+                                       id="pafa_pf8"
+                                       class="right-aling"
+                                       />
+                           </div>                             
+
+                    </div>
+
+
+                    <div style="display: inline-block; padding-right: 3em;"> 
+
+                           <div class = "SinEnfoque">
+                               <label for="pf9">septiembre:</label> 
+                               <input TYPE="text" 
+                                       name="pf9" 
+                                       id="pafa_pf9"
+                                       class="right-aling"
+                                       />                                
+                           </div> 
+
+
+                           <div class = "SinEnfoque">
+                               <label for="pf10">octubre:</label> 
+                               <input TYPE="text" 
+                                       name="pf10" 
+                                       id="pafa_pf10"
+                                       class="right-aling"
+                                       />                                
+                           </div>            
+
+
+                           <div class = "SinEnfoque">
+                               <label for="pf11">noviembre:</label> 
+                               <input TYPE="text" 
+                                       name="pf11" 
+                                       id="pafa_pf11"
+                                       class="right-aling"
+                                       />
+                           </div>            
+
+
+                           <div class = "SinEnfoque">
+                               <label for="pf12">diciembre:</label> 
+                               <input TYPE="text" 
+                                       name="pf12" 
+                                       id="pafa_pf12"
+                                       class="right-aling"
+                                       />
+                           </div>                             
+
+                    </div>
+                               
+                
+            </div>
+                
+
+        </form>
+  
+          
+    
+        
+    </article>
+    
+    <br/>
+    <article>
+        <h5  id="pafa_mensaje">
+            falta asignar
+        </h5>
+    </article>
+    
+
+            <article class = "botones-footer">
+
+                <div id="busqueda_footer">
+
+                    <div class ="commandbutton">
+                        <a href="javascript:void(0);" 
+                           id ="pafa_aceptar"
+                           class="botonEnlace" >Aceptar</a>
+                    </div>                                
+
+                    <div class ="commandbutton">
+                        <a href="javascript:void(0);" 
+                           id ="pafa_cerrar"
+                           class="botonEnlace" >Cerrar</a>
+                    </div>                                
+
+
+                </div> 
+
+            </article>    
+    
+    
+</jsp:root>
+                
+
+

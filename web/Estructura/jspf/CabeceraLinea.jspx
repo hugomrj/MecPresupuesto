@@ -1,0 +1,63 @@
+
+<jsp:root version="2.0"
+    xmlns:jsp="http://java.sun.com/JSP/Page" 
+     xmlns:c="http://java.sun.com/jsp/jstl/core">
+    
+    
+        <table class="tableD"
+               id="pvcabe_tabla">
+            
+            
+                <thead>
+                    <tr>
+                       
+                        <th>tp</th>
+                        <th>pg</th>
+                        <th>sp</th>
+                        <th>py</th>
+                        <th>obj</th>
+                        <th>ff</th>
+                        <th>of</th>
+                        <th>dpt</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    
+                        
+                    <c:forEach items="${lista}" var ="lista" >
+                         
+                        <tr
+                            data-registro_id ="${lista.id}"
+                            >
+                            <td>${lista.tp}</td>
+                            <td> ${lista.pg} </td>         
+                            <td>  ${lista.sp} </td>         
+                            <td>  ${lista.py} </td>         
+                            <td>  ${lista.obj} </td>         
+                            <td> ${lista.ff} </td>         
+                            <td>  ${lista.of} </td>         
+                            <td>  ${lista.dpt} </td>               
+
+                                
+                        </tr>  
+                    </c:forEach>
+                </tbody>
+                
+                <tfoot>
+                <tr>              
+                    <td colspan="10">                         
+                    </td>
+                </tr>
+                </tfoot>                        
+                
+                
+                
+        </table>
+
+
+    
+</jsp:root>
+                
+
+

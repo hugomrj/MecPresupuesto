@@ -1,0 +1,167 @@
+
+<jsp:root version="2.0"
+    xmlns:jsp="http://java.sun.com/JSP/Page" 
+     xmlns:c="http://java.sun.com/jsp/jstl/core">
+    
+                    <article>
+                        <h4>Agregar</h4>
+                    </article>
+    
+    
+                    <article>
+                        
+                        <a href="javascript:void(0);" 
+                           id="vinculo_reactivacion"
+                           style="padding-left: 1em;"
+                           >reactivaciones
+                        </a>       
+                        
+                        
+                        <a href="javascript:void(0);" 
+                           id="vinculo_llamado"
+                           style="padding-left: 1em;">
+                            llamados
+                        </a>
+                        
+                    </article>
+    
+        
+                    <article>    
+                        
+                        
+                        <form class="ancho9" 
+                                action="../PlanDetalle/Controlador/Agregar" 
+                                method="post" 
+                                id="pdsa_form" 
+                                name='pdsa_form'
+                                >
+                                                        
+                            <input  TYPE="hidden"
+                                        name="plan_id"  
+                                        id="pdsa_plan_id"
+                                        value="0"
+                                        />                              
+
+                            
+                            <div class = "SinEnfoque" 
+                                 id="pdsa_i3">                                
+                                <label for="cc">cc:</label> 
+                                <div class ="textbox">
+                                    <input TYPE="text" 
+                                           name="cc" 
+                                           id="pdsa_cc"                                           
+                                           size ="100"  
+                                           />                                
+                                </div>            
+                            </div>                            
+                            
+                            <div class = "SinEnfoque" 
+                                 id="pdsa_i4">                                
+                                <label for="llamado">llamado:</label> 
+                                <div class ="textbox">
+                                    <input TYPE="text" 
+                                           name="llamado" 
+                                           id="pdsa_llamado"
+                                           size ="100"  
+                                           />                                
+                                </div>            
+                            </div>                            
+
+                            <div class = "SinEnfoque" 
+                                 id="pdsa_i5">                                
+                                <label for="proveedor">proveedor:</label> 
+                                <div class ="textbox">
+                                    <input TYPE="text" 
+                                           name="proveedor" 
+                                           id="pdsa_proveedor"
+                                           size ="100"  
+                                           />                                
+                                </div>            
+                            </div>                            
+                            
+                            <div class = "SinEnfoque" 
+                                 id="pdsa_i6">                                
+                                <label for="pac">pac:</label> 
+                                <div class ="textbox">
+                                    <input TYPE="text" 
+                                           name="pac" 
+                                           id="pdsa_pac"
+                                           size ="100"  
+                                           />                                
+                                </div>            
+                            </div>       
+
+                            <div class = "SinEnfoque" 
+                                 id="pdsa_i7">                                
+                                <label for="monto">monto:</label> 
+                                <div class ="textbox">
+                                    <input TYPE="text" 
+                                           name="monto" 
+                                           id="pdsa_monto"
+                                           class="right-aling"
+                                           value ="0"
+                                           />                                
+                                </div>            
+                            </div>    
+
+                            <div class = "SinEnfoque" 
+                                 id="pdsa_i8">                                
+                                <label for="certificado">certificado:</label> 
+                                <div class ="textbox">
+                                    <input TYPE="text" 
+                                           name="certificado" 
+                                           id="pdsa_certificado"
+                                           class="right-aling"                                            
+                                           value ="0"
+                                           />                                
+                                </div>            
+                            </div>    
+
+
+
+                            <div class = "SinEnfoque" 
+                                 id="pdsa_i9">                                
+                                <label for="tipo">tipo:</label> 
+                                <div class ="textbox">
+                                    <input TYPE="text" 
+                                           name="tipo" 
+                                           id="pdsa_tipo"                                           
+                                           size ="10" 
+                                           />                                
+                                </div>            
+                            </div>    
+
+                            
+                            
+                        </form>	                                    
+                        
+                    </article>                       
+    
+    
+    
+                    <article class = "botones-footer">
+    
+                        <div id="busqueda_footer">
+
+                            <div class ="commandbutton">
+                                <a href="javascript:void(0);" 
+                                   id ="pdsa_agregar"
+                                   class="botonEnlace" >Agregar</a>
+                            </div>                                
+                            
+                            <div class ="commandbutton">
+                                <a href="javascript:void(0);" 
+                                   id ="pdsa_cerrar"
+                                   class="botonEnlace" >Cerrar</a>
+                            </div>                                
+                        
+                     
+                        </div> 
+                               
+                    </article>
+    
+    
+</jsp:root>
+                
+
+

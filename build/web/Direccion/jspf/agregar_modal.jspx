@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jsp:root version="2.0"
+     xmlns:jsp="http://java.sun.com/JSP/Page" 
+     xmlns:c="http://java.sun.com/jsp/jstl/core">
+         
+
+        <div>                  
+                    
+                    <article>
+                            <h4>Agregar Direccion</h4>  
+                    </article>
+                    
+                    <article>
+                            
+                        <form action="../Direccion/Controlador/Agregar" 
+                            method="post" 
+                            id="di_form" 
+                            name='di_form'
+                            >
+
+                            
+                            <input  TYPE="TEXT" 
+                                name="id"
+                                id = "di_id" 
+                                hidden="hidden" 
+                                value="0"
+                                />                               
+                            
+                            
+                            <div class = "SinEnfoque" 
+                                id="i3">                                
+                                <label for="descripcion">Descripcion:</label> 
+                                <div class ="textbox">
+                                    <input TYPE="TEXT" 
+                                        id="di_descripcion"
+                                        name="descripcion"
+                                        size ="50" 
+                                        
+                                        />                                
+                                </div>            
+                            </div>                            
+
+
+                        </form>	                                    
+                        
+                    </article> 
+
+                   <article class = "botones-footer">
+ 
+                        <div class ="commandbutton">
+                            <a href="javascript:void(0);" 
+                               class="botonEnlace" 
+                               id="di_guardar"
+                               >Guardar</a>
+                        </div>                                
+
+                                  
+                        <div class ="commandbutton">
+                                <a href="javascript:void(0);" 
+                                    class="botonEnlace"
+                                    id="di_cancelar">
+                                    Cancelar</a>
+                        </div>                        
+
+                   </article> 
+                             
+                    
+
+                    
+
+        </div>
+    
+    
+        
+    
+</jsp:root>
+            
+
+

@@ -1,0 +1,57 @@
+
+<jsp:root version="2.0"
+    xmlns:jsp="http://java.sun.com/JSP/Page" 
+     xmlns:c="http://java.sun.com/jsp/jstl/core">
+    
+    
+        <table class="tableA"
+               id="cclm_tabla">
+            
+
+            
+                <thead>
+                    <tr>
+                       
+                        <th>descripcion</th>
+                        <th>disponible</th>                        
+                        <th>certificado</th>
+                        <th>diferencia</th>
+                        
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    
+                    <c:forEach items="${lista}" var ="lista" >
+                         
+                        <tr
+                            data-registro_id ="${lista.id}"
+                            >
+                            
+                            <td>${lista.descripcion}</td>
+                             
+                            <td class="right-aling">
+                                ${lista.monto_disponible}
+                            </td>                            
+                            
+                            <td class="right-aling">
+                                ${lista.monto_certificacion}
+                            </td>
+                        
+                            <td class="right-aling">
+                                ${lista.diferencia}
+                            </td>
+
+                        </tr>  
+                    </c:forEach>
+                </tbody>
+                
+        </table>
+
+
+    
+</jsp:root>
+                
+
+

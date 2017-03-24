@@ -1,0 +1,61 @@
+
+<jsp:root version="2.0"
+    xmlns:jsp="http://java.sun.com/JSP/Page" 
+     xmlns:c="http://java.sun.com/jsp/jstl/core">
+    
+    
+        <table class="tableA"
+               id="vcmes_tabla">
+            
+                <thead>
+                    <tr>
+                       
+                        <th>fecha</th>
+                        <th>codigo interno</th>                        
+                        <th>tipo viatico</th>
+                        <th>monto</th>
+                        <th>anterior</th>
+                        
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    
+                    <c:forEach items="${lista}" var ="lista" >
+                         
+                        <tr
+                            data-registro_id ="${lista.id}"
+                            >
+                            
+                            <td>${lista.fecha}</td>
+                             
+                            <td class="right-aling">
+                                ${lista.codigo_interno}
+                            </td>                            
+                            
+                            <td class="right-aling">
+                                ${lista.tipo_viatico}
+                            </td>
+                        
+                            <td class="right-aling">
+                                ${lista.monto_certificacion}
+                            </td>
+                            
+                            <td class="right-aling">
+                                ${lista.anteriores}
+                            </td>                            
+                            
+
+                        </tr>  
+                    </c:forEach>
+                </tbody>
+                
+        </table>
+
+
+    
+</jsp:root>
+                
+
+

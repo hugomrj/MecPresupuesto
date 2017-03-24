@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<root>
+    
+    <table 
+        name="direcciones">            
+                    
+            <id name="id"/>
+            <column name="descripcion"/>                        
+    </table>
+    
+</root>
