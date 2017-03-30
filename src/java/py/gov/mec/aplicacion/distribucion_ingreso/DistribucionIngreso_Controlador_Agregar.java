@@ -15,7 +15,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import nebuleuse.ORM.Persistencia;
-import nebuleuse.GUI.web.HttpAction;
+
+
+            
 
 
 @WebServlet(name = "DistribucionIngreso_Controlador_Agregar", 
@@ -29,6 +31,8 @@ public class DistribucionIngreso_Controlador_Agregar extends HttpServlet {
             throws ServletException, IOException {
 
         response.setContentType("text/html;charset=UTF-8");        
+        
+        
         
         try
         {

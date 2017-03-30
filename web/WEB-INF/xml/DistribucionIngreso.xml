@@ -7,8 +7,8 @@
         name="distribucion_ingresos">            
                     
             <id name="id"/>
-            <column name="plan_id"/>                        
-            <column name="direccion;"/>                        
+            <column name="presupuesto_id"/>                        
+            <column name="direccion"/>                        
             <column name="pf1"/>                        
             <column name="pf2"/>                        
             <column name="pf3"/>                        

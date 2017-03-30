@@ -12,7 +12,7 @@ package py.gov.mec.aplicacion.distribucion_ingreso;
 public class DistribucionIngreso {
     
     private Integer id;
-    private Integer plan_id;
+    private Integer presupuesto_id;
     private Integer direccion;
     private Long pf1 = 0L;
     private Long pf2 = 0L;
@@ -35,13 +35,6 @@ public class DistribucionIngreso {
         this.id = id;
     }
 
-    public Integer getPlan_id() {
-        return plan_id;
-    }
-
-    public void setPlan_id(Integer plan_id) {
-        this.plan_id = plan_id;
-    }
 
     public Integer getDireccion() {
         return direccion;
@@ -145,6 +138,14 @@ public class DistribucionIngreso {
 
     public void setPf12(Long pf12) {
         this.pf12 = pf12;
+    }
+
+    public Integer getPresupuesto_id() {
+        return presupuesto_id;
+    }
+
+    public void setPresupuesto_id(Integer presupuesto_id) {
+        this.presupuesto_id = presupuesto_id;
     }
     
     

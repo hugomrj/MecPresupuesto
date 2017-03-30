@@ -1,5 +1,9 @@
 
-function DistribucionIngreso_agregar ( plan_id ){
+function DistribucionIngreso_agregar ( presupuesto_id ){
+
+
+
+
 
     campos_interaccion();
 
@@ -37,22 +41,14 @@ function DistribucionIngreso_agregar ( plan_id ){
     dima_agregar.addEventListener('click',
         function() {
 
-/*
- 
-                    // agregar codigo de cabecera a formulario
-                    var pdsa_plan_id = document.getElementById('pdsa_plan_id');
-                    pdsa_plan_id.value = plan_id;
-            
-*/
 
 
-                    var dima_plan_id = document.getElementById('dima_plan_id');
-                    dima_plan_id.value = plan_id;
+                    var dima_presupuesto_id = document.getElementById('dima_presupuesto_id');
+                    dima_presupuesto_id.value = presupuesto_id;
 
                
                     var form = document.getElementById("dima_form");            
                     var accion =  form.getAttribute('action') ; 
-
 
                     AjaxPeticionURL( accion, getDataForm(form) );
 

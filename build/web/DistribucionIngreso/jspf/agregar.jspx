@@ -24,8 +24,8 @@
             
             
             <input  TYPE="hidden"
-                        name="plan_id"  
-                        id="dima_plan_id"
+                        name="presupuesto_id"  
+                        id="dima_presupuesto_id"
                         value="0"
                         />                 
             

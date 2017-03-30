@@ -43,7 +43,7 @@ public class DistribucionIngresoDAO  {
                         "SELECT \n" +
                         "  direcciones_ingresos.descripcion as direccion_descripcion, \n" +
                         "  distribucion_ingresos.id, \n" +
-                        "  distribucion_ingresos.plan_id, \n" +
+                        "  distribucion_ingresos.presupuesto_id, \n" +
                         "  distribucion_ingresos.direccion, \n" +
                         "  distribucion_ingresos.pf1, \n" +
                         "  distribucion_ingresos.pf2, \n" +
@@ -62,7 +62,7 @@ public class DistribucionIngresoDAO  {
                         "  public.distribucion_ingresos\n" +
                         "WHERE \n" +
                         "  direcciones_ingresos.direccion = distribucion_ingresos.direccion\n" +
-                        "  and plan_id = " +   idreg  +
+                        "  and presupuesto_id = " +   idreg  +
                         "Order by direccion; " ;
                                                 
                 
@@ -81,7 +81,7 @@ public class DistribucionIngresoDAO  {
                 String sql = 
                     "  SELECT \n" +
                     "  distribucion_ingresos.id, \n" +
-                    "  distribucion_ingresos.plan_id, \n" +
+                    "  distribucion_ingresos.presupuesto_id, \n" +
                     "  distribucion_ingresos.direccion, \n" +
                     "  direcciones_ingresos.descripcion direccion_descripcion, \n" +
                     "  distribucion_ingresos.pf1, \n" +
@@ -127,10 +127,10 @@ public class DistribucionIngresoDAO  {
             if (mes >= 1 && mes <= 12){
                 
                 sql = 
-                    "  SELECT id, plan_id, direccion, pf" + mes.toString().trim() 
+                    "  SELECT id, presupuesto_id, direccion, pf" + mes.toString().trim() 
                         + " as montomes\n" +
                     "  FROM public.distribucion_ingresos\n" +
-                    " where plan_id = " + idregistro + 
+                    " where presupuesto_id = " + idregistro + 
                     " and direccion =  "  + direccion ;                
 
                 
@@ -138,7 +138,7 @@ public class DistribucionIngresoDAO  {
             else
             {
                 sql = 
-                    "  SELECT id, plan_id, direccion " 
+                    "  SELECT id, presupuesto_id, direccion " 
                         + " as montomes\n" +
                     "  FROM public.distribucion_ingresos\n" +
                     " where  1 = 2" ;                 

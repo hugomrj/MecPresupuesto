@@ -2,6 +2,8 @@
 
 function fomato_tabla_presupuesto_vigente_lista (){
     
+    
+    
     var table = document.getElementById( "pvcl_tabla" ).getElementsByTagName('tbody')[0] ;
     var rows = table.rows.length;
     var cell ;
