@@ -323,7 +323,7 @@ function datos_tabla (){
     
     
     
-        var jsonResponse = AjaxUrl( '../Plan/Suma.json'
+        var jsonResponse = AjaxUrl( '../PresupuestoVigente/Suma.json'
             +'?nn=0'        
             +'&tipo1='+tipo1.value+'&tipo2='+tipo2.value
             +'&pg1='+pg1.value+'&pg2='+pg2.value

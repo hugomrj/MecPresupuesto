@@ -3,17 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/js/componente/Cdp/Editar.js</file>
-            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/js/componente/Cdp/Detalle.js</file>
-            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/Cdp/Registro.jspx</file>
-            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/Cdp/Editar.jspx</file>
-            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/src/java/py/gov/mec/aplicacion/cdp/CdpJSON.java</file>
-            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/js/componente/Cdp/Registro.js</file>
-            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/js/componente/Cdp/comun.js</file>
-            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/Cdp/Detalle.jspx</file>
-            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/Cdp/Agregar.jspx</file>
-            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/Direccion/Registro.jspx</file>
-            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/js/utilidad/funciones.js</file>
+            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/src/java/py/gov/mec/aplicacion/plan/PlanSumaJSON.java</file>
+            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/Uoc/Indice.jspx</file>
+            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/src/java/py/gov/mec/aplicacion/presupuesto_vigente/PresupuestoVigenteDAO.java</file>
+            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/src/java/py/gov/mec/aplicacion/plan/PlanDAO.java</file>
+            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/src/java/py/gov/mec/aplicacion/presupuesto_vigente/PresupuestoVigente_Coleccion_Lista.java</file>
+            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/js/componente/Uoc/Indice.js</file>
         </group>
     </open-files>
 </project-private>

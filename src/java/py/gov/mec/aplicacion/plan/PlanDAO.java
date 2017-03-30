@@ -109,22 +109,9 @@ public class PlanDAO  {
     public List<Map<String, Object>>  RegistroId  ( Integer codigo)
             throws Exception {
             
-            
-// en este tiene que estar todos los campos, tiene que ser 
-// una consulta
 
-
-        
         
                 statement = conexion.getConexion().createStatement();         
-/*                                               
-                String sql = "  "
-                        + " SELECT id, tp, pg, sp, py, obj, ff, of, dpt, carpeta, producto, vigente\n" 
-                        +  "  FROM public.plan\n" 
-                        +  "  where  id =  "
-                                +  codigo                                                              
-                        + " ";
-   */
 
 
                 String sql = "   "+                        
