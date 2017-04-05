@@ -124,9 +124,6 @@ public class Persistencia {
 
         strSQL = strInsert + strColums + strValues + strRETURNING;
         
-        
-System.out.println(strSQL);
-
         Integer intID = 0;  
             
         try

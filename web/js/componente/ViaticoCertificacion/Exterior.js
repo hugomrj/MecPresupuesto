@@ -77,7 +77,8 @@ window.onload = function() {
                 mostrarVentana('capa_clara');         
                 
                 AjaxPeticion( '../ViaticoCertificacion/jspf/agregar_exterior.jspx' , 'capa_clara' );      
-                dimensionarVentana('capa_clara', 900, 450);   
+//                dimensionarVentana('capa_clara', 900, 450);   
+                dimensionarVentana('capa_clara', 900, 650);   
     
                 
                 

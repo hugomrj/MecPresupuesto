@@ -34,7 +34,7 @@ public class CajaChicaDistribucion_Controlador_InsertUpdate extends HttpServlet 
             
         try
         {
-          
+
 
             Integer registro = 0;
             if ( request.getParameter("uoc_id") != null){
@@ -58,6 +58,16 @@ public class CajaChicaDistribucion_Controlador_InsertUpdate extends HttpServlet 
                 
                 instancia.setId(  Integer.parseInt(request.getParameter("id_tabla")) );
                 persistencia.update(instancia, request);
+
+
+
+                
+ //aca tengo que llamar a un dao para que se actualicen los  valores cargados
+//  tabla cajachica_certificacion
+         
+         
+         
+                
 
             }
             // insert

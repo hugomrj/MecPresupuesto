@@ -37,7 +37,6 @@ public class CajaChicaCertificacionDAO  {
             throws Exception {
             
                 statement = conexion.getConexion().createStatement();         
-
                 
                 //falta arreglar este sql left join
                 
@@ -94,7 +93,46 @@ public class CajaChicaCertificacionDAO  {
     }          
              
     
+    
+    
+    public void actualizarSaldo ( Integer uoc_id , Integer mes ) 
+            throws Exception{
         
+        
+        
+        
+        
+        List<Map<String, Object>> list = this.ListaMes(uoc_id, mes);
+       
+        
+        Integer i = 0;
+        
+        
+        for (Map<String, Object> map : list) {
+            
+            
+            for (Map.Entry<String, Object> entry : map.entrySet()) {
+                
+                String key = entry.getKey();
+                Object value = entry.getValue();
+                
+                System.out.println(key);            
+                System.out.println(value.toString());            
+                
+            }
+            
+            System.out.println("--------------------------");            
+            
+        }
+
+        
+        
+    
+    }
+
+
+
+    
     
 }
 

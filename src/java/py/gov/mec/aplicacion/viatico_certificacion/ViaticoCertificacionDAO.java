@@ -175,7 +175,7 @@ public class ViaticoCertificacionDAO  {
                     "  plan_financiero.pf"+mes+" planmes, \n" +
                     "  viatico_certificacion_numeracion.anteriores, \n" +
                     "  vc.certificacion_actual,   \n" +
-                    "  ( pf"+mes+" - (  certificacion_actual - anteriores) )  saldo,\n" +
+                    "  ( pf"+mes+" - (  certificacion_actual + anteriores) )  saldo,\n" +
                     "  plan_financiero.id planf,\n" +
                     "  viatico_certificacion_numeracion.mes,\n" +
                     "  dolar\n" +

@@ -25,6 +25,7 @@
                     
             <column name="fecha_inicio"/>            
             <column name="fecha_fin"/>            
+            <column name="datosviaje"/>            
             
             
     </table>

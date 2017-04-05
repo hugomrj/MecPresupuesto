@@ -8,6 +8,17 @@ window.onload = function() {
     
     meses_valores (  ) ;
     
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
 };
 
 
@@ -105,11 +116,13 @@ function meses_valores (  ){
         pfdm_suma.innerHTML =   objetoJson[0].suma ;  
         pfdm_suma.innerHTML = formatoNumero_p(pfdm_suma.innerHTML); 
         
-        
-        
+               
         //datos_tabla_ccld_tabla();
         
     }
+    
+    
+    
     
     
     var pfdm_editar = document.getElementById('pfdm_editar');
@@ -117,11 +130,9 @@ function meses_valores (  ){
         function() {   
                     
                 mostrarVentana('capa_oscura');
-                mostrarVentana('capa_clara');           
+                mostrarVentana('capa_clara');                           
                 
-                
-                AjaxPeticion( '../Cajachica/jspf/agregar_editar.jspx' , 'capa_clara' );            
-                
+                AjaxPeticion( '../Cajachica/jspf/agregar_editar.jspx' , 'capa_clara' );                            
             
                 dimensionarVentana('capa_clara', 900, 250);                    
                 

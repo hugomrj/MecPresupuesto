@@ -13,6 +13,7 @@ import java.util.Set;
 import nebuleuse.ORM.Persistencia;
 import nebuleuse.ORM.Secuencia;
 import py.gov.mec.aplicacion.cajachica_certificacion.CajaChicaCertificacion;
+import py.gov.mec.aplicacion.cajachica_certificacion.CajaChicaCertificacionDAO;
 import py.gov.mec.aplicacion.cdp.Cdp;
 
 import py.gov.mec.aplicacion.distribucion_ingreso.DistribucionIngresoDAO;
@@ -36,44 +37,20 @@ public class Ejecutar {
      public static  void main(String[] args) throws Exception   {
    
          
-         
-    /*                 
-        PlanDAO p = new PlanDAO();
-        Gson gson = new Gson ();
-        String formatoJSON = gson.toJson(p.RegistroId(1));
-        System.out.println(formatoJSON);  
-         
+     //CajaChicaCertificacionDAO  dao = new CajaChicaCertificacionDAO();
+     
+     
+     //dao.actualizarSaldo(20, 3);
+     
+     
+                ViaticoCertificacionDAO dao = new ViaticoCertificacionDAO();                
+                List<Map<String, Object>> rows = dao.ExteriorMemo(29, 4, 40);
+     
+    
 
-        IngresoEjecucionDAO dao = new  IngresoEjecucionDAO();
-        System.out.println( dao.SaldoMes(2, 67,  1)  );  
-         
-         
-         
-
-
-        Secuencia<PaisCiudad> lista = new Secuencia<PaisCiudad>();         
-        List<PaisCiudad> SessionLista = new ArrayList<PaisCiudad>();
-               
-        
-        lista.subLineas = 10;
-        SessionLista = lista.listaColeccion( new PaisCiudad(), null, "", 1 );   
-
-       */
-    
-    
-        Cdp cdp = new Cdp();
-        Persistencia persistencia = new Persistencia();
-        
-        
-        cdp.setCc("cccc");
-        
-        persistencia.insert(cdp);
-        
-    
-    
-    
-        
-    
+                
+                
+                
      }
 
 }

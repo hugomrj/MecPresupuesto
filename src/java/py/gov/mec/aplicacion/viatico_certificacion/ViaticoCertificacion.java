@@ -35,6 +35,7 @@ public class ViaticoCertificacion {
     private Integer terminal_alimentacion;
     private Date fecha_inicio;
     private Date fecha_fin;
+    private String datosviaje;
     
     
        
@@ -161,6 +162,14 @@ public class ViaticoCertificacion {
 
     public void setFecha_fin(Date fecha_fin) {
         this.fecha_fin = fecha_fin;
+    }
+
+    public String getDatosviaje() {
+        return datosviaje;
+    }
+
+    public void setDatosviaje(String datosviaje) {
+        this.datosviaje = datosviaje;
     }
     
     

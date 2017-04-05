@@ -307,7 +307,6 @@
 
                 
                 
-                
                     <div class = "SinEnfoque">
                         <label for="monto_certificacion">Monto:</label> 
                         <input TYPE="text" 
@@ -318,6 +317,17 @@
                                 value="0"
                                 />
                     </div>                    
+                
+                
+                    <div class = "SinEnfoque">
+                        <label for="monto_certificacion">Datos viaje:</label> 
+                        <input TYPE="text" 
+                                name="datosviaje" 
+                                id="vicae_datosviaje"                                                                                             
+                                value=""
+                                size ="90"
+                                />
+                    </div>                       
                 
                 
                 

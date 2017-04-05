@@ -32,8 +32,6 @@
             <jsp:include page="../js/ajax/libreria.js" />
             <jsp:include page="../js/utilidad/funciones.js"/> 
                 
-                
-                
             <jsp:include page="../js/componente/Cajachica/Distribucion.js"/> 
                 
                 
