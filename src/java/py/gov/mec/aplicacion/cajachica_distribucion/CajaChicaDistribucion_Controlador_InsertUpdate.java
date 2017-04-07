@@ -16,6 +16,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import nebuleuse.ORM.Persistencia;
+import py.gov.mec.aplicacion.cajachica_certificacion.CajaChicaCertificacionDAO;
+
 
 
 
@@ -45,29 +47,26 @@ public class CajaChicaDistribucion_Controlador_InsertUpdate extends HttpServlet 
             CajaChicaDistribucion instancia = new CajaChicaDistribucion();
             Persistencia persistencia = new Persistencia();
             
+            CajaChicaDistribucionDAO dao = new  CajaChicaDistribucionDAO();            
+            CajaChicaCertificacionDAO  Certificaciondao = new CajaChicaCertificacionDAO();                
 
-            CajaChicaDistribucionDAO dao = new  CajaChicaDistribucionDAO();
-
-            
             
             // update
             if (dao.isRegistroExiste(registro)) {
             
                 instancia = (CajaChicaDistribucion) persistencia.extraerRegistro(request, instancia);
-                
-                
                 instancia.setId(  Integer.parseInt(request.getParameter("id_tabla")) );
-                persistencia.update(instancia, request);
+      
+                boolean control;
+                control = Certificaciondao.actualizarSaldo(instancia );
 
-
-
-                
- //aca tengo que llamar a un dao para que se actualicen los  valores cargados
-//  tabla cajachica_certificacion
-         
-         
-         
-                
+                if (control == true){
+                    persistencia.update(instancia, request);
+                }
+                else
+                {
+                    throw new Exception("No se puede actualizar");
+                }
 
             }
             // insert

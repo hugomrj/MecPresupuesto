@@ -14,6 +14,7 @@ import nebuleuse.ORM.Persistencia;
 import nebuleuse.ORM.Secuencia;
 import py.gov.mec.aplicacion.cajachica_certificacion.CajaChicaCertificacion;
 import py.gov.mec.aplicacion.cajachica_certificacion.CajaChicaCertificacionDAO;
+import py.gov.mec.aplicacion.cajachica_distribucion.CajaChicaDistribucion;
 import py.gov.mec.aplicacion.cdp.Cdp;
 
 import py.gov.mec.aplicacion.distribucion_ingreso.DistribucionIngresoDAO;
@@ -37,19 +38,22 @@ public class Ejecutar {
      public static  void main(String[] args) throws Exception   {
    
          
-     //CajaChicaCertificacionDAO  dao = new CajaChicaCertificacionDAO();
-     
-     
-     //dao.actualizarSaldo(20, 3);
-     
-     
-                ViaticoCertificacionDAO dao = new ViaticoCertificacionDAO();                
-                List<Map<String, Object>> rows = dao.ExteriorMemo(29, 4, 40);
-     
-    
-
+     CajaChicaCertificacionDAO  dao = new CajaChicaCertificacionDAO();
                 
-                
+     CajaChicaDistribucion instancia = new CajaChicaDistribucion();
+     Persistencia persistencia = new Persistencia();     
+     instancia = (CajaChicaDistribucion) persistencia.filtrarId(instancia, 3);
+     
+     
+     instancia.setPf4(10L);
+     
+             
+     System.out.println(  dao.actualizarSaldo(instancia ) );
+     
+     //dao.ReCalcular(20,4, 100000L);
+     
+     
+     
                 
      }
 

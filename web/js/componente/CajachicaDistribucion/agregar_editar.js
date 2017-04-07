@@ -19,6 +19,7 @@ function Cajachica_agregar_editar ( registro ){
 
                     var form = document.getElementById("pafa_form");            
                     var accion =  form.getAttribute('action') ; 
+                    //  action="../CajaChicaDistribucion/Controlador/InsertUpdate"                                         
                     var control = AjaxPeticionURL( accion, getDataForm(form) );      
                     
                     if (control == null){    

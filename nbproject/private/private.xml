@@ -3,11 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/js/componente/Cajachica/Distribucion.js</file>
             <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/src/java/py/gov/mec/aplicacion/cajachica_certificacion/CajaChicaCertificacionDAO.java</file>
-            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/js/componente/CajachicaCertificacion/Lista.js</file>
+            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/Cajachica/jspf/agregar_editar.jspx</file>
             <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/src/java/py/gov/mec/aplicacion/cajachica_distribucion/CajaChicaDistribucion_Controlador_InsertUpdate.java</file>
-            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/CajachicaCertificacion/Lista.jspx</file>
-            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/src/java/py/gov/mec/aplicacion/cajachica_certificacion/CajaChicaCertificacion_Coleccion_ListaMes.java</file>
+            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/js/componente/CajachicaDistribucion/agregar_editar.js</file>
+            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/src/java/nebuleuse/ORM/Persistencia.java</file>
             <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/src/java/com/itx/execute/Ejecutar.java</file>
         </group>
     </open-files>
