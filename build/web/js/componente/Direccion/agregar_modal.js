@@ -16,12 +16,9 @@ function Direccion_agregar_modal() {
             {                
             
                 
-                
                 ocultarVentana('capa_oscura_segunda');
                 ocultarVentana('capa_clara_segunda');
                 //window.location = "../Direccion/Lista.jspx";                            
-                
-                
                 
                 
                 

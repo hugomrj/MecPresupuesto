@@ -33,6 +33,8 @@ function ViaticoCertificacion_agregar_interior ( planf, presupuesto_id, mes, nro
         zero( 'vicai_direccion' );     
     };    
     
+    
+    
     var vicai_qry_direccion = document.getElementById( 'vicai_qry_direccion');
     vicai_qry_direccion.addEventListener('click',
         function()

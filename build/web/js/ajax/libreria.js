@@ -625,6 +625,9 @@ function Busqueda_relacionada ( strObjeto, strPrefijo, strRetorno, servlet  )
     };
 
 
+    
+
+
     AjaxPeticion('../'+strObjeto+'/Sub/Busqueda.jspx','capa_clara_segunda');
     busqueda_registro( strObjeto, strPrefijo, strRetorno, servlet );
 

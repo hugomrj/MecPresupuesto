@@ -59,7 +59,7 @@ public class CajaChicaDistribucion_Controlador_InsertUpdate extends HttpServlet 
       
                 boolean control;
                 control = Certificaciondao.actualizarSaldo(instancia );
-
+         
                 if (control == true){
                     persistencia.update(instancia, request);
                 }
@@ -67,6 +67,8 @@ public class CajaChicaDistribucion_Controlador_InsertUpdate extends HttpServlet 
                 {
                     throw new Exception("No se puede actualizar");
                 }
+
+                
 
             }
             // insert
@@ -81,7 +83,7 @@ public class CajaChicaDistribucion_Controlador_InsertUpdate extends HttpServlet 
 
                     
         } catch (Exception ex) {
-            Logger.getLogger(CajaChicaDistribucion_Controlador_InsertUpdate.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(CajaChicaDistribucion_Controlador_InsertUpdate.class.getName()).log(Level.SEVERE, null, ex);
             
             //PrintWriter out = response.getWriter();
             out.println(ex.getMessage());                  

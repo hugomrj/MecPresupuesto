@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<root>
+    
+    <table 
+        name="documentos">       
+        
+            <id name="id"/>
+            <column name="fecha_documento"/>                        
+            <column name="fecha_entrada"/>                        
+            <column name="direccion"  foreign = "Direccion" />                        
+            <column name="descripcion"/>                        
+            <column name="expediente_numero"/>                        
+            
+    </table>
+    
+</root>
+

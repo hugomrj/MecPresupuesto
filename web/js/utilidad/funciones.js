@@ -163,6 +163,7 @@ function formatoFecha(str) {
         
     retorno = retorno + " " + mes ;
 //  Mon May 02 22:41:47 PYT 2016
+//  Tue Apr 18 00:00:00 CDT 2017
 
     retorno = retorno + " " + Right(str, 4);
 
@@ -196,40 +197,40 @@ function MesCorto(mes){
 
     
     if (mes == "Jan" || mes == "01" ){
-        retornar = "ene";
+        retornar = "Ene";
     }
     else if (mes == "Feb" || mes ==  "02" ){
-        retornar = "feb";
+        retornar = "Feb";
     }
     else if (mes == "Mar" || mes ==  "03" ){
-        retornar = "mar";
+        retornar = "Mar";
     }    
-    else if (mes == "Abr" || mes ==  "04" ){
-        retornar = "abr";
+    else if (mes == "Apr" || mes ==  "04" ){
+        retornar = "Abr";
     }        
     else if (mes == "May" || mes ==  "05" ){
-        retornar = "may";
+        retornar = "May";
     }        
     else if (mes == "Jun" || mes ==  "06" ){
-        retornar = "jun";
+        retornar = "Jun";
     }        
     else if (mes == "Jul" || mes == "07" ){
-        retornar = "jul";
+        retornar = "Jul";
     }    
     else if ( mes == "Aug" || mes == "08" ){
-        retornar = "ago";
+        retornar = "Ago";
     }    
     else if (mes == "Sep" || mes == "09" ){
-        retornar = "sep";
+        retornar = "Sep";
     }            
     else if ( mes == "Oct" ||  mes == "10" ){
-        retornar = "oct";
+        retornar = "Oct";
     }            
     else if (mes == "Nov" || mes ==  "11" ){
-        retornar = "nov";
+        retornar = "Nov";
     }
     else if ( mes == "Dec" ||   mes == "12" ){
-        retornar = "dic";
+        retornar = "Dic";
     }        
     
     return retornar;
@@ -345,6 +346,10 @@ function convertirFecha(str) {
     return aaaa+"-"+mm+"-"+dd;
 
 }
+
+
+
+
 
 
 function validaFechaDDMMAAAA(fecha){

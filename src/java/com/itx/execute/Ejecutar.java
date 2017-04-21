@@ -18,6 +18,7 @@ import py.gov.mec.aplicacion.cajachica_distribucion.CajaChicaDistribucion;
 import py.gov.mec.aplicacion.cdp.Cdp;
 
 import py.gov.mec.aplicacion.distribucion_ingreso.DistribucionIngresoDAO;
+import py.gov.mec.aplicacion.documento.Documento;
 import py.gov.mec.aplicacion.ingreso_certificacion.IngresoCertificacionDAO;
 import py.gov.mec.aplicacion.ingreso_ejecucion.IngresoEjecucionDAO;
 import py.gov.mec.aplicacion.persona.Persona;
@@ -37,7 +38,7 @@ public class Ejecutar {
 
      public static  void main(String[] args) throws Exception   {
    
-         
+         /*
      CajaChicaCertificacionDAO  dao = new CajaChicaCertificacionDAO();
                 
      CajaChicaDistribucion instancia = new CajaChicaDistribucion();
@@ -50,7 +51,17 @@ public class Ejecutar {
              
      System.out.println(  dao.actualizarSaldo(instancia ) );
      
+*/
      //dao.ReCalcular(20,4, 100000L);
+     
+     
+     
+     
+     Documento doc = new Documento();
+     
+     Persistencia p = new Persistencia();
+     
+     p.filtrarId(doc, 1);
      
      
      

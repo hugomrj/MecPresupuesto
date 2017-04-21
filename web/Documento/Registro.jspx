@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Document   : colores
+    Created on : 09-oct-2013, 12:20:48
+    Author     : hugo
+-->
+
+
+<jsp:root version="2.0"
+        xmlns:jsp="http://java.sun.com/JSP/Page"
+          xmlns:c="http://java.sun.com/jsp/jstl/core"
+          >
+
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=2.0" />
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+
+
+        <style type="text/css" >
+            @import "../css/Basic.css" ;
+            @import "../css/Media.css" ;
+            @import "../css/themes/SteelBlue.css";
+        </style>
+
+
+
+        <script type="text/javascript">
+            <jsp:include page="../js/ajax/libreria.js" />
+            <jsp:include page="../js/utilidad/funciones.js"/>
+            
+            <jsp:include page="../js/componente/Documento/Registro.js"/>
+                
+            <jsp:include page="../js/componente/Documento/comun.js"/>
+                        
+        </script>
+
+
+
+    <jsp:element name="html">
+        <jsp:attribute name="lang">ES</jsp:attribute>
+
+
+        <head>            
+        </head>
+        
+        
+        <body>
+                      
+            <header>
+                <div></div>
+            </header>
+
+            <nav1>
+                <div></div>
+            </nav1>
+
+            <div id="wrapper">
+                
+                <aside>
+                    <div></div>
+                </aside>
+
+                <section>                  
+                    
+                    <article>
+                            <h3>Documento</h3>  
+                    </article>
+                    
+                    <article>
+                            
+                        <form action="../" 
+                            method="post" 
+                            id="doci_form" 
+                            name='doci_form'
+                            >
+
+                            
+                            <div class = "SinEnfoque" >                                
+                                <label for="id">Codigo:</label> 
+                                <div class ="textbox">
+                                    <input TYPE="TEXT" 
+                                        id="doci_id"
+                                        name="id"   
+                                        readonly="readonly"
+                                        />                                
+                                </div>            
+                            </div>                                   
+                            
+                            
+                            
+                            
+                            <div class = "SinEnfoque" >                                
+                                <label for="expediente_numero">Expediente Nro.:</label> 
+                                <div class ="textbox">
+                                    <input TYPE="TEXT" 
+                                        id="doci_expediente_numero"
+                                        name="expediente_numero"   
+                                        readonly="readonly"
+                                        />                                
+                                </div>            
+                            </div>                                    
+                             
+
+                            
+                            <div class = "SinEnfoque" >                                
+                                <label for="fecha_documento">Fecha Doc.:</label> 
+                                <div class ="textbox">
+                                    <input TYPE="TEXT" 
+                                        id="doci_fecha_documento"
+                                        name="fecha_documento"                                        
+                                        readonly="readonly"
+                                        />                                
+                                </div>            
+                            </div>                                    
+                           
+
+
+                        <div class = "SinEnfoque">                                
+                            <label for="direccion">Direccion:</label> 
+                            <div class ="textbox">
+                                <input TYPE="TEXT" 
+                                       id ="doci_direccion"
+                                       name="direccion" 
+                                       size ="10"
+                                       class = "campoFK"
+                                       readonly="readonly"
+                                       />      
+                                
+                                <output 
+                                        class="campoRelacionado" 
+                                        id="doci_direccion_descripcion"
+                                        size ="80" >
+                                </output>
+                            </div>   
+                        </div>  
+
+
+                            <div class = "SinEnfoque" 
+                                id="i6">                                
+                                <label for="descripcion">Descripcion:</label> 
+                                <div class ="textbox">
+                                    <input TYPE="TEXT" 
+                                        id="doci_descripcion"
+                                        name="descripcion"                                        
+                                        size ="100" 
+                                        readonly="readonly"
+                                        />                                
+                                </div>            
+                            </div>                                
+
+                        </form>	                                    
+                        
+                    </article> 
+
+                    
+
+                   <article class = "botones-footer">
+ 
+                      <div class ="commandbutton">
+                          <a href="javascript:void(0);"
+                          id = "doci_agregar" 
+                          class="botonEnlace">Agregar</a>
+                      </div>
+
+                      <div class ="commandbutton">
+                          <a href="javascript:void(0);"
+                          id = "doci_editar" 
+                          class="botonEnlace">Editar</a>
+                      </div>
+
+                      <div class ="commandbutton">
+                          <a href="javascript:void(0);"  
+                          id = "doci_borrar"
+                          class="botonEnlace">Borrar</a>
+                      </div>
+                                            
+                      <div class ="commandbutton">
+                          <a href="javascript:void(0);"
+                          id = "doci_listar"  
+                          class="botonEnlace">Lista</a>
+                      </div>
+                       
+                   </article> 
+                    
+                    
+                    
+                </section>
+                
+            </div>
+
+            
+            <br/>  
+            <footer1>
+                <div></div>
+            </footer1>
+           
+
+                <div id="capa_oscura_segunda">
+                    <div id="capa_clara_segunda">
+                    </div>
+                </div>                    
+
+
+        </body>
+        
+        
+        
+        
+        
+
+    </jsp:element>
+
+</jsp:root>
