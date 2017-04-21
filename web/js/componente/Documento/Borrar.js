@@ -16,8 +16,6 @@ window.onload = function() {
                 var control = AjaxPeticionURL( accion, getDataForm(form) );                
 
                 
-                alert(control);
-                
                 if (control == null)
                 {   
                                            
