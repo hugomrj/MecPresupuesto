@@ -50,7 +50,21 @@ window.onload = function() {
     ingresar.addEventListener('click',
         function() 
         {
-            javascript:document.form_login.submit();  
+            
+            /*
+            session = AjaxUrl ("../Usuario/Session") ;
+            if (session == null){
+                window.location = "../";    
+                return;
+            }
+            else{
+                
+            }
+           */
+          
+            javascript:document.form_login.submit(); 
+            
+            
         }, 
         false
     );  

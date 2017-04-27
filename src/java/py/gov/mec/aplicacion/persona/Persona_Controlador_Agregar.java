@@ -30,9 +30,8 @@ public class Persona_Controlador_Agregar extends HttpServlet {
         
             response.setContentType("text/html;charset=UTF-8");        
             response.setCharacterEncoding("UTF-8");
-            
 
-        
+            
         try
         {
 
@@ -41,7 +40,7 @@ public class Persona_Controlador_Agregar extends HttpServlet {
             instancia = (Persona) persistencia.extraerRegistro(request, instancia);
             
             instancia =  (Persona) persistencia.insert(instancia, request);
-              
+            
             
             /*            
             HttpAction mensajeAction = new HttpAction();            
@@ -54,21 +53,20 @@ public class Persona_Controlador_Agregar extends HttpServlet {
         catch (Exception ex) {
             //Logger.getLogger(Persona_Controlador_Agregar.class.getName()).log(Level.SEVERE, null, ex);
             
-            System.out.println(ex.getMessage());
-            
+            System.out.println(ex.getMessage());            
             
             PrintWriter out = response.getWriter();
             out.println(ex.getMessage());      
             
         }
         
+        
         /*
         catch (SQLException sqlEx)
         {            
             Mensaje mensaje = new Mensaje();                             
             mensaje.setMensajeBase(sqlEx.getMessage());            
-            request.getSession().setAttribute("SessionMensajes", mensaje);
-            
+            request.getSession().setAttribute("SessionMensajes", mensaje);            
         } 
         */
         

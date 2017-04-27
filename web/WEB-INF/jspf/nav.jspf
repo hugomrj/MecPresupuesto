@@ -6,12 +6,14 @@
 
 <ul id="menu">    
     
+    <%-- 
     <li>
         <a href="<jsp:expression>request.getContextPath()+"/Interaccion/Indice.jspx"</jsp:expression>">
             <descripcion>Inicio</descripcion>
         </a>
-    </li>
-        
+    </li>       
+
+       
     <c:forEach items="${SessionModulos}" var ="modulos" >
             <modulo  id="${modulos.modulo}">
                 <li>
@@ -27,7 +29,7 @@
                 </li>
             </modulo>                                           
     </c:forEach>    
-     
+             --%>
     
         <li style="float: right;">
             <a href="<jsp:expression>request.getContextPath()+"/Usuario/Logoff.do"</jsp:expression>">

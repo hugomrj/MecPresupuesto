@@ -4,7 +4,7 @@
  */
 package py.gov.mec.aplicacion.documento;
 
-import py.gov.mec.aplicacion.direccion.*;
+
 import java.io.IOException;
 import java.io.PrintWriter;
  import javax.servlet.ServletException;
@@ -13,6 +13,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import nebuleuse.ORM.Persistencia;
+import py.gov.mec.aplicacion.documento_movimiento.DocumentoMovimiento;
+import py.gov.mec.aplicacion.documento_movimiento_estado.DocumentoMovimientoEstado;
+import py.gov.mec.sistema.usuario.Usuario;
 
 
 @WebServlet(name = "Documento_Controlador_Agregar",
@@ -27,30 +30,57 @@ public class Documento_Controlador_Agregar extends HttpServlet {
         
             response.setContentType("text/html;charset=UTF-8");        
             response.setCharacterEncoding("UTF-8");
+  
             
+            // aca hay que controlar si esta logueado            
+//            UsuarioSession us = new UsuarioSession();
+//            us.ControlSession(request, response);
+            
+
+/*
+            if ( request.getSession().getAttribute("SessionUsuario") == null)
+            {        
+                //response.sendRedirect("../login.jspx");
+                response.sendRedirect("/MecPresupuesto");
+            }
+            else            
+            {
+   */         
             PrintWriter out = response.getWriter();            
             
-        try
-        {
-            
-            Documento  instancia = new Documento();
-            Persistencia persistencia = new Persistencia();
-            instancia = (Documento) persistencia.extraerRegistro(request, instancia);            
-            instancia =  (Documento) persistencia.insert(instancia, request);
-            
-            out.println(instancia.getId());                  
-            
-        }
-        
-        catch (Exception ex) {
-            //Logger.getLogger(Persona_Controlador_Agregar.class.getName()).log(Level.SEVERE, null, ex);
-            
-            System.out.println(ex.getMessage());
-            
-            out.println(ex.getMessage());      
-            
-        }
-                
+                try
+                {
+
+                    Documento  instancia = new Documento();
+                    Persistencia persistencia = new Persistencia();
+                    instancia = (Documento) persistencia.extraerRegistro(request, instancia);            
+                    instancia =  (Documento) persistencia.insert(instancia, request);
+
+                    // guarda moviemiento en documentos con estado Entrada
+                    Usuario usuario = new Usuario();
+
+                    DocumentoMovimiento docmov = new DocumentoMovimiento();
+                    docmov.setUsuario(usuario.getSession(request));
+                    docmov.setDocumento(instancia);
+
+                    DocumentoMovimientoEstado estado = new DocumentoMovimientoEstado();
+                    estado.setId(1);
+
+                    docmov.setEstado(estado);
+                    persistencia.insert(docmov);            
+
+                    out.println(instancia.getId());      
+
+                }
+
+                catch (Exception ex) {
+                    //Logger.getLogger(Persona_Controlador_Agregar.class.getName()).log(Level.SEVERE, null, ex);            
+                    System.out.println(ex.getMessage());            
+                    out.println(ex.getMessage());                  
+                }
+    /*
+            }
+   */
 
     }
 

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<root>
+    
+    <table 
+        name="documentos_movimiento">       
+        
+            <id name="id"/>
+            <column name="documento"  foreign = "Documento" />  
+            <column name="fecha" insertnot="insertnot"   />                       
+            <column name="estado" foreign = "DocumentoMovimientoEstado"  />              
+            <column name="usuario" foreign = "Usuario"  />              
+            <column name="comentario" />              
+            
+    </table>
+    
+</root>
+

@@ -27,7 +27,6 @@ public class Mes_Coleccion_ListaSimple extends HttpServlet {
             throws ServletException, IOException, Exception {
         
         response.setContentType("text/html;charset=UTF-8");
-
                
         
             MesDAO dao = new MesDAO();

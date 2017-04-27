@@ -494,6 +494,8 @@ public class Persistencia {
     
     
        
+    
+    
     public Integer ejecutarSQL ( String strSQL, String strID ) 
             throws SQLException {
         
@@ -580,6 +582,9 @@ public class Persistencia {
         
       return strSelect + " " + strFrom +" "+strWhere + codigoID.toString();                 
     }    
+    
+    
+    
     
     
     public String selectSQL (Object objeto, String strBuscar)

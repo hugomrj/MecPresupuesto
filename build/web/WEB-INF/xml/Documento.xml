@@ -8,7 +8,7 @@
         
             <id name="id"/>
             <column name="fecha_documento"/>                        
-            <column name="fecha_entrada"/>                        
+            <column name="fecha_entrada" insertnot="insertnot"   />                       
             <column name="direccion"  foreign = "Direccion" />                        
             <column name="descripcion"/>                        
             <column name="expediente_numero"/>                        

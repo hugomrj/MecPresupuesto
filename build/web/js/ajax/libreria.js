@@ -216,35 +216,38 @@ function alerta_error(mensaje){
 
      if (mensaje != null)
     {
-
-        var indice = 1;
-        var id = "err";
-        id = (id + indice.toString().trim());
-
-
-        if (document.getElementById(id)){
-            return;
+        if (mensaje.toString().trim() == "NoSession")
+        {
+            window.location = "../";    
         }
+        else
+        {
+            var indice = 1;
+            var id = "err";
+            id = (id + indice.toString().trim());
 
+            if (document.getElementById(id)){
+                return;
+            }
 
-        var midiv = document.createElement("div");
-        midiv.setAttribute("id", id);
+            var midiv = document.createElement("div");
+            midiv.setAttribute("id", id);
 
-        midiv.setAttribute("class", "notificacion_error");
+            midiv.setAttribute("class", "notificacion_error");
 
-        midiv.innerHTML = "<div class='contenedorInterior'><div class='left'>"+mensaje+"</div>"
-                +"</div>";
+            midiv.innerHTML = "<div class='contenedorInterior'><div class='left'>"+mensaje+"</div>"
+                    +"</div>";
 
-        document.body.appendChild(midiv);
+            document.body.appendChild(midiv);
 
-        erasediv = document.getElementById(id);
-        // var strCmd = "document.body.removeChild(erasediv);";
-        var strCmd = "if (document.getElementById('"+id+"')){ document.body.removeChild(erasediv);}";
-        var timeOutPeriod = 4000;
-        var hideTimer = setTimeout(strCmd, timeOutPeriod);
+            erasediv = document.getElementById(id);
+            // var strCmd = "document.body.removeChild(erasediv);";
+            var strCmd = "if (document.getElementById('"+id+"')){ document.body.removeChild(erasediv);}";
+            var timeOutPeriod = 4000;
+            var hideTimer = setTimeout(strCmd, timeOutPeriod);
 
-        indice = Number(indice) + 1;
-
+            indice = Number(indice) + 1;
+        }
     }
 }
 

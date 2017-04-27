@@ -1,0 +1,113 @@
+
+<jsp:root version="2.0"
+    xmlns:jsp="http://java.sun.com/JSP/Page" 
+    xmlns:c="http://java.sun.com/jsp/jstl/core">
+    
+        
+        
+            <article>
+                <h4>Transpaso</h4>
+            </article>            
+        
+        
+        
+        <article>
+
+            <form 
+                action="../DocumentoMovimiento/Controlador/Agregar" 
+                method="post" 
+                id="dmcat_form" 
+                name='dmcat_form'
+                style="width: 100%;"
+                >
+
+                
+                <input  TYPE="hidden"
+                            name="id"  
+                            id="dmcat_id"
+                            value="0"
+                            />                
+                
+                <input  TYPE="hidden"
+                            name="documento"  
+                            id="dmcat_documento"
+                            value="0"
+                            />                
+
+                <input  TYPE="hidden"
+                            name="estado"  
+                            id="dmcat_estado"
+                            value="2"
+                            />                     
+                
+
+                    <div class = "SinEnfoque">                                
+                        <label for="usuario">Usuario:</label> 
+                        <div class ="textbox">
+                            <input TYPE="TEXT" 
+                                   id ="dmcat_usuario"
+                                   name="usuario" 
+                                   size ="10"
+                                   class = "campoFK"
+                                   />      
+                            <div class="botonBusqueda">                                        
+                                &#160;
+                                <a 
+                                    href="javascript:void(0);"
+                                    id="dmcat_qry_usuario"
+                                    class = "botonCampo"
+                                    >buscar</a>                    
+                                 &#160;                                                           
+                                 
+                            </div>                                    
+                            <output 
+                                    class="campoRelacionado" 
+                                    id="dmcat_usuario_descripcion">
+                            </output>
+                        </div>   
+                    </div>     
+
+
+                    <div class = "SinEnfoque">
+                        <label for="comentario">Comentario:</label> 
+                        <input TYPE="text" 
+                                name="comentario" 
+                                id="dmcat_comentario" 
+                                size ="100"
+                                />
+                    </div>                             
+                
+
+                <br/>
+
+            </form>
+            
+        </article>
+
+    
+
+            <article class = "botones-footer">
+
+                <div id="busqueda_footer">
+
+                    <div class ="commandbutton">
+                        <a href="javascript:void(0);" 
+                           id ="dmcat_aceptar"
+                           class="botonEnlace" >Aceptar</a>
+                    </div>                                
+
+                    <div class ="commandbutton">
+                        <a href="javascript:void(0);" 
+                           id ="dmcat_cerrar"
+                           class="botonEnlace" >Cerrar</a>
+                    </div>                                
+
+                </div> 
+
+            </article>    
+    
+    
+</jsp:root>
+                
+
+

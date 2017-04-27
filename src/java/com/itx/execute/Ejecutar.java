@@ -16,9 +16,12 @@ import py.gov.mec.aplicacion.cajachica_certificacion.CajaChicaCertificacion;
 import py.gov.mec.aplicacion.cajachica_certificacion.CajaChicaCertificacionDAO;
 import py.gov.mec.aplicacion.cajachica_distribucion.CajaChicaDistribucion;
 import py.gov.mec.aplicacion.cdp.Cdp;
+import py.gov.mec.aplicacion.direccion.Direccion;
 
 import py.gov.mec.aplicacion.distribucion_ingreso.DistribucionIngresoDAO;
 import py.gov.mec.aplicacion.documento.Documento;
+import py.gov.mec.aplicacion.documento.DocumentoDAO;
+import py.gov.mec.aplicacion.documento_movimiento.DocumentoMovimiento;
 import py.gov.mec.aplicacion.ingreso_certificacion.IngresoCertificacionDAO;
 import py.gov.mec.aplicacion.ingreso_ejecucion.IngresoEjecucionDAO;
 import py.gov.mec.aplicacion.persona.Persona;
@@ -27,6 +30,9 @@ import py.gov.mec.aplicacion.plan_financiero.PlanFinanciero;
 import py.gov.mec.aplicacion.uoc_certificacion.UocCertificacion;
 import py.gov.mec.aplicacion.viatico_certificacion.ViaticoCertificacion;
 import py.gov.mec.aplicacion.viatico_certificacion.ViaticoCertificacionDAO;
+import py.gov.mec.sistema.permiso.PermisoDAO;
+import py.gov.mec.sistema.usuario.Usuario;
+import py.gov.mec.sistema.usuario.UsuarioDAO;
 
 
 
@@ -55,16 +61,25 @@ public class Ejecutar {
      //dao.ReCalcular(20,4, 100000L);
      
      
+/*     
      
-     
-     Documento doc = new Documento();
+     Usuario u  = new Usuario();
      
      Persistencia p = new Persistencia();
      
-     p.filtrarId(doc, 1);
+    u = (Usuario) p.filtrarId(u, 1);
      
+    System.out.println(u.getCuenta());
      
-     
+    
+*/
+
+    UsuarioDAO dao = new  UsuarioDAO ();
+    
+   
+    dao.ListaSimple();
+
+
                 
      }
 

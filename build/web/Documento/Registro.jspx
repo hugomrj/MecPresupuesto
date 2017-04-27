@@ -13,6 +13,7 @@
 
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=2.0" />
     <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+    <jsp:directive.include file="../WEB-INF/jspf/sessiones.jspf"/>
 
 
         <style type="text/css" >
@@ -30,6 +31,8 @@
             <jsp:include page="../js/componente/Documento/Registro.js"/>
                 
             <jsp:include page="../js/componente/Documento/comun.js"/>
+            <jsp:include page="../js/componente/Usuario/listaSimple.js"/>
+                
                         
         </script>
 
@@ -183,6 +186,24 @@
                     
                     
                     
+                    <article> 
+                        <div id="ingre_pf" style="display: inline-table; padding: 1rem; "> 
+                            Movimientos
+                        </div>   
+                        
+
+                        <div id="movi_tabla">       
+                            t
+                        </div>
+                        
+                        <div id="movi_boton">                            
+                        </div>                        
+                        
+                        
+                    </article> 
+                    
+                    
+                    
                 </section>
                 
             </div>
@@ -194,10 +215,20 @@
             </footer1>
            
 
+            <div id="capa1">
+                <div id="capa_oscura">
+                    <div id="capa_clara">                        
+                    </div>
+                </div>     
+            </div>            
+            
+            
+            <div id="capa2">
                 <div id="capa_oscura_segunda">
-                    <div id="capa_clara_segunda">
+                    <div id="capa_clara_segunda">                        
                     </div>
                 </div>                    
+            </div>                 
 
 
         </body>

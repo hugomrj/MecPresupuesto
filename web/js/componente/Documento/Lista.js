@@ -57,10 +57,10 @@ function Formato_documento_lista_tabla (){
         cell = table.rows[i].cells[0] ;                                  
         cell.innerHTML = formatoNumero_p(cell.innerHTML); 
 
-        
+/*        
         cell = table.rows[i].cells[1] ;                                  
         cell.innerHTML = formatoFecha(cell.innerHTML.toString().trim()); 
-
+*/
     }    
 
 }

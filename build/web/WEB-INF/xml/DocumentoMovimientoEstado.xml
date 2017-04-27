@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<root>
+    
+    <table 
+        name="documentos_movimiento_estado">       
+        
+            <id name="id"/>                  
+            <column name="descripcion"/>              
+            
+            
+    </table>
+    
+</root>
+

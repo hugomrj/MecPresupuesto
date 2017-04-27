@@ -62,12 +62,21 @@ window.onload = function() {
     guardar.addEventListener('click',
         function() 
         {            
+            
+            
+            
+            session = AjaxUrl ("../Usuario/Session") ;
+            if (session == null){
+                window.location = "../";    
+                return;
+            }
+                        
+            
             if (DocumentoAgregar_validacion()){
                 
                 var form = document.getElementById("doci_form");            
                 var accion =  form.getAttribute('action') ; 
                 var control = AjaxPeticionURL( accion, getDataForm(form) );                
-
                 // si es numero es codigo id para ir a registro
                 if (!(isNaN(control)))
                 {   

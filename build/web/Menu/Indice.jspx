@@ -27,8 +27,11 @@
         </style>
         
         
-        <script type="text/javascript">        
+        <script type="text/javascript">                   
             <jsp:include page="../js/ajax/libreria.js" />
+            <jsp:include page="../js/componente/Menu/Indice.js" />
+                
+                
         </script>             
        
       
@@ -42,7 +45,12 @@
             </header>
 
             <nav>
+                
+                
                 <jsp:directive.include file="../WEB-INF/jspf/nav.jspf"/>
+                
+    
+                
             </nav>
 
             <div id="wrapper">
@@ -59,7 +67,9 @@
                         <br/>         
                         <br/>
 
-                    <ul id="listaProcesos">                            
+                    <ul id="listaProcesos">  
+                        
+                        
                     </ul>                    
 
 

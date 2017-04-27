@@ -67,21 +67,8 @@ public class UsuarioControllerLogin extends HttpServlet {
         else
         {
             
-
             request.getSession().setAttribute("SessionUsuario", usuario);
-
-            
-/*            
-            ModuloListar moduloListar = new ModuloListar();
-            List<Modulo> ListaModulos = moduloListar.ejecutar(usuario);
-            
-            request.getSession().setAttribute("SessionModulos", ListaModulos);              
-            
-*/         
-            
-            
-            
-                        
+                                   
             response.sendRedirect("../Menu/Indice.jspx");                     
             
         }            

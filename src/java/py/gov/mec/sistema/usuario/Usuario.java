@@ -5,7 +5,9 @@
  
 package py.gov.mec.sistema.usuario;
 
+import javax.servlet.http.HttpServletRequest;
 import nebuleuse.ORM.Persistencia;
+
 
 
 public class Usuario {
@@ -45,13 +47,11 @@ public class Usuario {
 
           Usuario objUsuario = new Usuario();  
 
-
           String sql = 
                     " SELECT usuario, cuenta, pass "
-                    + " FROM usuarios "
+                    + " FROM sistema.usuarios "
                     + " WHERE cuenta like '"+cuenta+"'  " 
                     + "and pass like md5('"+pass+"')" ;         
-         
          
           Persistencia persistencia = new Persistencia();            
           objUsuario = (Usuario) persistencia.sqlToObject(sql, objUsuario);
@@ -59,9 +59,24 @@ public class Usuario {
           return objUsuario;          
 
       }
+     
+      
+      
 
+    public Usuario getSession( HttpServletRequest request) {        
+              
+        Usuario u = new Usuario();
+        u = (Usuario) request.getSession().getAttribute("SessionUsuario");
+      
+        if (u== null)
+        {  
+            return null;
+        }
+        else
+        {
+            return u;
+        }
 
-
-
+    }      
     
 }
