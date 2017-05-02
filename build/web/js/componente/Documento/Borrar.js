@@ -13,11 +13,10 @@ window.onload = function() {
                 
                 var form = document.getElementById("doci_form");            
                 var accion =  form.getAttribute('action') ; 
+                
                 var control = AjaxPeticionURL( accion, getDataForm(form) );                
 
-                
-                if (control == null)
-                {   
+                if (control.toString().trim() == "DeleteOK")                {   
                                            
                     //window.location = "../Documento/Registro.jspx?id="+control.toString().trim();  
                     window.location = "../Documento/Lista.jspx";

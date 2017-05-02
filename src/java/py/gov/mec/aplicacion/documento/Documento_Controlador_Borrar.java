@@ -26,24 +26,28 @@ public class Documento_Controlador_Borrar extends HttpServlet {
         
             response.setContentType("text/html;charset=UTF-8");    
             
-            PrintWriter out = response.getWriter();            
+            PrintWriter out = response.getWriter();    
 
         try
         {
-
+            
             Documento  instancia = new Documento();
             Persistencia persistencia = new Persistencia();
-            instancia = (Documento) persistencia.extraerRegistro(request, instancia);
-            
+            instancia = (Documento) persistencia.extraerRegistro(request, instancia);            
             instancia =  (Documento) persistencia.delete(instancia, request);
-                          
+            out.println("DeleteOK");                          
               
         }
         
         catch (Exception ex) {
             //Logger.getLogger(Persona_Controlador_Agregar.class.getName()).log(Level.SEVERE, null, ex);
             
-            out.println(ex.getMessage());      
+            
+            out.println(ex.getMessage()); 
+            
+            System.out.println( ex.getMessage());     
+
+
             
         }
         

@@ -410,7 +410,10 @@ public class Persistencia {
                 
         try 
         {            
+            
+            
             strSQL = strDelete + strWhere;
+            
             bool  = this.ejecutarSQL(strSQL);
 
             Integer valorInt;
@@ -732,12 +735,18 @@ public class Persistencia {
   
         
     public Object extraerRegistro ( HttpServletRequest request, Object objeto) throws Exception {
-            
+    
+
+System.out.println(objeto);
+
             Object instanciaObjeto = null;
             HashMap registro = new HashMap();
             RegistroMap registoMap = new RegistroMap();
             registro = registoMap.convertirHashMap(request, objeto); 
+System.out.println(registro);            
+            
             instanciaObjeto = extraerObjeto(registro,objeto);    
+
             return instanciaObjeto;  
     }
     

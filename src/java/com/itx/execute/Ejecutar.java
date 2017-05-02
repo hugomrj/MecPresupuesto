@@ -63,23 +63,29 @@ public class Ejecutar {
      
 /*     
      
-     Usuario u  = new Usuario();
-     
-     Persistencia p = new Persistencia();
-     
-    u = (Usuario) p.filtrarId(u, 1);
-     
-    System.out.println(u.getCuenta());
-     
+     Usuario u  = new Usuario();     
+     Persistencia p = new Persistencia();     
+    u = (Usuario) p.filtrarId(u, 1);     
+    System.out.println(u.getCuenta());     
     
-*/
+
 
     UsuarioDAO dao = new  UsuarioDAO ();
-    
-   
     dao.ListaSimple();
 
+*/
 
+Documento documento = new Documento();
+Persistencia persistencia = new Persistencia();
+
+
+documento = (Documento) persistencia.filtrarId(documento, 68);
+
+System.out.println(documento.getId());
+
+documento =  (Documento) persistencia.delete(documento);
+
+System.out.println(documento.getId());
                 
      }
 
