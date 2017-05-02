@@ -211,6 +211,14 @@ function perderEnfoque(valor)
 
 
 
+function controlSession(){
+    
+    
+}
+
+
+
+
 
 function alerta_error(mensaje){
 

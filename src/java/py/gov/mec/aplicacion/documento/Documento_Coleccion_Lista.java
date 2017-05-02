@@ -2,6 +2,8 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
+
+
 package py.gov.mec.aplicacion.documento;
 
 import java.io.IOException;
@@ -14,6 +16,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import py.gov.mec.sistema.usuario.Usuario;
 
 /**
  * @author hugo
@@ -35,27 +38,35 @@ public class Documento_Coleccion_Lista extends HttpServlet {
         // busqueda
         String strBuscar = "";
         strBuscar = (String) request.getParameter("buscar");        
-               
+
+        
+        
         if (strBuscar == null)
         {
             strBuscar = "";        
         }
-        
+
+        strBuscar = strBuscar.toString().trim();
 
         /*
         
         Secuencia<Documento> lista = new Secuencia<Documento>();         
-        List<Documento> direcciones = new ArrayList<Documento>();       
-        
+        List<Documento> direcciones = new ArrayList<Documento>();  
         direcciones = lista.buscarTodos(new Documento(), strBuscar);
         
         */
 
+        Usuario usuario = new Usuario();
+        usuario.getSession(request);
+        if (usuario != null){
+          
             DocumentoDAO documentos = new DocumentoDAO();   
-            List<Map<String, Object>> rows = documentos.ListaEstado();        
+            List<Map<String, Object>> rows = documentos.ListaEstado(strBuscar.toString().trim(),
+                    usuario.getUsuario() );        
+          
+            request.setAttribute("lista", rows);
+        }
         
-            
-        request.setAttribute("lista", rows);
         request.getRequestDispatcher("/Documento/jspf/CollectionLista.jspx").include(request, response);                
     }
 

@@ -14,6 +14,7 @@
 
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=2.0" />
     <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+    <jsp:directive.include file="../WEB-INF/jspf/sessiones.jspf"/>
 
 
         <style type="text/css" >
@@ -62,10 +63,22 @@
                     
                     <br/>                    
                     <article>
-                        <h4>Direcciones</h4>  
+                        <h4>Documentos</h4>  
                     </article>
+
                     
-                                           
+                    <article>
+                        <div class = "busqueda"> 
+                                <label for="buscar">Buscar:</label>
+                                <input type="search" 
+                                name="buscar" 
+                                id="buscar"  
+                                placeholder="escribir y presionar Enter"
+                                />
+                        </div>                       
+                    </article>                                         
+                    <br/><br/>
+                    
                     
                     <article>
                         <div id="tab_body">                            

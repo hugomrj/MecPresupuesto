@@ -31,75 +31,110 @@ public class DocumentoDAO  {
     }
 
 
-    /*
-    public Integer  UsuarioPropietario ( Integer documento )
+
+    
+    public List<Map<String, Object>>  ListaEstado ( String buscar, Integer usuario )
             throws Exception {
             
+        
+            String condicionBusqueda = "";
+            
+            if (!(buscar.equals("")))
+            {
+
+                buscar = "%"+buscar+"%";
+                buscar = buscar.replaceAll(" ", "%");
+                
+
+                condicionBusqueda = " "+ 
+                    "  and (\n" +
+                    "   cast(expediente_numero as text) || \n" +
+                    "   cast(direcciones.descripcion as text) || \n" +
+                    "   cast(documentos.descripcion as text)  || \n" +                    
+                    "   cast(documentos_movimiento_estado.descripcion as text)  || \n" +
+                    "   cast(cuenta as text) ilike '"+buscar+"'\n" +                        
+                    "   ) ";
+            
+
+                
+            }
+
+        
                 statement = conexion.getConexion().createStatement();         
                 
                 String sql = " "+                        
-                "  SELECT \n" +
-                "  documentos.id , usuario, estado \n" +
-                " FROM \n" +
-                "  public.documentos, \n" +
-                "  public.documentos_movimiento\n" +
-                " WHERE \n" +
-                "  documentos_movimiento.documento = documentos.id\n" +
-                "  and documento = " + documento + 
-                "  order by documentos_movimiento.id desc\n" +
-                " limit 1";                      
-                        
-                resultset = statement.executeQuery(sql);     
-                
-                Integer doc = 0;
-                
-                if (resultset.next()){
-                    doc = Integer.parseInt( resultset.getString("usuario").toString() );
-                }
-                
-            //    return lista.resultsetToList(resultset ) ;
-                return doc;
-             
-    }          
-    */
-    
-    
-    public List<Map<String, Object>>  ListaEstado (  )
-            throws Exception {
-            
-                statement = conexion.getConexion().createStatement();         
-                
-                String sql = " "+                        
-" SELECT 	\n" +
-"	public.documentos.id, \n" +
-"	public.documentos.expediente_numero, \n" +
-"	public.documentos.fecha_documento, \n" +
-"	public.documentos.descripcion, \n" +
-"	public.direcciones.descripcion direccion_descripcion, \n" +
-"	sistema.usuarios.usuario, 	\n" +
-"	sistema.usuarios.cuenta, 	\n" +
-"	estado,\n" +
-"	documentos_movimiento_estado.descripcion estado_descripcion\n" +
-"FROM \n" +
-"  public.documentos, \n" +
-"  public.documentos_movimiento, \n" +
-"  public.direcciones,\n" +
-"  public.documentos_movimiento_estado,\n" +
-"  sistema.usuarios,\n" +
-"  (\n" +
-"	  SELECT  documento, max(id) coddoc\n" +
-"	  FROM public.documentos_movimiento\n" +
-"	  group by documento\n" +
-"  ) as ultimo\n" +
+"  SELECT 	 \n" +
+"	public.documentos.id,  \n" +
+"	public.documentos.expediente_numero,  \n" +
+"	public.documentos.fecha_documento,  \n" +
+"	public.documentos.descripcion,  \n" +
+"	public.direcciones.descripcion direccion_descripcion,  \n" +
+"	sistema.usuarios.usuario, 	 \n" +
+"	sistema.usuarios.cuenta, 	 \n" +
+"	estado, \n" +
+"	documentos_movimiento_estado.descripcion estado_descripcion \n" +
+" FROM  \n" +
+"  public.documentos,  \n" +
+"  public.documentos_movimiento,  \n" +
+"  public.direcciones, \n" +
+"  public.documentos_movimiento_estado, \n" +
+"  sistema.usuarios, \n" +
+"  ( \n" +
+"	  SELECT  documento, max(id) coddoc \n" +
+"	  FROM public.documentos_movimiento \n" +
+"	  group by documento \n" +
+"  ) as ultimo \n" +
+" WHERE  \n" +
+"  documentos_movimiento.documento = documentos.id  \n" +
+"  AND direcciones.id = documentos.direccion \n" +
+"  and documentos_movimiento_estado.id = documentos_movimiento.estado \n" +
+"  and ultimo.documento = documentos.id \n" +
+"  and ultimo.coddoc =  documentos_movimiento.id \n" +
+"  and sistema.usuarios.usuario = public.documentos_movimiento.usuario \n" +
+"  and sistema.usuarios.usuario  = 1\n" +
+"  and (documentos_movimiento.estado = 1 or documentos_movimiento.estado = 2)\n" +
 "\n" +
-"WHERE \n" +
-"  documentos_movimiento.documento = documentos.id \n" +
-"  AND direcciones.id = documentos.direccion\n" +
-"  and documentos_movimiento_estado.id = documentos_movimiento.estado\n" +
-"  and ultimo.documento = documentos.id\n" +
-"  and ultimo.coddoc =  documentos_movimiento.id\n" +
-"  and sistema.usuarios.usuario = public.documentos_movimiento.usuario\n" +
-"order by fecha_documento desc " ;
+" union\n" +
+"\n" +
+" select *\n" +
+" from(\n" +
+"\n" +
+"\n" +
+" SELECT 	 \n" +
+"	public.documentos.id,  \n" +
+"	public.documentos.expediente_numero,  \n" +
+"	public.documentos.fecha_documento,  \n" +
+"	public.documentos.descripcion,  \n" +
+"	public.direcciones.descripcion direccion_descripcion,  \n" +
+"	sistema.usuarios.usuario, 	 \n" +
+"	sistema.usuarios.cuenta, 	 \n" +
+"	estado, \n" +
+"	documentos_movimiento_estado.descripcion estado_descripcion \n" +
+"FROM  \n" +
+"  public.documentos,  \n" +
+"  public.documentos_movimiento,  \n" +
+"  public.direcciones, \n" +
+"  public.documentos_movimiento_estado, \n" +
+"  sistema.usuarios, \n" +
+"  ( \n" +
+"	  SELECT  documento, max(id) coddoc \n" +
+"	  FROM public.documentos_movimiento \n" +
+"	  group by documento \n" +
+"  ) as ultimo \n" +
+" \n" +
+" WHERE  \n" +
+"  documentos_movimiento.documento = documentos.id  \n" +
+"  AND direcciones.id = documentos.direccion \n" +
+"  and documentos_movimiento_estado.id = documentos_movimiento.estado \n" +
+"  and ultimo.documento = documentos.id \n" +
+"  and ultimo.coddoc =  documentos_movimiento.id \n" +
+"  and sistema.usuarios.usuario = public.documentos_movimiento.usuario   \n" +
+condicionBusqueda +
+"  limit 30	\n" +
+" ) as nn\n" +
+" order by fecha_documento desc  ;\n" +
+"\n" +
+" " ;
                         
                 resultset = statement.executeQuery(sql);     
                 

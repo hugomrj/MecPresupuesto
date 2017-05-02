@@ -27,7 +27,11 @@
                     
                     <c:forEach items="${lista}" var ="lista" >
 
-                        <tr data-linea_id ="${lista.id}">     
+                        <tr 
+                            data-linea_id ="${lista.id}"
+                            data-usuario ="${lista.usuario}"
+                            data-estado ="${lista.estado}"
+                            >     
                             
                             
                             

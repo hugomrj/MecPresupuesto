@@ -2,13 +2,48 @@
 
 window.onload = function() {
    
-    AjaxPeticion('../Documento/Coleccion/Lista','tab_body');          
-    Documento_sub_Registro( );
-    Formato_documento_lista_tabla();
+  
+  Documento_tabla_lista ( );
+  
+    // darle funcionalidad a buscar
+    var buscar = document.getElementById('buscar');
+    buscar.addEventListener('keyup',
+        function(event) {
+
+            if(event.keyCode == 13)
+            {
+                Documento_tabla_lista ( );
+            }
+        },
+        false
+    );
+
     
 };
 
+function Documento_tabla_lista ( ){
 
+        // controlar si existe session
+        session = AjaxUrl ("../Usuario/Session") ;
+        if (session == null){
+            session = 0;
+        }        
+        else
+        {
+            session = session.toString().trim();
+        }        
+
+        
+        
+
+
+            AjaxPeticion('../Documento/Coleccion/Lista?buscar='
+                +document.getElementById('buscar').value 
+                ,'tab_body');          
+            Documento_sub_Registro( );
+            Formato_documento_lista_tabla();                
+    
+}
 
 
 
@@ -20,27 +55,52 @@ function Documento_sub_Registro (   ){
 };
 
 
-
-
-
-
     function  Documento_sub_tabla (tabla , largo, ancho ){
 
         //tabla tab rol
         var tabla_coleccion = document.getElementById( tabla ).getElementsByTagName('tbody')[0];
         var rows = tabla_coleccion.getElementsByTagName('tr');
 
+
+
+        //  obtener codigo de usuario
+        session = AjaxUrl ("../Usuario/Session") ;
+        if (session == null){
+            session = 0;
+        }        
+        else
+        {
+            session = session.toString().trim();
+        }
+
+
+
         for (var i=0 ; i < rows.length; i++)
         {
             rows[i].addEventListener ( 'click',
-                function() {
-                                        
+                function() {                                        
                     //registroid = this.getElementsByTagName('id')[0].dataset.linea_id;                    
                     registroid = this.dataset.linea_id;                                       
                     window.location = "../Documento/Registro.jspx?id="+registroid;                    
                 },
                 false
             );
+    
+    
+            // colores para la lineas de usuarios
+    
+            usuarioid = rows[i].dataset.usuario;            
+            estadoid = rows[i].dataset.estado; 
+            if (usuarioid.toString().trim() == session.toString().trim())
+            {
+                // controlar si no es estado 4 no estado 3
+                if (estadoid != 4 && estadoid != 3)
+                {
+                    for (var x = 0; x < 6; x++) {
+                        rows[i].cells[x].style.backgroundColor = "#c7e2c7";  
+                    }
+                }
+            }    
         }
     }
 
@@ -52,6 +112,7 @@ function Formato_documento_lista_tabla (){
     var rows = table.rows.length;
     var cell ;
  
+ 
     for(i=0; i<rows; i++)
     {  
         cell = table.rows[i].cells[0] ;                                  
@@ -61,6 +122,30 @@ function Formato_documento_lista_tabla (){
         cell = table.rows[i].cells[1] ;                                  
         cell.innerHTML = formatoFecha(cell.innerHTML.toString().trim()); 
 */
+
+
+//alert(rows[i].dataset.usuario);
+
+
     }    
+    
+
+
+/*
+    //  obtener codigo de usuario
+    session = AjaxUrl ("../Usuario/Session") ;
+    if (session == null){
+        session = 0;
+    }        
+    else
+    {
+        session = session.toString().trim();
+    }
+ */
+
+
+
+
+
 
 }
