@@ -394,6 +394,11 @@ System.out.println(strSQL);
     
     public Object delete ( Object objeto )  throws SQLException, Exception {
      
+        
+System.out.println("entra en delete objeto");
+
+
+
         boolean bool = false;
                     
         String strSQL = "";
@@ -421,6 +426,8 @@ System.out.println(strSQL);
             
             
 System.out.println(strSQL);
+
+
             
             bool  = this.ejecutarSQL(strSQL);
 
@@ -451,7 +458,8 @@ System.out.println(strSQL);
 
     public Object delete ( Object objeto, HttpServletRequest request ) 
             throws SQLException, Exception {
-               
+
+        
         Object objetoReturn = null ;
     
         try {
@@ -746,18 +754,23 @@ System.out.println(strSQL);
     public Object extraerRegistro ( HttpServletRequest request, Object objeto) throws Exception {
     
 
-System.out.println(objeto);
-
 
             Object instanciaObjeto = null;
             HashMap registro = new HashMap();
             RegistroMap registoMap = new RegistroMap();
+
+            
+System.out.println("antes de convertir hash");
+            
             registro = registoMap.convertirHashMap(request, objeto); 
 
-System.out.println(registro);    
+System.out.println("despues de convertir hash");            
+
 
             instanciaObjeto = extraerObjeto(registro,objeto);    
 
+System.out.println("despues de extraer objeto");                        
+            
             return instanciaObjeto;  
     }
     
@@ -776,12 +789,11 @@ System.out.println(registro);
     }
 
     
-    public Object extraerObjeto ( HashMap parametro_registro, Object objeto) {
-        
-System.out.println("entra a extraer objeto");
-     
-        try        {
+    public Object extraerObjeto ( HashMap parametro_registro, Object objeto) 
+            throws Exception {
             
+        
+System.out.println("entra a extaer objeto");
 
             HashMap registro  = new HashMap();
             registro  = parametro_registro;
@@ -854,14 +866,6 @@ System.out.println("entra a extraer objeto");
 
             return instanciaObjeto;        
 
-        }
-        
-        catch (Exception ex) {            
-            System.out.println( ex.getMessage());     
-            System.out.println( ex.getLocalizedMessage());     
-            return null;        
-        }
-        
         
     }    
     
