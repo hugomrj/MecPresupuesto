@@ -776,80 +776,93 @@ System.out.println(registro);
     }
 
     
-    public Object extraerObjeto ( HashMap parametro_registro, Object objeto) throws Exception {
+    public Object extraerObjeto ( HashMap parametro_registro, Object objeto) {
         
 System.out.println("entra a extraer objeto");
-        
-        HashMap registro  = new HashMap();
-        registro  = parametro_registro;
-        
-        Object instanciaObjeto = null;
-                                   
-        Serializacion serializacion = new Serializacion(objeto);                
-        serializacion.getElementos() ;
-        Nexo elemento = new Nexo();
-        Class classDato = null;
-        Method metodoSet = null;
-        String valorCampo = null;
-        
-        Class claseObjeto = Class.forName(objeto.getClass().getName());                     
-        instanciaObjeto = claseObjeto.newInstance();                 
-        
-        for (int i = 1; i < serializacion.getElementos().size() ; i++) 
-        {              
-            elemento = serializacion.getElementos().get(i); 
-            elemento.getObjeto();
-            elemento.getTabla();
-            serializacion.getElementos().get(i).getObjeto();
+     
+        try        {
             
-            classDato = instanciaObjeto.getClass().getMethod(elemento.nombreMetodoGET()).getReturnType();                              
-            metodoSet = instanciaObjeto.getClass().getMethod(elemento.nombreMetodoSET(), classDato );                  
-            valorCampo  = (String) registro.get(elemento.getTabla());                    
-            
-            if (  valorCampo == null )
-            {           
-                metodoSet.invoke(instanciaObjeto, (Object) null);  
-            }
-            else
-            {
-                if (classDato == Integer.class) 
-                {                                        
-                    valorCampo = valorCampo.replace(",", "");       
-                    valorCampo = valorCampo.replace(".", "");       
-                    metodoSet.invoke(instanciaObjeto, Integer.parseInt(valorCampo));                    
-                }
-                else if (classDato == Long.class) 
-                {
-                    valorCampo = valorCampo.replace(",", "");                    
-                    valorCampo = valorCampo.replace(".", "");       
-                    metodoSet.invoke(instanciaObjeto, Long.parseLong(valorCampo));  
-                }                    
-                else if (classDato == String.class) 
-                {
-                    // posiblemente se tenga que poner una opcion para no traer el valor del pass encriptado
-                    
-                   metodoSet.invoke(instanciaObjeto, (valorCampo));  
-                }
-                else if (classDato == Date.class) 
-                {
-                    // aca posiblente se le tenga que poner un formateardo de fechas
-                    metodoSet.invoke(instanciaObjeto, Datetime.castDate(valorCampo));  
+
+            HashMap registro  = new HashMap();
+            registro  = parametro_registro;
+
+            Object instanciaObjeto = null;
+
+            Serializacion serializacion = new Serializacion(objeto);                
+            serializacion.getElementos() ;
+            Nexo elemento = new Nexo();
+            Class classDato = null;
+            Method metodoSet = null;
+            String valorCampo = null;
+
+            Class claseObjeto = Class.forName(objeto.getClass().getName());                     
+            instanciaObjeto = claseObjeto.newInstance();                 
+
+            for (int i = 1; i < serializacion.getElementos().size() ; i++) 
+            {              
+                elemento = serializacion.getElementos().get(i); 
+                elemento.getObjeto();
+                elemento.getTabla();
+                serializacion.getElementos().get(i).getObjeto();
+
+                classDato = instanciaObjeto.getClass().getMethod(elemento.nombreMetodoGET()).getReturnType();                              
+                metodoSet = instanciaObjeto.getClass().getMethod(elemento.nombreMetodoSET(), classDato );                  
+                valorCampo  = (String) registro.get(elemento.getTabla());                    
+
+                if (  valorCampo == null )
+                {           
+                    metodoSet.invoke(instanciaObjeto, (Object) null);  
                 }
                 else
                 {
-                                       
-                    Persistencia persistencia = new Persistencia();                    
-                    Object instanciaAuxiliarObjeto;
-                                        
-                    instanciaAuxiliarObjeto = classDato.newInstance();                     
-                    instanciaAuxiliarObjeto = persistencia.filtrarId( instanciaAuxiliarObjeto, Integer.parseInt(valorCampo));                    
-                    metodoSet.invoke( instanciaObjeto, instanciaAuxiliarObjeto );                 
-                     
-                }               
+                    if (classDato == Integer.class) 
+                    {                                        
+                        valorCampo = valorCampo.replace(",", "");       
+                        valorCampo = valorCampo.replace(".", "");       
+                        metodoSet.invoke(instanciaObjeto, Integer.parseInt(valorCampo));                    
+                    }
+                    else if (classDato == Long.class) 
+                    {
+                        valorCampo = valorCampo.replace(",", "");                    
+                        valorCampo = valorCampo.replace(".", "");       
+                        metodoSet.invoke(instanciaObjeto, Long.parseLong(valorCampo));  
+                    }                    
+                    else if (classDato == String.class) 
+                    {
+                        // posiblemente se tenga que poner una opcion para no traer el valor del pass encriptado
+
+                       metodoSet.invoke(instanciaObjeto, (valorCampo));  
+                    }
+                    else if (classDato == Date.class) 
+                    {
+                        // aca posiblente se le tenga que poner un formateardo de fechas
+                        metodoSet.invoke(instanciaObjeto, Datetime.castDate(valorCampo));  
+                    }
+                    else
+                    {
+
+                        Persistencia persistencia = new Persistencia();                    
+                        Object instanciaAuxiliarObjeto;
+
+                        instanciaAuxiliarObjeto = classDato.newInstance();                     
+                        instanciaAuxiliarObjeto = persistencia.filtrarId( instanciaAuxiliarObjeto, Integer.parseInt(valorCampo));                    
+                        metodoSet.invoke( instanciaObjeto, instanciaAuxiliarObjeto );                 
+
+                    }               
+                }
             }
+
+            return instanciaObjeto;        
+
         }
         
-        return instanciaObjeto;        
+        catch (Exception ex) {            
+            System.out.println( ex.getMessage());     
+            System.out.println( ex.getLocalizedMessage());     
+            return null;        
+        }
+        
+        
     }    
     
     
