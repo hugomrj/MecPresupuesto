@@ -41,14 +41,8 @@ public class Documento_Controlador_Borrar extends HttpServlet {
         
         catch (Exception ex) {
             //Logger.getLogger(Persona_Controlador_Agregar.class.getName()).log(Level.SEVERE, null, ex);
-            
-            
             out.println(ex.getMessage()); 
-            
             System.out.println( ex.getMessage());     
-
-
-            
         }
         
 

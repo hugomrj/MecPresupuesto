@@ -419,6 +419,9 @@ System.out.println(strSQL);
             
             strSQL = strDelete + strWhere;
             
+            
+System.out.println(strSQL);
+            
             bool  = this.ejecutarSQL(strSQL);
 
             Integer valorInt;
