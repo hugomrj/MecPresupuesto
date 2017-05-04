@@ -754,11 +754,15 @@ System.out.println(objeto);
             RegistroMap registoMap = new RegistroMap();
             registro = registoMap.convertirHashMap(request, objeto); 
 
-System.out.println(registro);            
+System.out.println(registro);    
+
             instanciaObjeto = extraerObjeto(registro,objeto);    
 
             return instanciaObjeto;  
     }
+    
+    
+    
     
     public Object extraerRegistro ( ResultSet resultset, Object objeto) throws Exception {
 
@@ -773,6 +777,8 @@ System.out.println(registro);
 
     
     public Object extraerObjeto ( HashMap parametro_registro, Object objeto) throws Exception {
+        
+System.out.println("entra a extraer objeto");
         
         HashMap registro  = new HashMap();
         registro  = parametro_registro;
@@ -845,6 +851,8 @@ System.out.println(registro);
         
         return instanciaObjeto;        
     }    
+    
+    
     
     
     public Object sqlToObject ( String strSQL, Object objeto) throws Exception {
