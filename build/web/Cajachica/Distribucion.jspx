@@ -37,6 +37,8 @@
                 
             <jsp:include page="../js/componente/CajachicaDistribucion/agregar_editar.js"/> 
             <jsp:include page="../js/componente/CajachicaDistribucion/distribucionMeses.js"/> 
+                
+            <jsp:include page="../js/componente/CajachicaEjecucion/agregar_editar.js"/>                 
             
 
             <jsp:include page="../js/componente/Cajachica/CabeceraLinea.js"/> 
@@ -68,10 +70,26 @@
                         
                         
                     <article>
-                        <h4>Plan Financiero</h4>  
+                        <h4>Caja chica</h4>  
                     </article>
                     
                     
+                    <div class ="pestagnas-tab"
+                         id = "planf"> 
+                        plan financiero
+                    </div> 
+                    
+                    <div class ="pestagnas-tab"
+                         id = "certi"> 
+                        certificacion
+                    </div> 
+                    
+                    <div class ="pestagnas-tab"
+                         id="ejec"> 
+                        ejecucion
+                    </div> 
+                                            
+                                    
                     <br/><br/>
                     
                     <article>

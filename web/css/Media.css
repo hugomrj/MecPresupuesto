@@ -838,3 +838,12 @@ ul#tabs li .active {
 }
 
 
+.pestagnas-tab{
+    
+        display: inline-table; 
+        padding: 1rem; 
+        cursor: pointer;
+        /*border-bottom: solid 1px;*/
+}
+
+

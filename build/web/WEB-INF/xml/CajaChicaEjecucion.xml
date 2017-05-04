@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<root>
+    
+    <table 
+        name="cajachica_ejecucion">            
+                    
+            <id name="id"/>
+            <column name="uoc_id"/>
+                                
+            <column name="ej1"/>
+            <column name="ej2"/>
+            <column name="ej3"/>
+            <column name="ej4"/>
+            <column name="ej5"/>
+            <column name="ej6"/>
+            <column name="ej7"/>
+            <column name="ej8"/>
+            <column name="ej9"/>
+            <column name="ej10"/>
+            <column name="ej11"/>
+            <column name="ej12"/>
+            
+            
+    </table>
+    
+</root>

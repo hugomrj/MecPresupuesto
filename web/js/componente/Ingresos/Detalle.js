@@ -6,31 +6,16 @@ window.onload = function() {
     var idreg = getParametroValor("idreg");
     
     // click en pestañas
-    
-    
+        
     var ingre_pf = document.getElementById('ingre_pf');
     pestagnas(ingre_pf);         
     
-    
-    ingre_pf.addEventListener('click',
-        function() {    
-            
-            pestagnas(ingre_pf);                                 
-            datos_tabla_dite_tabla();
-            
-        },
-        false
-    );               
-        
-        
         
     var ingre_certi = document.getElementById('ingre_certi');
     ingre_certi.addEventListener('click',
-        function() {    
-            
+        function() {                
             pestagnas(ingre_certi);            
             IngresoCertificacion_estructura ( idreg );
-            
         },
         false
     );               
@@ -39,11 +24,9 @@ window.onload = function() {
     
     var ingre_eje = document.getElementById('ingre_eje');
     ingre_eje.addEventListener('click',
-        function() {    
-                        
+        function() {                            
             pestagnas(ingre_eje);       
-            IngresoEjecucion_estructura ( idreg );
-            
+            IngresoEjecucion_estructura ( idreg );            
         },
         false
     );               

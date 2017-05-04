@@ -150,7 +150,6 @@ public class CajaChicaCertificacionDAO  {
                 
                 if (!(monto_plan_aux.equals(monto_plan)))
                 {                
-
                     this.ReCalcular(cajaChicaDistri.getUoc_id(), x, monto_plan);                                     
                 }
                 

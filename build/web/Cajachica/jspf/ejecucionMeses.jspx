@@ -1,0 +1,162 @@
+
+<jsp:root version="2.0"
+    xmlns:jsp="http://java.sun.com/JSP/Page" 
+     xmlns:c="http://java.sun.com/jsp/jstl/core">
+    
+    
+        <table class="tableC"
+               id="pfdm_tabla1"               
+               >
+            
+                <thead>
+                    
+                    <tr>                       
+                        <th id ="mes1" style="width: 9rem;" >ene</th>
+                        <th id ="mes2" style="width: 9rem;">feb</th>
+                        <th id ="mes3" style="width: 9rem;">mar</th>
+                        <th id ="mes4" style="width: 9rem;">abr</th>
+                        <th id ="mes5" style="width: 9rem;">may</th>
+                        <th id ="mes6" style="width: 9rem;">jun</th>                        
+                    </tr>                                        
+                    
+                </thead>
+                <tbody>
+
+                        <tr>
+
+                            
+                            <td class="right-aling" id="m1">                                
+                                0
+                            </td>
+                            <td class="right-aling" id="m2">                                
+                                 0                            
+                            </td>                            
+                            <td class="right-aling" id="m3">
+                                 0                            
+                            </td>                            
+                            <td class="right-aling" id="m4">
+                                 0                            
+                            </td>                            
+                            <td class="right-aling" id="m5">
+                                 0                            
+                            </td>                            
+                            <td class="right-aling" id="m6">
+                                 0                            
+                            </td>                                                        
+                        </tr>                            
+
+
+                </tbody>
+                
+        </table>
+
+                    
+        <br/>    
+        <br/>    
+        <br/>    
+
+        
+        
+          <table class="tableC"
+               id="pfdm_tabla2"               
+               >
+            
+                <thead>
+                    
+                    <tr>                       
+                        <th id ="mes7" style="width: 9rem;">jul</th>
+                        <th id ="mes8" style="width: 9rem;">ago</th>
+                        <th id ="mes9" style="width: 9rem;">sep</th>
+                        <th id ="mes10" style="width: 9rem;">oct</th>
+                        <th id ="mes11" style="width: 9rem;">nov</th>
+                        <th id ="mes12" style="width: 9rem;">dic</th>                        
+                    </tr>                                        
+                    
+                </thead>
+                <tbody>
+                    
+                        <tr>
+
+                            
+                            <td class="right-aling" id="m7">                                
+                                0
+                            </td>
+                            <td class="right-aling" id="m8">
+                                 0                            
+                            </td>                            
+                            <td class="right-aling" id="m9">
+                                 0                            
+                            </td>                            
+                            <td class="right-aling" id="m10">
+                                 0                            
+                            </td>                            
+                            <td class="right-aling" id="m11">
+                                 0                            
+                            </td>                            
+                            <td class="right-aling" id="m12">
+                                 0                            
+                            </td>                                                        
+                        </tr>                            
+
+
+                </tbody>
+                
+        </table>      
+        
+  
+        
+        
+        <br/>   
+
+          <table class="tableC"
+               id="pfdm_tabla3"               
+               >
+            
+              
+              <tfoot>
+                    
+                    <tr>                       
+                        <td style="width: 9rem; border: none;" ></td>
+                        <td style="width: 9rem; border: none;" ></td>
+                        <td style="width: 9rem; border: none;" ></td>
+                        <td style="width: 9rem; border: none;" ></td>
+                        <td style="width: 9rem; border: none;" ></td>
+                        <td style="width: 9rem; border: none;" 
+                            class="right-aling"
+                            id = "pfdm_suma" >
+                            0
+                        </td>
+
+                    </tr>                                        
+                    
+                    <tr>                       
+                        <td colspan="6" style=" padding: 0em ; 
+                            border: none;
+                            border-bottom: 1px solid ;">
+                        </td>                     
+                    </tr>                                       
+                    
+                    
+                </tfoot>
+
+                
+        </table>              
+        
+        <br/>
+                
+        <article class="botones-footer">
+            <div class="commandbutton">
+                <a class="botonEnlace" 
+                   id="cachejme_editar" 
+                   href="javascript:void(0);">
+                    Edicion
+                </a>
+            </div>
+        </article>      
+
+            
+    
+</jsp:root>
+                
+
+

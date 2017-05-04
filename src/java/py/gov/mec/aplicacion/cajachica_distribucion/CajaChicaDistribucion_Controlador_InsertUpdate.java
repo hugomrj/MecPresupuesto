@@ -47,12 +47,12 @@ public class CajaChicaDistribucion_Controlador_InsertUpdate extends HttpServlet 
             CajaChicaDistribucion instancia = new CajaChicaDistribucion();
             Persistencia persistencia = new Persistencia();
             
-            CajaChicaDistribucionDAO dao = new  CajaChicaDistribucionDAO();            
+            CajaChicaDistribucionDAO distribucionDAO = new  CajaChicaDistribucionDAO();            
             CajaChicaCertificacionDAO  Certificaciondao = new CajaChicaCertificacionDAO();                
 
             
             // update
-            if (dao.isRegistroExiste(registro)) {
+            if (distribucionDAO.isRegistroExiste(registro)) {
             
                 instancia = (CajaChicaDistribucion) persistencia.extraerRegistro(request, instancia);
                 instancia.setId(  Integer.parseInt(request.getParameter("id_tabla")) );

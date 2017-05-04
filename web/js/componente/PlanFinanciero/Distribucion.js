@@ -7,16 +7,13 @@ window.onload = function() {
     PresupuestoVigente_CabeceraLinea(registro);
     
     
-    //AjaxPeticion('../PresupuestoVigente/Cabecera/Lista?registro='+registro,'presupuesto_cabecera');      
-    
+    //AjaxPeticion('../PresupuestoVigente/Cabecera/Lista?registro='+registro,'presupuesto_cabecera');     
     //AjaxPeticion('../PlanFinanciero/jspf/distribucionMeses.jspx','presupuesto_cabecera');  
-               
           
     
     meses_valores (  )    ;
-       
     
-
+    
 };
 
 

@@ -1,11 +1,9 @@
 
 function Cajachica_agregar_editar ( registro ){
 
-    
     Cajachica_agregar_editar_json ( registro );
 
     Cajachica_agregar_editar_campos_interaccion();
-
 
     var pafa_aceptar = document.getElementById('pafa_aceptar');
     pafa_aceptar.addEventListener('click',
@@ -22,8 +20,9 @@ function Cajachica_agregar_editar ( registro ){
                     //  action="../CajaChicaDistribucion/Controlador/InsertUpdate"                                         
                     var control = AjaxPeticionURL( accion, getDataForm(form) );      
                     
-                    if (control == null){    
-                        meses_valores (  ) ;
+                    if (control == null)
+                    {    
+                        Plan_financiero_meses_valores (  ) ;
                         pafa_cerrar.click();
                     }
                     else{                    
