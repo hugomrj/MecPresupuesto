@@ -466,6 +466,7 @@ System.out.println(strSQL);
             request.getSession().setAttribute("SessionMensajes", mensaje);
             return objeto;
             */
+            System.out.println(SqlEx.getMessage());
             throw new SQLException(SqlEx);
             
             
@@ -745,6 +746,7 @@ System.out.println(strSQL);
     public Object extraerRegistro ( HttpServletRequest request, Object objeto) throws Exception {
     
 
+System.out.println(objeto);
 
 
             Object instanciaObjeto = null;
@@ -752,7 +754,7 @@ System.out.println(strSQL);
             RegistroMap registoMap = new RegistroMap();
             registro = registoMap.convertirHashMap(request, objeto); 
 
-            
+System.out.println(registro);            
             instanciaObjeto = extraerObjeto(registro,objeto);    
 
             return instanciaObjeto;  
