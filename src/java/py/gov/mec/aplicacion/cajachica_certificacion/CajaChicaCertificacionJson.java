@@ -48,8 +48,8 @@ public class CajaChicaCertificacionJson extends HttpServlet {
                 CajaChicaCertificacionDAO dao = new CajaChicaCertificacionDAO();
                
                 Gson gson = new Gson ();
-                String formatoJSON = gson.toJson(dao.Registro(codigo));
-                out.println(formatoJSON);            
+                //String formatoJSON = gson.toJson(dao.Registro(codigo));
+                //out.println(formatoJSON);            
 
             }            
         } 
