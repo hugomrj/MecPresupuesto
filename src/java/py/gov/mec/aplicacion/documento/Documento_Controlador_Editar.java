@@ -7,6 +7,7 @@ package py.gov.mec.aplicacion.documento;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Enumeration;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -28,6 +29,20 @@ public class Documento_Controlador_Editar extends HttpServlet {
             
             PrintWriter out = response.getWriter();            
 
+            
+   /*         
+// verificar el request
+Enumeration<String> parametros = request.getParameterNames();  
+
+while(parametros.hasMoreElements())
+{
+     String strParametro = parametros.nextElement();       
+     System.out.println(strParametro);
+     System.out.println(request.getParameter(strParametro));
+     
+}
+*/
+         
         try
         {
 

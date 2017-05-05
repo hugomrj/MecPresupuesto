@@ -7,6 +7,8 @@ package nebuleuse.util;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
@@ -39,31 +41,48 @@ public abstract class  Datetime {
     }
         
     
-    public static Date castDate(String strFecha) throws ParseException{  
+    public static Date castDate(String strFecha) {  
         
         java.util.Date date = new java.util.Date();
-         if (  (strFecha.trim().equals(""))  ||  (strFecha.trim().length() != 10) ) 
+        
+         if (  (strFecha.trim().equals(""))  ) 
          {
             date = null;
          }
          else
          {
-             SimpleDateFormat formato = null;             
-             if ( Cadena.contChr( strFecha, '/' ) == 2 ){
-                formato = new SimpleDateFormat("dd/MM/yyyy");                             
-             }
-             if ( Cadena.contChr( strFecha, '-' ) == 2 ){
-                formato = new SimpleDateFormat("yyyy-MM-dd");   
-             }                          
-             
-             date = formato.parse(strFecha);            
-             
-             if ( !(strFecha.trim().equals(  Datetime.toSQLDate(date).trim())) 
-                     &&
-                !(strFecha.trim().equals(  Datetime.toSQLDateFormatoDiagonal(date).trim()))                      
-                     ){
-                 date = null;
-             }
+             try 
+            {
+                SimpleDateFormat formato = null;
+                if ( Cadena.contChr( strFecha, '/' ) == 2 ){
+                    formato = new SimpleDateFormat("dd/MM/yyyy");                    
+                }
+                if ( Cadena.contChr( strFecha, '-' ) == 2 ){
+                    formato = new SimpleDateFormat("yyyy-MM-dd");
+                }
+                if ( Cadena.contChr( strFecha, ' ' ) == 2 ){
+                    formato = new SimpleDateFormat("dd MMM yyyy");
+                }
+                
+                date = formato.parse(strFecha);
+
+/*
+                if ( !(strFecha.trim().equals(  Datetime.toSQLDate(date).trim()))
+                        &&
+                        !(strFecha.trim().equals(  Datetime.toSQLDateFormatoDiagonal(date).trim()))
+                        )
+                {
+                    date = null;
+                }
+*/          
+                
+            } 
+            catch (Exception ex) 
+            {
+                date = null;
+                System.out.println(ex.getMessage());
+                //Logger.getLogger(Datetime.class.getName()).log(Level.SEVERE, null, ex);
+            }
          }        
          
          return date;            

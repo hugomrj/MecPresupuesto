@@ -41,7 +41,10 @@ public class Documento_Controlador_Borrar extends HttpServlet {
                 instancia =  (Documento) persistencia.delete(instancia);
                 out.println("DeleteOK");                          
                 
+                
+                
 //instancia = (Documento) persistencia.extraerRegistro(request, instancia);     
+
 
 
             }

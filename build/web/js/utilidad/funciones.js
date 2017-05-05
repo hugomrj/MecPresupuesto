@@ -476,19 +476,24 @@ function validaFechaDDMMAAAA(fecha){
     function formatoJSONFecha(strfecha)
     {
         var retorno = "";
-        var sepa = strfecha.indexOf(",");
-        var dere = strfecha.substring(0, sepa); 
-        var izqu = strfecha.substring(sepa+1, 12); 
-    
-    
-        if (strfecha != "")
+        
+        if (strfecha != undefined) 
         {
-            retorno = dere.substring(4, 8) 
-                +" "+ MesCorto(dere.substring(0, 3)) +" "+ izqu.trim();                       
-        }
+        
+            strfecha = strfecha.toString().trim();
+            
+            var sepa = strfecha.indexOf(",");
+            var dere = strfecha.substring(0, sepa); 
+            var izqu = strfecha.substring(sepa+1, 12); 
 
+
+            if (strfecha != "")
+            {
+                retorno = dere.substring(4, 8) 
+                    +" "+ MesCorto(dere.substring(0, 3)) +" "+ izqu.trim();                       
+            }
+        }
         return retorno;
-    
     }
 
 

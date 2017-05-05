@@ -6,6 +6,7 @@
 
 package nebuleuse.ORM;
 
+import java.lang.reflect.InvocationTargetException;
 import nebuleuse.ORM.xml.Serializacion;
 import java.lang.reflect.Method;
 import java.sql.ResultSet;
@@ -393,11 +394,6 @@ System.out.println(strSQL);
     
     
     public Object delete ( Object objeto )  throws SQLException, Exception {
-     
-        
-System.out.println("entra en delete objeto");
-
-
 
         boolean bool = false;
                     
@@ -423,12 +419,7 @@ System.out.println("entra en delete objeto");
             
             
             strSQL = strDelete + strWhere;
-            
-            
-System.out.println(strSQL);
 
-
-            
             bool  = this.ejecutarSQL(strSQL);
 
             Integer valorInt;
@@ -753,24 +744,11 @@ System.out.println(strSQL);
         
     public Object extraerRegistro ( HttpServletRequest request, Object objeto) throws Exception {
     
-
-
             Object instanciaObjeto = null;
             HashMap registro = new HashMap();
             RegistroMap registoMap = new RegistroMap();
-
-            
-System.out.println("antes de convertir hash");
-            
             registro = registoMap.convertirHashMap(request, objeto); 
-
-System.out.println("despues de convertir hash");            
-
-
             instanciaObjeto = extraerObjeto(registro,objeto);    
-
-System.out.println("despues de extraer objeto");                        
-            
             return instanciaObjeto;  
     }
     
@@ -790,82 +768,100 @@ System.out.println("despues de extraer objeto");
 
     
     public Object extraerObjeto ( HashMap parametro_registro, Object objeto) 
-            throws Exception {
+     {
+    
+        try
+        {
             
-        
-System.out.println("entra a extaer objeto");
-
             HashMap registro  = new HashMap();
             registro  = parametro_registro;
 
             Object instanciaObjeto = null;
-
+            
             Serializacion serializacion = new Serializacion(objeto);                
             serializacion.getElementos() ;
             Nexo elemento = new Nexo();
             Class classDato = null;
             Method metodoSet = null;
             String valorCampo = null;
-
-            Class claseObjeto = Class.forName(objeto.getClass().getName());                     
-            instanciaObjeto = claseObjeto.newInstance();                 
-
-            for (int i = 1; i < serializacion.getElementos().size() ; i++) 
-            {              
+            
+            Class claseObjeto = Class.forName(objeto.getClass().getName());
+            instanciaObjeto = claseObjeto.newInstance();
+            
+            for (int i = 1; i < serializacion.getElementos().size() ; i++)
+            {
                 elemento = serializacion.getElementos().get(i); 
                 elemento.getObjeto();
                 elemento.getTabla();
                 serializacion.getElementos().get(i).getObjeto();
-
-                classDato = instanciaObjeto.getClass().getMethod(elemento.nombreMetodoGET()).getReturnType();                              
-                metodoSet = instanciaObjeto.getClass().getMethod(elemento.nombreMetodoSET(), classDato );                  
-                valorCampo  = (String) registro.get(elemento.getTabla());                    
-
+                
+                classDato = instanciaObjeto.getClass().getMethod(elemento.nombreMetodoGET()).getReturnType();
+                metodoSet = instanciaObjeto.getClass().getMethod(elemento.nombreMetodoSET(), classDato );                
+                valorCampo  = (String) registro.get(elemento.getTabla());
+                
                 if (  valorCampo == null )
-                {           
+                {
                     metodoSet.invoke(instanciaObjeto, (Object) null);  
                 }
                 else
                 {
-                    if (classDato == Integer.class) 
-                    {                                        
-                        valorCampo = valorCampo.replace(",", "");       
-                        valorCampo = valorCampo.replace(".", "");       
+                    if (classDato == Integer.class)
+                    {
+                        valorCampo = valorCampo.replace(",", "");
+                        valorCampo = valorCampo.replace(".", "");
                         metodoSet.invoke(instanciaObjeto, Integer.parseInt(valorCampo));                    
                     }
                     else if (classDato == Long.class) 
                     {
-                        valorCampo = valorCampo.replace(",", "");                    
-                        valorCampo = valorCampo.replace(".", "");       
-                        metodoSet.invoke(instanciaObjeto, Long.parseLong(valorCampo));  
-                    }                    
+                        valorCampo = valorCampo.replace(",", "");
+                        valorCampo = valorCampo.replace(".", "");
+                        metodoSet.invoke(instanciaObjeto, Long.parseLong(valorCampo));
+                    }
                     else if (classDato == String.class) 
                     {
                         // posiblemente se tenga que poner una opcion para no traer el valor del pass encriptado
-
-                       metodoSet.invoke(instanciaObjeto, (valorCampo));  
+                        
+                        metodoSet.invoke(instanciaObjeto, (valorCampo));  
                     }
                     else if (classDato == Date.class) 
                     {
+                        
+System.out.println( metodoSet );                        
+System.out.println(valorCampo);                                                   
+//System.out.println( Datetime.castDate(valorCampo));
+System.out.println( "sale de cast");
+
+
                         // aca posiblente se le tenga que poner un formateardo de fechas
-                        metodoSet.invoke(instanciaObjeto, Datetime.castDate(valorCampo));  
+                        metodoSet.invoke(instanciaObjeto, Datetime.castDate(valorCampo));
+                        
+
+                        
                     }
                     else
                     {
-
+                        
                         Persistencia persistencia = new Persistencia();                    
                         Object instanciaAuxiliarObjeto;
-
-                        instanciaAuxiliarObjeto = classDato.newInstance();                     
-                        instanciaAuxiliarObjeto = persistencia.filtrarId( instanciaAuxiliarObjeto, Integer.parseInt(valorCampo));                    
-                        metodoSet.invoke( instanciaObjeto, instanciaAuxiliarObjeto );                 
-
+                        
+                        instanciaAuxiliarObjeto = classDato.newInstance();
+                        instanciaAuxiliarObjeto = persistencia.filtrarId( instanciaAuxiliarObjeto, Integer.parseInt(valorCampo));
+                        metodoSet.invoke( instanciaObjeto, instanciaAuxiliarObjeto );
+                        
                     }               
                 }
             }
-
-            return instanciaObjeto;        
-
+            
+            return instanciaObjeto;    
+            
+            
+        } 
+        catch (Exception ex) {
+            //Logger.getLogger(Persistencia.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex.getMessage());
+            return null;            
+        } 
+        
         
     }    
     

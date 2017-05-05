@@ -5,7 +5,10 @@
  */
 package com.itx.execute;
 
+import java.text.SimpleDateFormat;
 import nebuleuse.ORM.Persistencia;
+import nebuleuse.util.Cadena;
+import nebuleuse.util.Datetime;
 import py.gov.mec.aplicacion.documento.Documento;
 
 /**
@@ -23,9 +26,13 @@ public class NewMain {
         Documento doc = new Documento();
         Persistencia per = new Persistencia();
         
-        doc = (Documento) per.filtrarId(doc ,19);
-        doc= (Documento) per.delete(doc);
+        System.out.println(        
+            Datetime.castDate("1 jun 2017")                
+        );
         
+        
+        //java.text.DecimalFormat@674dc
+        //java.text.DecimalFormat@674dc
         
         
     }
