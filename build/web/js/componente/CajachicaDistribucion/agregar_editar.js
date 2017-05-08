@@ -217,7 +217,7 @@ function Cajachica_agregar_editar_campos_interaccion ( )
 function Cajachica_agregar_editar_json ( registro )
 {
 
-    var jsonResponse = AjaxUrl( "../CajaChica/Distribucion.json?registro="+registro );  
+    var jsonResponse = AjaxUrl( "../CajaChicaDistribucion/Linea.json?registro="+registro );  
     
     if (jsonResponse.toString().trim() != "[]")
     {
@@ -329,12 +329,6 @@ function PlanFinanciero_agregar_sumar_formulario (  )
             pafa_mensaje.style.color = 'steelblue';                        
             pafa_mensaje.innerHTML = "Falta asignar: &nbsp;&nbsp;&nbsp; "+formatoPunto(pafa_mensaje.innerHTML);        
         }
-    
-
-//        pafa_mensaje.innerHTML = "Falta asignar: &nbsp;&nbsp;&nbsp; "+formatoPunto(pafa_mensaje.innerHTML);        
-        
-    
-    
     
 }
 

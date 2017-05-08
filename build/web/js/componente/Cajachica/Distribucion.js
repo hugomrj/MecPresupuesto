@@ -55,7 +55,7 @@ function Plan_financiero_meses_valores (  ){
     AjaxPeticion('../Cajachica/jspf/distribucionMeses.jspx','tab_body');  
 
     var registro = getParametroValor("registro");
-    var jsonResponse = AjaxUrl( "../CajaChica/Distribucion.json?registro="+registro );    
+    var jsonResponse = AjaxUrl( "../CajaChicaDistribucion/Linea.json?registro="+registro );    
       
     var uoc_id = 0;
     

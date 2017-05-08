@@ -38,24 +38,38 @@ window.onload = function() {
     }                                                                
 
     
-    
     // montos de planfinanciero mes y saldo anterior
     // de plan financiero se quita, Distribucion
-    var jsonResponse = AjaxUrl( "../CajaChica/DistribucionMes.json?registro="+uoc_id
+    var jsonResponse = AjaxUrl( "../CajaChicaDistribucion/DisponibleMes.json?registro="+uoc_id
             +"&mes="+mes );        
-
     if (jsonResponse.toString().trim() != "[]")
     {
         var objetoJson = JSON.parse(jsonResponse);    
         var plan_mes = document.getElementById('plan_mes');        
         plan_mes.innerHTML =   objetoJson[0].mes ;
-        
-        plan_mes.innerHTML = +"&emsp;"+ formatoNumero_p(plan_mes.innerHTML);         
-        
+        plan_mes.innerHTML = "&emsp;"+ formatoNumero_p(plan_mes.innerHTML);         
         //plan_mes.style.color = "black";
-    }   
+    }
+    else   
+    {
+        plan_mes.innerHTML = "&emsp;"+ "0";         
+    }
 
 
+    var jsonResponse = AjaxUrl( "../CajaChicaEjecucion/SaldoMesAnterior.json?uoc_id="+uoc_id
+            +"&mes="+mes );    
+    if (jsonResponse.toString().trim() != "[]")
+    {
+        var objetoJson = JSON.parse(jsonResponse);    
+        var saldo_mes_anterior = document.getElementById('saldo_mes_anterior');        
+        saldo_mes_anterior.innerHTML =   objetoJson[0].saldo_anterior ;
+        saldo_mes_anterior.innerHTML = "&emsp;"+ formatoNumero_p(saldo_mes_anterior.innerHTML);         
+    }
+    else   
+    {
+        saldo_mes_anterior.innerHTML = "&emsp;"+ "0";         
+    }
+    
         
 
   
@@ -75,17 +89,12 @@ window.onload = function() {
                 mostrarVentana('capa_clara');         
                 
                 AjaxPeticion( '../CajachicaCertificacion/jspf/agregar.jspx' , 'capa_clara' );          
-                
-                
+                                
                 dimensionarVentana('capa_clara', 700, 250);   
                 
                 CajachicaCertificacion_agregar( evt.target.uoc_id,                                                                 
-                                                                evt.target.mes );
-                                                                
+                                                                evt.target.mes );                                                                
     }
-    
-    
-  
         
     
 };

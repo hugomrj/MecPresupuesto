@@ -48,18 +48,24 @@ public class CajaChicaDistribucion_Controlador_InsertUpdate extends HttpServlet 
             Persistencia persistencia = new Persistencia();
             
             CajaChicaDistribucionDAO distribucionDAO = new  CajaChicaDistribucionDAO();            
-            CajaChicaCertificacionDAO  Certificaciondao = new CajaChicaCertificacionDAO();                
+            CajaChicaCertificacionDAO  certificacionDAO = new CajaChicaCertificacionDAO();                
 
             
             // update
             if (distribucionDAO.isRegistroExiste(registro)) {
             
+                // se extrae el registro del plan financiero con sus valores pasados por formulario
+                
                 instancia = (CajaChicaDistribucion) persistencia.extraerRegistro(request, instancia);
                 instancia.setId(  Integer.parseInt(request.getParameter("id_tabla")) );
       
+                
+                
                 boolean control;
-                control = Certificaciondao.actualizarSaldo(instancia );
+                control = certificacionDAO.actualizarSaldo(instancia );
          
+                
+                
                 if (control == true){
                     persistencia.update(instancia, request);
                 }

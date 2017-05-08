@@ -15,6 +15,7 @@ import nebuleuse.ORM.Conexion;
 import nebuleuse.ORM.Persistencia;
 import nebuleuse.util.Lista;
 import py.gov.mec.aplicacion.cajachica_distribucion.CajaChicaDistribucion;
+import py.gov.mec.aplicacion.cajachica_ejecucion.CajaChicaEjecucionDAO;
 
 /**
  *
@@ -66,27 +67,56 @@ public class CajaChicaCertificacionDAO  {
             
                 statement = conexion.getConexion().createStatement();         
 
-                
-                String sql = " "+ 
-                "                  SELECT id, cajachica_distribucion.uoc_id,  \n" +
-                "                	(    \n" +
-                "                	   CASE WHEN (monto_certificacion  is null) THEN pf"+mes+" \n" +
-                "                	       ELSE (pf"+mes+" - monto_certificacion)    \n" +
-                "                	       END    \n" +
-                "                	) disponible  	 \n" +
-                "                 \n" +
-                "                  FROM cajachica_distribucion \n" +
-                "                  left join \n" +
-                "                 ( \n" +
-                "			SELECT uoc_id, sum(monto_certificacion) monto_certificacion\n" +
-                "			  FROM public.cajachica_certificacion\n" +
-                "			  where mes = " + mes +
-                "			group by uoc_id\n" +
-                "                 ) as d \n" +
-                "                 on d.uoc_id = cajachica_distribucion.uoc_id   \n" +
-                "                  where cajachica_distribucion.uoc_id =  " + uoc_id +
-                "; ";
 
+                
+                
+                String sql = " " + 
+"		  SELECT cajachica_saldo.id, cajachica_saldo.uoc_id,   \n" +
+"			(     \n" +
+"			   CASE WHEN (monto_certificacion  is null) THEN sl"+mes+"\n" +
+"			       ELSE (sl"+mes+" - monto_certificacion)     \n" +
+"			       END     \n" +
+"			) disponible  	  \n" +
+"		  \n" +
+"		  FROM \n" +
+"		(\n" +
+"                     SELECT   cajachica_distribucion.id,\n" +
+"                     cajachica_distribucion.uoc_id ,  \n" +
+"                     pf1, ej1, pf2, ej2, pf3, ej3, pf4, ej4, pf5, ej5, pf6, ej6,\n" +
+"                     pf8, ej8, pf7, ej7, pf9, ej9, pf10, ej10, pf11, ej11, pf12, ej12,                     \n" +
+"                      pf1 AS sl1,\n" +
+"                      CASE WHEN (ej1 IS NULL) THEN pf2 else ((pf1 - ej1)+ pf2) END AS sl2,                          \n" +
+"                      CASE WHEN (ej2 IS NULL) THEN pf3 else ((pf2 - ej2)+ pf3) END AS sl3,                      \n" +
+"                      CASE WHEN (ej3 IS NULL) THEN pf4 else ((pf3 - ej3)+ pf4) END AS sl4,                      \n" +
+"                      CASE WHEN (ej4 IS NULL) THEN pf5 else ((pf4 - ej4)+ pf5) END AS sl5,                      \n" +
+"                      CASE WHEN (ej5 IS NULL) THEN pf6 else ((pf5 - ej5)+ pf6) END AS sl6,                      \n" +
+"                      CASE WHEN (ej6 IS NULL) THEN pf7 else ((pf6 - ej6)+ pf7) END AS sl7,                      \n" +
+"                      CASE WHEN (ej7 IS NULL) THEN pf8 else ((pf7 - ej7)+ pf8) END AS sl8,                      \n" +
+"                      CASE WHEN (ej8 IS NULL) THEN pf9 else ((pf8 - ej8)+ pf9) END AS sl9,                      \n" +
+"                      CASE WHEN (ej9 IS NULL) THEN pf10 else ((pf9 - ej9)+ pf10) END AS sl10,                      \n" +
+"                      CASE WHEN (ej10 IS NULL) THEN pf11 else ((pf10 - ej10)+ pf11) END AS sl11,                      \n" +
+"                      CASE WHEN (ej11 IS NULL) THEN pf12 else ((pf11 - ej11)+ pf12) END AS sl12                      \n" +
+"                       FROM cajachica_distribucion left join cajachica_ejecucion \n" +
+"                       on (cajachica_distribucion.uoc_id = cajachica_ejecucion.uoc_id ) \n" +
+"                       where cajachica_distribucion.uoc_id = 20 \n" +
+"		)\n" +
+"                                  cajachica_saldo  \n" +
+"                                  left join  \n" +
+"                                 (  \n" +
+"                			SELECT uoc_id, sum(monto_certificacion) monto_certificacion \n" +
+"                			  FROM public.cajachica_certificacion \n" +
+"                			  where mes =   "+mes+"\n" +
+"                			group by uoc_id \n" +
+"                                 ) as d  \n" +
+"                                 on d.uoc_id = cajachica_saldo.uoc_id    \n" +
+"                                  where cajachica_saldo.uoc_id =       "   +     uoc_id;         
+                
+
+                
+                
+                
+                
+                
                 resultset = statement.executeQuery(sql);     
                 
                 return lista.resultsetToList(resultset ) ;
@@ -102,17 +132,22 @@ public class CajaChicaCertificacionDAO  {
         throws Exception{
         
         boolean retornar = true;
-        CajaChicaDistribucion cajaChicaAux = new CajaChicaDistribucion();
+        CajaChicaDistribucion cajaChicaDistribucionAuxiliar = new CajaChicaDistribucion();
         Persistencia persistencia = new Persistencia();
         Long monto_certificacion  = 0L;
         Long monto_plan  = 0L;
         Long monto_plan_aux  = 0L;
         String metodo = "";
                 
-        for (int j = 1; j <= 12; j++) {
+        CajaChicaEjecucionDAO cajachicaEjecucionDAO = new CajaChicaEjecucionDAO();
+        
+        
+        // recorre todos los meses
+        for (int j = 1; j <= 12; j++) 
+        {
                         
             monto_certificacion  = 0L;
-            cajaChicaAux = (CajaChicaDistribucion) persistencia.filtrarId(cajaChicaAux, cajaChicaDistri.getId());
+            cajaChicaDistribucionAuxiliar = (CajaChicaDistribucion) persistencia.filtrarId(cajaChicaDistribucionAuxiliar, cajaChicaDistri.getId());
             List<Map<String, Object>> list = this.ListaMes(cajaChicaDistri.getUoc_id(), j);
 
             Integer i = 0;
@@ -127,6 +162,11 @@ public class CajaChicaCertificacionDAO  {
             
             metodo  = "getPf"+ j  ;            
             monto_plan = (Long) cajaChicaDistri.getClass().getMethod(metodo).invoke(cajaChicaDistri)  ;
+
+            
+            // aca tengo que sumarle el saldo anterior del mes            
+            monto_plan =  monto_plan +  (Long) cajachicaEjecucionDAO.getSaldoMesAnterior(cajaChicaDistri.getUoc_id(), j) ;    
+
             
             if (monto_certificacion  >   monto_plan){                    
                 retornar =  false;
@@ -145,14 +185,19 @@ public class CajaChicaCertificacionDAO  {
 
                
                 metodo  = "getPf"+ x  ;            
-                monto_plan = (Long) cajaChicaDistri.getClass().getMethod(metodo).invoke(cajaChicaDistri)  ;                
-                monto_plan_aux = (Long) cajaChicaAux.getClass().getMethod(metodo).invoke(cajaChicaAux)  ;                
+                monto_plan = (Long) cajaChicaDistri.getClass().getMethod(metodo).invoke(cajaChicaDistri)  ;   
                 
+                monto_plan =  monto_plan +  (Long) cajachicaEjecucionDAO.getSaldoMesAnterior(cajaChicaDistri.getUoc_id(), x) ;    
+                
+                this.ReCalcular(cajaChicaDistri.getUoc_id(), x, monto_plan);                                                     
+                
+                /*
+                monto_plan_aux = (Long) cajaChicaDistribucionAuxiliar.getClass().getMethod(metodo).invoke(cajaChicaDistribucionAuxiliar)  ;                                
                 if (!(monto_plan_aux.equals(monto_plan)))
                 {                
                     this.ReCalcular(cajaChicaDistri.getUoc_id(), x, monto_plan);                                     
                 }
-                
+                */
                 //cajaChicaDistri.getClass().getMethod(metodo).invoke(cajaChicaDistri)  ;      
             }
         }

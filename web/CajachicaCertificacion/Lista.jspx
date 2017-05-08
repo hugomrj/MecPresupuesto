@@ -80,13 +80,13 @@
                         <h6 id="montomes">
                             <div>
                                 <span style="font-weight: normal;">
-                                  Disponible mes:
+                                  Disponible Plan fin.:
                                 </span>                                
                                 <span style="font-weight: normal" id="plan_mes">0</span>
                             </div>
                             <div>
-                                <span style="font-weight: normal">Saldo mes anterior</span>
-                                <span style="font-weight: normal">50000</span>
+                                <span style="font-weight: normal">Saldo mes anterior:</span>
+                                <span style="font-weight: normal"   id="saldo_mes_anterior">0</span>
                             </div>                            
                             
                         </h6>            
