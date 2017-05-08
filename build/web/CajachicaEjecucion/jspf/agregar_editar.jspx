@@ -120,7 +120,7 @@
                            <div class = "SinEnfoque">
                                <label for="ej8">agosto:</label> 
                                <input TYPE="text" 
-                                       name="pf8" 
+                                       name="ej8" 
                                        id="pafeje_ej8"
                                        class="right-aling"
                                        />

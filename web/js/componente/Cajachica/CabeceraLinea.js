@@ -1,10 +1,9 @@
 
 
 
-
 function Cajachica_CabeceraLinea (registro){
 
-        AjaxPeticion('../CajaChica/Cabecera/Linea?registro='+registro,'presupuesto_cabecera');      
+    AjaxPeticion('../CajaChica/Cabecera/Linea?registro='+registro,'presupuesto_cabecera');      
     
     var table = document.getElementById( "pvcabe_tabla" ).getElementsByTagName('tbody')[0] ;
     var rows = table.rows.length;

@@ -36,10 +36,7 @@
             <jsp:include page="../js/componente/CajachicaCertificacion/agregar.js"/>                 
             <jsp:include page="../js/componente/Direccion/listaSimple.js"/>                 
             <jsp:include page="../js/componente/Direccion/agregar_modal.js"/>                 
-
     
-
-
         </script>
 
 
@@ -71,15 +68,32 @@
                     <div id="presupuesto_cabecera">
                         cabecera
                     </div>    
-                        
-                    <br/>                    
+                    <br/>
                     <article>
-                        <h4>Pasajes y Viaticos Certficaciones</h4>  
+                        <h4>Caja chica</h4>  
                     </article>
             
                     <article>
-                        <h3 id="nombremes">mes</h3>  
-                    </article>
+                        <h4 id="nombremes">mes</h4>  
+
+                        
+                        <h6 id="montomes">
+                            <div>
+                                <span style="font-weight: normal;">
+                                  Disponible mes:
+                                </span>                                
+                                <span style="font-weight: normal" id="plan_mes">0</span>
+                            </div>
+                            <div>
+                                <span style="font-weight: normal">Saldo mes anterior</span>
+                                <span style="font-weight: normal">50000</span>
+                            </div>                            
+                            
+                        </h6>            
+                        
+                        
+                    </article>                    
+                    
                     <br/>                    
                     
                     <article>

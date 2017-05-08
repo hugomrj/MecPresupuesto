@@ -72,18 +72,17 @@
                     <article>
                         <h4>Caja chica</h4>  
                     </article>
-                    
-                    
+
+                    <div class ="pestagnas-tab"
+                         id = "certi"> 
+                        certificacion
+                    </div>                         
+                        
                     <div class ="pestagnas-tab"
                          id = "planf"> 
                         plan financiero
                     </div> 
-                    
-                    <div class ="pestagnas-tab"
-                         id = "certi"> 
-                        certificacion
-                    </div> 
-                    
+
                     <div class ="pestagnas-tab"
                          id="ejec"> 
                         ejecucion

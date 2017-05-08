@@ -169,7 +169,7 @@ public class Persistencia {
         {            
             Mensaje mensaje = new Mensaje();                             
             mensaje.setMensajeBase(sqlEx.getMessage());            
-            request.getSession().setAttribute("SessionMensajes", mensaje);
+            //request.getSession().setAttribute("SessionMensajes", mensaje);
             
              throw new SQLException(sqlEx);
             
@@ -331,9 +331,6 @@ public class Persistencia {
         
         
         strSQL = strUpdate + strSet + strWhere + strRETURNING;
-
-System.out.println(strSQL);
-        
         
         Integer intID = 0;
         

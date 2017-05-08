@@ -82,6 +82,34 @@ public class CajaChicaDistribucionDAO  {
     
     
     
+    public List<Map<String, Object>>  DisponibleMes ( Integer idregistro, Integer mes)                
+        throws Exception {
+
+            if (mes >= 1 && mes <=12){
+            
+                statement = conexion.getConexion().createStatement();         
+
+                String sql = 
+                "  SELECT id, uoc_id, pf"+mes+" as mes\n" +
+                "  FROM public.cajachica_distribucion\n" +
+                "  where uoc_id =  " + idregistro +
+                " ";
+
+                resultset = statement.executeQuery(sql);     
+
+                return lista.resultsetToList(resultset ) ;            
+            
+            }
+            else 
+            {
+                return null;            
+            }
+        
+    }        
+    
+    
+    
+    
     
     
 }

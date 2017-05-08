@@ -203,6 +203,131 @@ public class CajaChicaCertificacionDAO  {
                 
     
     
+    public List<Map<String, Object>>  RegistroMeses  ( Integer idregistro)                
+        throws Exception {
+
+            statement = conexion.getConexion().createStatement();
+            
+            
+            String sql = 
+                " SELECT t.uoc_id, suma,\n" +
+                " CASE WHEN (cr1 is null) THEN 0 ELSE (cr1)  END,\n" +
+                " CASE WHEN (cr2 is null) THEN 0 ELSE (cr2)  END,\n" +
+                " CASE WHEN (cr3 is null) THEN 0 ELSE (cr3)  END,\n" +
+                " CASE WHEN (cr4 is null) THEN 0 ELSE (cr4)  END,\n" +
+                " CASE WHEN (cr5 is null) THEN 0 ELSE (cr5)  END,\n" +
+                " CASE WHEN (cr6 is null) THEN 0 ELSE (cr6)  END,\n" +
+                " CASE WHEN (cr7 is null) THEN 0 ELSE (cr7)  END,\n" +
+                " CASE WHEN (cr8 is null) THEN 0 ELSE (cr8)  END,\n" +
+                " CASE WHEN (cr9 is null) THEN 0 ELSE (cr9)  END,\n" +
+                " CASE WHEN (cr10 is null) THEN 0 ELSE (cr10)  END,\n" +
+                " CASE WHEN (cr11 is null) THEN 0 ELSE (cr11)  END,\n" +
+                " CASE WHEN (cr12 is null) THEN 0 ELSE (cr12)  END\n" +
+                " \n" +
+                " from \n" +
+                " (\n" +
+                " SELECT uoc_id, sum(monto_certificacion) as suma       \n" +
+                "   FROM public.cajachica_certificacion\n" +
+                "   where uoc_id = \n" + idregistro +
+                "   group by uoc_id\n" +
+                " ) as t left join \n" +
+                " (\n" +
+                " SELECT uoc_id, sum(monto_certificacion) cr1\n" +
+                "   FROM public.cajachica_certificacion\n" +
+                "   where uoc_id = \n" + idregistro +
+                "   and mes = 1\n" +
+                "   group by uoc_id\n" +
+                "   ) cer1 on (t.uoc_id = cer1.uoc_id) left join\n" +
+                " (\n" +
+                "SELECT uoc_id, sum(monto_certificacion) cr2\n" +
+                "  FROM public.cajachica_certificacion\n" +
+                "  where uoc_id = \n" + idregistro +
+                "  and mes = 2\n" +
+                "  group by uoc_id\n" +
+                "  ) cer2 on (t.uoc_id = cer2.uoc_id) left join\n" +
+                " (\n" +
+                " SELECT uoc_id, sum(monto_certificacion) cr3\n" +
+                "   FROM public.cajachica_certificacion\n" +
+                "   where uoc_id = \n" + idregistro +
+                "   and mes = 3\n" +
+                "   group by uoc_id\n" +
+                "   ) cer3 on (t.uoc_id = cer3.uoc_id) left join\n" +
+                "  (\n" +
+                " SELECT uoc_id, sum(monto_certificacion) cr4\n" +
+                "   FROM public.cajachica_certificacion\n" +
+                "   where uoc_id = \n" + idregistro +
+                "   and mes = 4\n" +
+                "   group by uoc_id\n" +
+                "   ) cer4 on (t.uoc_id = cer4.uoc_id) left join\n" +
+                "  (\n" +
+                " SELECT uoc_id, sum(monto_certificacion) cr5\n" +
+                "   FROM public.cajachica_certificacion\n" +
+                "   where uoc_id = \n" + idregistro +
+                "   and mes = 5\n" +
+                "   group by uoc_id\n" +
+                "   ) cer5 on (t.uoc_id = cer5.uoc_id) left join\n" +
+                "  (\n" +
+                " SELECT uoc_id, sum(monto_certificacion) cr6\n" +
+                "   FROM public.cajachica_certificacion\n" +
+                "   where uoc_id = \n" + idregistro +
+                "   and mes = 6\n" +
+                "   group by uoc_id\n" +
+                "   ) cer6 on (t.uoc_id = cer6.uoc_id) left join\n" +
+                " (\n" +
+                " SELECT uoc_id, sum(monto_certificacion) cr7\n" +
+                "   FROM public.cajachica_certificacion\n" +
+                "   where uoc_id = \n" + idregistro +
+                "   and mes = 7\n" +
+                "   group by uoc_id\n" +
+                "   ) cer7 on (t.uoc_id = cer7.uoc_id) left join\n" +
+                " (\n" +
+                " SELECT uoc_id, sum(monto_certificacion) cr8\n" +
+                "   FROM public.cajachica_certificacion\n" +
+                "   where uoc_id = \n" + idregistro +
+                "   and mes = 8\n" +
+                "   group by uoc_id\n" +
+                "   ) cer8 on (t.uoc_id = cer8.uoc_id) left join\n" +
+                "  (\n" +
+                " SELECT uoc_id, sum(monto_certificacion) cr9\n" +
+                "   FROM public.cajachica_certificacion\n" +
+                "   where uoc_id = \n" + idregistro +
+                "   and mes = 9\n" +
+                "   group by uoc_id\n" +
+                "   ) cer9 on (t.uoc_id = cer9.uoc_id) left join\n" +
+                "  (\n" +
+                " SELECT uoc_id, sum(monto_certificacion) cr10\n" +
+                "   FROM public.cajachica_certificacion\n" +
+                "   where uoc_id = \n" + idregistro +
+                "   and mes = 10\n" +
+                "   group by uoc_id\n" +
+                "   ) cer10 on (t.uoc_id = cer10.uoc_id) left join\n" +
+                "  (\n" +
+                " SELECT uoc_id, sum(monto_certificacion) cr11\n" +
+                "   FROM public.cajachica_certificacion\n" +
+                "   where uoc_id = \n" + idregistro +
+                "   and mes = 11\n" +
+                "   group by uoc_id\n" +
+                "   ) cer11 on (t.uoc_id = cer11.uoc_id) left join\n" +
+                "  (\n" +
+                " SELECT uoc_id, sum(monto_certificacion) cr12\n" +
+                "   FROM public.cajachica_certificacion\n" +
+                "   where uoc_id = \n" + idregistro +
+                "   and mes = 12\n" +
+                "   group by uoc_id\n" +
+                "   ) cer12 on (t.uoc_id = cer12.uoc_id)";
+              
+            
+            
+            resultset = statement.executeQuery(sql);     
+
+            return lista.resultsetToList(resultset ) ;
+
+    }              
+    
+    
+    
+    
+    
     
     
 }

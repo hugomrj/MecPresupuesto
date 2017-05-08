@@ -49,7 +49,6 @@ public class CajaChicaEjecucion_Controlador_InsertUpdate extends HttpServlet {
             if (ejecucionDAO.isRegistroExiste(registro)) 
             {
                 
-System.out.println("entra en update");
                 
                 instancia = (CajaChicaEjecucion) persistencia.extraerRegistro(request, instancia);
                 instancia.setId(  Integer.parseInt(request.getParameter("id_eje_tabla")) );

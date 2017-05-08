@@ -135,7 +135,7 @@ function Cajachica_ejecucion_agregar_editar_campos_interaccion ( )
         mes8.value = 0;
     }
     mes8.onblur  = function() {
-        zero( 'pafeje_mes8');
+        zero( 'pafeje_ej8');
         mes8.value = formatoNumero_p(mes8.value);
     };
 

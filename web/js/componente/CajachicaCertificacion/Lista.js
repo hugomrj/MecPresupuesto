@@ -6,6 +6,10 @@ window.onload = function() {
     var mes = getParametroValor("mes");  
     var uoc_id = getParametroValor("uoc_id");  
          
+         
+         
+         
+         
     // cabecera
     Cajachica_CabeceraLinea(uoc_id);    
    
@@ -32,7 +36,26 @@ window.onload = function() {
         nombremes.innerHTML =   objetoJson[0].descripcion ;
         nombremes.style.color = "black";
     }                                                                
+
+    
+    
+    // montos de planfinanciero mes y saldo anterior
+    // de plan financiero se quita, Distribucion
+    var jsonResponse = AjaxUrl( "../CajaChica/DistribucionMes.json?registro="+uoc_id
+            +"&mes="+mes );        
+
+    if (jsonResponse.toString().trim() != "[]")
+    {
+        var objetoJson = JSON.parse(jsonResponse);    
+        var plan_mes = document.getElementById('plan_mes');        
+        plan_mes.innerHTML =   objetoJson[0].mes ;
         
+        plan_mes.innerHTML = +"&emsp;"+ formatoNumero_p(plan_mes.innerHTML);         
+        
+        //plan_mes.style.color = "black";
+    }   
+
+
         
 
   
@@ -43,6 +66,8 @@ window.onload = function() {
         
     vci_agregar.uoc_id = uoc_id;    
     vci_agregar.mes = mes;    
+    
+    
     
     function vci_agregar_click(evt)
     {

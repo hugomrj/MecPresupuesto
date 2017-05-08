@@ -15,7 +15,7 @@ window.onload = function() {
     
     var vinculo ="";
     vinculo = "../Cdp/Detalle.jspx?idreg=";                            
-    Estructura_tabla_registro(vinculo)
+    Estructura_tabla_registro(vinculo);
     
 
    var tipo1 = document.getElementById('desde_tipo');
@@ -23,6 +23,7 @@ window.onload = function() {
     tipo1.addEventListener('blur', function() {            
             datos_tabla();
             fomato_tabla();           
+            Estructura_tabla_registro(vinculo);
         }, false
     );      
     tipo1.addEventListener('keypress', function(e) {
@@ -38,6 +39,7 @@ window.onload = function() {
     pg1.addEventListener('blur', function() {            
             datos_tabla();
             fomato_tabla();              
+            Estructura_tabla_registro(vinculo);
         }, false
     );      
     pg1.addEventListener('keypress', function(e) {
@@ -53,6 +55,7 @@ window.onload = function() {
     sp1.addEventListener('blur', function() {            
             datos_tabla();
             fomato_tabla();              
+            Estructura_tabla_registro(vinculo);
         }, false
     );      
     sp1.addEventListener('keypress', function(e) {
@@ -70,6 +73,7 @@ window.onload = function() {
     py1.addEventListener('blur', function() {            
             datos_tabla();
             fomato_tabla();              
+            Estructura_tabla_registro(vinculo);
         }, false
     );      
     py1.addEventListener('keypress', function(e) {
@@ -84,6 +88,7 @@ window.onload = function() {
     obj1.addEventListener('blur', function() {            
             datos_tabla();
             fomato_tabla();              
+            Estructura_tabla_registro(vinculo);
         }, false
     );      
     obj1.addEventListener('keypress', function(e) {
@@ -98,6 +103,7 @@ window.onload = function() {
     ff1.addEventListener('blur', function() {            
             datos_tabla();
             fomato_tabla();              
+            Estructura_tabla_registro(vinculo);
         }, false
     );      
     ff1.addEventListener('keypress', function(e) {
@@ -113,6 +119,7 @@ window.onload = function() {
     of1.addEventListener('blur', function() {            
             datos_tabla();
             fomato_tabla();              
+            Estructura_tabla_registro(vinculo);
         }, false
     );      
     of1.addEventListener('keypress', function(e) {
@@ -126,6 +133,7 @@ window.onload = function() {
     dpt1.addEventListener('blur', function() {            
             datos_tabla();
             fomato_tabla();              
+            Estructura_tabla_registro(vinculo);
         }, false
     );      
     dpt1.addEventListener('keypress', function(e) {

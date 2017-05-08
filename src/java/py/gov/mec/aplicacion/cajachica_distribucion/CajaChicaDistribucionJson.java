@@ -55,6 +55,7 @@ public class CajaChicaDistribucionJson extends HttpServlet {
         } 
         finally 
         {
+            out.println("[]");    
             out.close();
         }
     }
