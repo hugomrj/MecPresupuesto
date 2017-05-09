@@ -2,6 +2,20 @@
 
 window.onload = function() {
                
+    // cargar estado de path
+    var estado = getParametroValor("estado");    
+    if (estado != "0" )
+    {
+        var doci_estado = document.getElementById( 'doci_estado');
+        doci_estado.value = estado;
+    }
+    else
+    {
+        window.location = "../Documento/Lista.jspx";
+    }
+               
+               
+               
               
     var doci_expediente_numero = document.getElementById( 'doci_expediente_numero');
     if (doci_expediente_numero.value == ""){

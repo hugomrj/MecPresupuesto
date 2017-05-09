@@ -85,20 +85,20 @@
                         </div>
                     </article>                      
                     
-
-
-                    <article class = "botones-footer">
-                        <div class ="commandbutton">
-                            <a href="../Documento/Agregar.jspx" class="botonEnlace">Agregar</a>
-                        </div>                                                                             
-                    </article> 
-
                     
+                   <article class = "botones-footer">
+ 
+                        <div class ="commandbutton">
+                            <a href="../Documento/Agregar.jspx?estado=1" class="botonEnlace">Entrada documento.</a>
+                        </div>                                
+                                  
+                        <div class ="commandbutton">
+                            <a href="../Documento/Agregar.jspx?estado=5" class="botonEnlace">Elaborar documento</a>
+                        </div>                        
 
+                   </article>                         
+                    
                 </section>
-                
-                
-                                    
                 
                 
                 

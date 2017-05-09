@@ -85,6 +85,14 @@
                                 hidden="hidden" 
                                 value="0"
                                 />             
+
+                            
+                            <input  TYPE="TEXT" 
+                                name="estado"
+                                id = "doci_estado" 
+                                hidden="hidden" 
+                                value="0"
+                                />      
                             
                             
                             <div class = "SinEnfoque" >                                

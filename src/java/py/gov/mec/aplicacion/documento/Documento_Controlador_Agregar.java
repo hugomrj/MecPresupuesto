@@ -59,15 +59,22 @@ public class Documento_Controlador_Agregar extends HttpServlet {
                     // guarda moviemiento en documentos con estado Entrada
                     Usuario usuario = new Usuario();
 
-                    DocumentoMovimiento docmov = new DocumentoMovimiento();
-                    docmov.setUsuario(usuario.getSession(request));
-                    docmov.setDocumento(instancia);
+                    
+                    
+                    
+                    DocumentoMovimiento doc_movimiento = new DocumentoMovimiento();
+                    doc_movimiento.setUsuario(usuario.getSession(request));
+                    doc_movimiento.setDocumento(instancia);
 
-                    DocumentoMovimientoEstado estado = new DocumentoMovimientoEstado();
-                    estado.setId(1);
+                    
+                    DocumentoMovimientoEstado estadoDocumento = new DocumentoMovimientoEstado();
+                    
+                    Integer estado = Integer.parseInt(request.getParameter("estado")) ;                                           
+                     
+                    estadoDocumento.setId(estado);
 
-                    docmov.setEstado(estado);
-                    persistencia.insert(docmov);            
+                    doc_movimiento.setEstado(estadoDocumento);
+                    persistencia.insert(doc_movimiento);            
 
                     out.println(instancia.getId());      
 
