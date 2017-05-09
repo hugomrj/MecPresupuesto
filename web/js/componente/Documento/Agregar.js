@@ -130,14 +130,19 @@ function DocumentoAgregar_validacion (  ){
     
     
     // si el valor de disponible es menor a lo certificado
+   
     
+    /*
     var doci_expediente_numero = document.getElementById('doci_expediente_numero');        
     if (doci_expediente_numero.value == 0) {
         alerta_error("Falta numero de expediente");
         document.getElementById('doci_expediente_numero').focus();
         return false;
     }         
-    
+    */
+   
+   
+   
     var doci_fecha_documento = document.getElementById('doci_fecha_documento');    
     if (doci_fecha_documento.value == '') {
         alerta_error("El valor de la fecha del documento esta vacio");
