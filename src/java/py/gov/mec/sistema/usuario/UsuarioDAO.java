@@ -38,9 +38,7 @@ public class UsuarioDAO  {
         public List<Map<String, Object>>  ListaSimple  ( )                
             throws Exception {
                 
-                statement = conexion.getConexion().createStatement();         
-         
-                
+                statement = conexion.getConexion().createStatement();    
                 String sql = 
                         " SELECT usuario, cuenta " +
                         "  FROM sistema.usuarios " +
@@ -48,9 +46,7 @@ public class UsuarioDAO  {
                         "   " ;
                 
                 resultset = statement.executeQuery(sql);     
-                
                 return lista.resultsetToList(resultset ) ;
-             
     }          
         
 
@@ -59,8 +55,6 @@ public class UsuarioDAO  {
                 
             
                 statement = conexion.getConexion().createStatement();         
-                
-                
                 String sql = 
                         " SELECT usuario, cuenta " +
                         "  FROM sistema.usuarios " +
@@ -68,7 +62,6 @@ public class UsuarioDAO  {
                         "   " ;                
                 
                 resultset = statement.executeQuery(sql);     
-                
                 return lista.resultsetToList(resultset ) ;
              
     }            

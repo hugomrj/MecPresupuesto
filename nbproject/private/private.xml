@@ -3,8 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/Direccion/Lista.jspx</file>
-            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/Direccion/jspf/CollectionLista.jspx</file>
+            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/js/componente/Anteproyecto/Tipo.js</file>
+            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/js/componente/Documento/Editar.js</file>
+            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/src/java/py/gov/mec/aplicacion/estructura/tipo/Tipo.java</file>
+            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/Documento/Lista.jspx</file>
+            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/js/utilidad/funciones.js</file>
+            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/Anteproyecto/Tipo.jspx</file>
+            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/Documento/Editar.jspx</file>
+            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/src/java/py/gov/mec/aplicacion/estructura/EstructuraDAO.java</file>
+            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/WEB-INF/xml/Tipo.xml</file>
+            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/src/java/py/gov/mec/aplicacion/documento/DocumentoJSON.java</file>
+            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/js/componente/Documento/Registro.js</file>
+            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/Documento/Agregar.jspx</file>
+            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/js/componente/Documento/Agregar.js</file>
+            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/src/java/py/gov/mec/aplicacion/documento/Documento_Controlador_Agregar.java</file>
         </group>
     </open-files>
 </project-private>

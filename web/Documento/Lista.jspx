@@ -89,11 +89,11 @@
                    <article class = "botones-footer">
  
                         <div class ="commandbutton">
-                            <a href="../Documento/Agregar.jspx?estado=1" class="botonEnlace">Entrada documento.</a>
+                            <a href="../Documento/Agregar.jspx?estado=1" class="botonEnlace">Entrada doc.</a>
                         </div>                                
                                   
                         <div class ="commandbutton">
-                            <a href="../Documento/Agregar.jspx?estado=5" class="botonEnlace">Elaborar documento</a>
+                            <a href="../Documento/Agregar.jspx?estado=5" class="botonEnlace">Elaborar doc.</a>
                         </div>                        
 
                    </article>                         

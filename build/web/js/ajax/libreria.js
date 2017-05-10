@@ -257,6 +257,7 @@ function alerta_error(mensaje){
             indice = Number(indice) + 1;
         }
     }
+    mensaje = null;
 }
 
 

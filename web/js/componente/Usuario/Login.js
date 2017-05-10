@@ -1,12 +1,11 @@
 
 
-
 window.onload = function() {
             
     var mensaje = AjaxUrl('MensajeAction');    
     alerta_error(mensaje); 
-    AjaxUrl('SessionErase.do');    
-    
+    AjaxUrl('MensajeRemove');    
+    mensaje = null;
 
     var cuenta = document.getElementById('cuenta');        
     cuenta.onfocus  = function() {                

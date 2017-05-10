@@ -36,6 +36,10 @@ public class UsuarioControllerLogin extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) 
             throws IOException, Exception  {
                 
+        
+        response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");        
+        
+        
                 
         if (request.getHeader("referer") == null) {
             response.sendRedirect("../login.jspx");    

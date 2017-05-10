@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<root>
+    
+    <table 
+        name="estructura.tipos">            
+        
+            <id name="tipo"/>
+            <column name="descripcion"/>                        
+
+    </table>
+    
+</root>

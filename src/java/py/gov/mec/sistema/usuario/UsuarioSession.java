@@ -35,8 +35,9 @@ public class UsuarioSession extends HttpServlet {
             {        
                 Usuario usuario = new Usuario();
                 usuario = usuario.getSession(request);                
-                out.println(usuario.getUsuario());     
+                out.println(usuario.getUsuario().toString().trim());     
             }
+
 
     }
 
