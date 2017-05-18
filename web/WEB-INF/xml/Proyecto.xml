@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<root>
+    
+    <table 
+        name="estructura.proyectos">            
+        
+            <id name="id"/>
+            <column name="tp"/> 
+            <column name="pg"/> 
+            <column name="sp"/> 
+            <column name="py"/> 
+            <column name="subprograma"  foreign = "Subprograma" /> 
+            <column name="descripcion"/>                        
+
+    </table>
+    
+</root>

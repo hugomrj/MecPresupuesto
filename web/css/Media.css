@@ -213,7 +213,7 @@ input{
 
 label{
     display:table-cell;
-    vertical-align:middle;
+    vertical-align:top;
     width: 20%;
     background: inherit;
 }
@@ -354,7 +354,6 @@ ul#listaProcesos li .active {
 
 
 
-
 /* TABLAS */
 
 .tableA, .tableB, .tableD {
@@ -411,11 +410,12 @@ ul#listaProcesos li .active {
     font-size: 0.8em;
     }
 
-.tableA  td ,
-.tableD  td {
-    font-size: 15px;
-    }
-
+.tableA td,
+.tableD td {    
+    font-size: 0.95rem;
+}
+    
+    
     
     
 .tableC table, th, td {    
@@ -749,8 +749,16 @@ ul#tabs li .active {
     float: right;
 }
 
-.right-aling{
+
+td.numero{    
+    padding-right: 3px;
     text-align: right;
+}
+
+.right-aling{
+    padding-right: 3px;
+    text-align: right;
+    
 };
 
 
@@ -844,6 +852,51 @@ ul#tabs li .active {
         padding: 1rem; 
         cursor: pointer;
         /*border-bottom: solid 1px;*/
+}
+
+
+
+
+/* tabla con div*/
+
+div.tabla
+{
+	clear: none;
+	overflow: auto;
+}
+
+div.fila
+{
+	clear: both;
+}
+
+div.col_titulo
+{
+	float: left;
+	padding: 0.2rem;
+	background: #F0E0A0;
+	border-color: #F0E0A0;
+	border-style: solid;
+	border-right-width: 0px;
+	border-left-width: 0px;
+	border-top-width: 0px;
+	border-bottom-width: 1px;
+}
+
+div.col
+{
+	float: left;
+	padding: 0.2rem;
+              font-size: 0.94rem;
+        
+	/*border-color: #F0E0A0;
+	border-style: solid;*/
+                border-style: none;
+	border-right-width: 0px;
+	border-left-width: 0px;
+	border-top-width: 1px;
+	border-bottom-width: 0px;
+        
 }
 
 

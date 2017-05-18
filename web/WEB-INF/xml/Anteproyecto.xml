@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<root>
+    
+    <table 
+        name="presupuesto.anteproyecto2017">            
+        
+            <id name="id"/>            
+            <column name="tp"/>                        
+            <column name="pg"/>                        
+            <column name="sp"/>                        
+            <column name="py"/>                        
+            <column name="obj"/>                        
+            <column name="ff"/>                        
+            <column name="of"/>                        
+            <column name="dpt"/>                        
+            <column name="producto"/>                        
+            <column name="vigente"/>                        
+            <column name="ideal"/>                        
+            
+
+    </table>
+    
+</root>

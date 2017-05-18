@@ -55,7 +55,7 @@ function Documento_sub_Registro (   ){
 };
 
 
-    function  Documento_sub_tabla (tabla , largo, ancho ){
+function  Documento_sub_tabla (tabla , largo, ancho ){
 
         //tabla tab rol
         var tabla_coleccion = document.getElementById( tabla ).getElementsByTagName('tbody')[0];

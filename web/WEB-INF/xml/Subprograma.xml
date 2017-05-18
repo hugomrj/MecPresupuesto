@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<root>
+    
+    <table 
+        name="estructura.subprogramas">            
+        
+            <id name="id"/>
+            <column name="tp"/> 
+            <column name="pg"/> 
+            <column name="sp"/> 
+            <column name="programa"  foreign = "Programa" /> 
+            <column name="descripcion"/>                        
+
+    </table>
+    
+</root>

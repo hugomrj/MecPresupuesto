@@ -153,8 +153,26 @@ function mostrarVentana(elementoDOM)
     document.getElementById(elementoDOM).style.position = 'absolute' ;
     document.getElementById(elementoDOM).style.display = 'block' ;
     document.getElementById(elementoDOM).style.width = '100%' ;
-    document.getElementById(elementoDOM).style.height = '100%' ;
+    //document.getElementById(elementoDOM).style.height = '100%' ;
+    
+    var altura = document.body.scrollHeight;
+    document.getElementById(elementoDOM).style.height = altura;
+  
+    //tamaño del monitor
+    //alert((screen.width + " x " + screen.height) );
+   
+    
+    
+/*
+    window.onresize = function() 
+    {               
+        alert(elementoDOM + "2");
+    } ;
+*/
+  
+    
 }
+
 
 
 
@@ -167,7 +185,9 @@ function asignarValor(elementoDOM, valor )
 function dimensionarVentana(elementoDOM, ancho, alto)
 {
 
+
     var ventana = document.getElementById(elementoDOM);
+
 
     var valor_ancho = ancho + "px";
     var valor_alto = alto + "px";
@@ -176,7 +196,7 @@ function dimensionarVentana(elementoDOM, ancho, alto)
     ventana.style.setProperty('left', '50%');
 
     ventana.style.setProperty('width', valor_ancho);
-    ventana.style.setProperty('height', valor_alto);
+    //ventana.style.setProperty('height', valor_alto);
 
     ventana.style.setProperty('margin-top', '-'+(alto/2)+'px');
     ventana.style.setProperty('margin-left', '-'+(ancho/2)+'px');
@@ -185,6 +205,18 @@ function dimensionarVentana(elementoDOM, ancho, alto)
 //    ventana.style.setProperty('border', '1px solid');
 
     ventana.style.setProperty('height', null);
+
+    /*
+    ventana.style.setProperty('margin-right', 'auto');
+    ventana.style.setProperty('margin-left', 'auto');
+*/
+  
+  
+  ventana.style.setProperty('position', 'fixed');
+  /*
+  ventana.style.setProperty('width', ancho);
+  ventana.style.setProperty('margin', '0 auto');
+  */
 
     ventana.className = 'cc-border';
 

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<root>
+    
+    <table 
+        name="estructura.programas">            
+        
+            <id name="id"/>
+            <column name="tp"  foreign = "Tipo" /> 
+            <column name="pg"/>                        
+            <column name="descripcion"/>                        
+
+    </table>
+    
+</root>
+

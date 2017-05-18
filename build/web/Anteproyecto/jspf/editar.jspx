@@ -1,0 +1,87 @@
+
+<jsp:root version="2.0"
+    xmlns:jsp="http://java.sun.com/JSP/Page" 
+    xmlns:c="http://java.sun.com/jsp/jstl/core">
+    
+        
+        
+            <article>
+                <h4></h4>
+            </article>            
+        
+        
+        
+        <article>
+
+            <form 
+                action="../../Anteproyecto/Controlador/Editar" 
+                method="post" 
+                id="antee_form" 
+                name='proya_form'
+                style="width: 100%;"
+                >
+                
+
+                <input  TYPE="hidden"
+                            name="id"  
+                            id="antea_id"
+                            value="0"
+                            />                
+
+
+                    <div class = "SinEnfoque">
+                        <label for="vigente" style="padding-left :30px;">Vigente:</label> 
+                        <input TYPE="text" 
+                                name="vigente" 
+                                id="proya_vigente"     
+                                class="right-aling"
+                                value="0"
+                                size="20"                          
+                                />
+                    </div>                             
+
+                    <div class = "SinEnfoque">
+                        <label for="ideal" style="padding-left :30px;">Ideal:</label> 
+                        <input TYPE="text" 
+                                name="ideal" 
+                                id="proya_ideal"     
+                                class="right-aling"
+                                value="0"
+                                size="20"                          
+                                />
+                    </div>   
+                
+
+                <br/>
+
+            </form>
+            
+        </article>
+
+    
+
+            <article class = "botones-footer">
+
+                <div id="busqueda_footer">
+
+                    <div class ="commandbutton">
+                        <a href="javascript:void(0);" 
+                           id ="antee_aceptar"
+                           class="botonEnlace" >Aceptar</a>
+                    </div>                                
+
+                    <div class ="commandbutton">
+                        <a href="javascript:void(0);" 
+                           id ="antee_cerrar"
+                           class="botonEnlace" >Cerrar</a>
+                    </div>                                
+
+                </div> 
+
+            </article>    
+    
+    
+</jsp:root>
+                
+
+

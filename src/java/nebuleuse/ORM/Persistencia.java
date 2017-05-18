@@ -705,8 +705,6 @@ public class Persistencia {
             strWhere =" WHERE "+strWhere;
         }
     
-        
-        
         return strSelect + " " + strFrom +" "+strWhere ;   
       
     }    
@@ -822,17 +820,8 @@ public class Persistencia {
                     }
                     else if (classDato == Date.class) 
                     {
-                        
-System.out.println( metodoSet );                        
-System.out.println(valorCampo);                                                   
-//System.out.println( Datetime.castDate(valorCampo));
-System.out.println( "sale de cast");
-
-
                         // aca posiblente se le tenga que poner un formateardo de fechas
                         metodoSet.invoke(instanciaObjeto, Datetime.castDate(valorCampo));
-                        
-
                         
                     }
                     else

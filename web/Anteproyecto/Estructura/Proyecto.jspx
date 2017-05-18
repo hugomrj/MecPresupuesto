@@ -14,22 +14,23 @@
 
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=2.0" />
     <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
-    <jsp:directive.include file="../WEB-INF/jspf/sessiones.jspf"/>
+    
 
 
         <style type="text/css" >
-            @import "../css/Basic.css" ;
-            @import "../css/Media.css" ;
-            @import "../css/themes/SteelBlue.css";
+            @import "../../css/Basic.css" ;
+            @import "../../css/Media.css" ;
+            @import "../../css/themes/SteelBlue.css";
         </style>
 
 
 
         <script type="text/javascript">
-            <jsp:include page="../js/ajax/libreria.js" />
-            <jsp:include page="../js/utilidad/funciones.js"/>
-            <jsp:include page="../js/componente/Anteproyecto/Tipo.js"/>
-                        
+            <jsp:include page="../../js/ajax/libreria.js" />
+            <jsp:include page="../../js/utilidad/funciones.js"/>
+            <jsp:include page="../../js/componente/Anteproyecto/Proyecto.js"/>
+            <jsp:include page="../../js/componente/Proyecto/agregar.js"/>
+                
         </script>
 
 
@@ -63,13 +64,18 @@
                     
                     <br/>                    
                     <article>
-                        <h4>Tipos presupuestarios</h4>  
+                        <h4>Proyectos</h4>  
                     </article>
 
-                                       
-                    <br/><br/>
+
                     
+                    <article>
+                        <div id="cabecera_body">                            
+                        </div>
+                    </article>                            
                     
+                    <br/>
+
                     <article>
                         <div id="tab_body">                            
                         </div>
@@ -79,14 +85,14 @@
                    <article class = "botones-footer">
  
                         <div class ="commandbutton">
-                            <a href="../Documento/Agregar.jspx?estado=1" class="botonEnlace">Entrada doc.</a>
+                            <a href="javascript:void(0);" 
+                               class="botonEnlace"
+                               id ="proy_agregar">
+                                Agregar</a>
                         </div>                                
-                                  
-                        <div class ="commandbutton">
-                            <a href="../Documento/Agregar.jspx?estado=5" class="botonEnlace">Elaborar doc.</a>
-                        </div>                        
 
-                   </article>                         
+                   </article>                          
+                     
                     
                 </section>
                 

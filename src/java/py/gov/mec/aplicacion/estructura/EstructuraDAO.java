@@ -87,7 +87,6 @@ public class EstructuraDAO  {
             throws Exception {
             
                 statement = conexion.getConexion().createStatement();         
-
                 
                 String sql = 
                     "  SELECT id, tp, pg, sp, py, obj, ff, of, dpt\n" +
@@ -101,6 +100,179 @@ public class EstructuraDAO  {
     }          
             
     
+    public List<Map<String, Object>>  Cabecera (Integer tp)
+            throws Exception {
+        
+        statement = conexion.getConexion().createStatement();         
+        String sql = "";
+        
+            if (tp == null)
+            {
+                tp = 0;
+            }                            
+                sql = " "+                        
+                    "  	SELECT 1 as orden, 'Tipo' as titulo, tipo cod, descripcion \n" +
+                    "	FROM estructura.tipos \n" +
+                    "	WHERE tipo =  " + tp ;
+                
+                resultset = statement.executeQuery(sql);                     
+                return lista.resultsetToList(resultset ) ;
+             
+    }             
+            
+
+    public List<Map<String, Object>>  Cabecera (Integer tp, Integer pg)
+            throws Exception {
+        
+        statement = conexion.getConexion().createStatement();         
+        String sql = "";
+        
+            if (tp == null)
+            {
+                tp = 0;
+            }                            
+                sql = " "+                        
+                    "  	SELECT 1 as orden, 'Tipo' as titulo, tipo cod, descripcion \n" +
+                    "	FROM estructura.tipos \n" +
+                    "	WHERE tipo =  " + tp  +
+                    "  	union\n" +
+                    "	SELECT 2 as orden, 'Programa' as titulo, pg as cod, descripcion\n" +
+                    "	FROM estructura.programas\n" +
+                    "	where tp = \n" + tp  +
+                    "	and pg = \n" + pg  +
+                    "	order by orden"; 
+                
+                resultset = statement.executeQuery(sql);                     
+                return lista.resultsetToList(resultset ) ;
+             
+    }             
+                
+
+
+    public List<Map<String, Object>>  Cabecera (Integer tp, Integer pg, Integer sp)
+            throws Exception {
+        
+        statement = conexion.getConexion().createStatement();         
+        String sql = "";
+        
+            if (tp == null)
+            {
+                tp = 0;
+            }                            
+                sql = " "+                        
+                    "  	SELECT 1 as orden, 'Tipo' as titulo, tipo cod, descripcion \n" +
+                    "	FROM estructura.tipos \n" +
+                    "	WHERE tipo =  " + tp  +
+                    "  	union\n" +
+                    "	SELECT 2 as orden, 'Programa' as titulo, pg as cod, descripcion\n" +
+                    "	FROM estructura.programas\n" +
+                    "	where tp = \n" + tp  +
+                    "	and pg = \n" + pg  +
+                    "            union\n" +
+                    "	SELECT 3 as orden, 'Sub programa' as titulo, sp as cod, descripcion\n" +
+                    "	FROM estructura.subprogramas\n" +
+                    "	where tp = \n" + tp  +
+                    "	and pg = \n" + pg  +
+                    "	and sp = \n" + sp +
+                    "	order by orden\n" +
+                    "                   "; 
+                
+                resultset = statement.executeQuery(sql);                     
+                return lista.resultsetToList(resultset ) ;
+             
+    }    
+    
+    
+    
+    
+    public List<Map<String, Object>>  Cabecera (Integer tp, Integer pg, Integer sp, Integer py)
+            throws Exception {
+        
+        statement = conexion.getConexion().createStatement();         
+        String sql = "";
+        
+            if (tp == null)
+            {
+                tp = 0;
+            }              
+            
+            sql = " "+                        
+                "  	SELECT 1 as orden, 'Tipo' as titulo, tipo cod, descripcion \n" +
+                "	FROM estructura.tipos \n" +
+                "	WHERE tipo =  " + tp  +
+                "  	union\n" +
+                "	SELECT 2 as orden, 'Programa' as titulo, pg as cod, descripcion\n" +
+                "	FROM estructura.programas\n" +
+                "	where tp = \n" + tp  +
+                "	and pg = \n" + pg  +
+                "            union\n" +
+                "	SELECT 3 as orden, 'Sub programa' as titulo, sp as cod, descripcion\n" +
+                "	FROM estructura.subprogramas\n" +
+                "	where tp = \n" + tp  +
+                "	and pg = \n" + pg  +
+                "	and sp = \n" + sp +
+                "	union\n" +
+                "	SELECT  4 as orden, 'Proyecto' as titulo, py as cod, descripcion\n" +
+                "	FROM estructura.proyectos\n" +
+                "	where tp = \n" + tp  +
+                "	and pg = \n" + pg  +
+                "	and sp = \n" + sp  +
+                "	and py = \n" + py  +
+                "	order by orden" +
+                "                   "; 
+                
+                resultset = statement.executeQuery(sql);                     
+                return lista.resultsetToList(resultset ) ;
+             
+    }             
+               
+    public List<Map<String, Object>>  Cabecera (Integer tp, Integer pg, Integer sp, Integer py,
+            Integer pr )
+            throws Exception {
+        
+        statement = conexion.getConexion().createStatement();         
+        String sql = "";
+        
+            if (tp == null)
+            {
+                tp = 0;
+            }              
+            
+            sql = " "+                        
+                "  	SELECT 1 as orden, 'Tipo' as titulo, tipo cod, descripcion \n" +
+                "	FROM estructura.tipos \n" +
+                "	WHERE tipo =  " + tp  +
+                "  	union\n" +
+                "	SELECT 2 as orden, 'Programa' as titulo, pg as cod, descripcion\n" +
+                "	FROM estructura.programas\n" +
+                "	where tp = \n" + tp  +
+                "	and pg = \n" + pg  +
+                "            union\n" +
+                "	SELECT 3 as orden, 'Sub programa' as titulo, sp as cod, descripcion\n" +
+                "	FROM estructura.subprogramas\n" +
+                "	where tp = \n" + tp  +
+                "	and pg = \n" + pg  +
+                "	and sp = \n" + sp +
+                "	union\n" +
+                "	SELECT  4 as orden, 'Proyecto' as titulo, py as cod, descripcion\n" +
+                "	FROM estructura.proyectos\n" +
+                "	where tp = \n" + tp  +
+                "	and pg = \n" + pg  +
+                "	and sp = \n" + sp  +
+                "	and py = \n" + py  +
+                "	union\n" +
+                "           SELECT 5 as orden, 'Producto' as titulo, producto as cod, descripcion\n" +
+                "           FROM public.productos\n" +
+                "           where producto  = \n" + pr +
+                "           order by orden \n" +
+                "           ;"; 
+                
+                resultset = statement.executeQuery(sql);                     
+                return lista.resultsetToList(resultset ) ;
+             
+    }             
+               
     
     
 }
+

@@ -6,9 +6,11 @@
 package com.itx.execute;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import nebuleuse.ORM.Persistencia;
+import nebuleuse.ORM.Secuencia;
 import nebuleuse.util.Cadena;
 import nebuleuse.util.Datetime;
 import py.gov.mec.aplicacion.cajachica_certificacion.CajaChicaCertificacionDAO;
@@ -16,6 +18,10 @@ import py.gov.mec.aplicacion.cajachica_distribucion.CajaChicaDistribucion;
 import py.gov.mec.aplicacion.cajachica_distribucion.CajaChicaDistribucionDAO;
 import py.gov.mec.aplicacion.cajachica_ejecucion.CajaChicaEjecucionDAO;
 import py.gov.mec.aplicacion.documento.Documento;
+import py.gov.mec.aplicacion.estructura.EstructuraDAO;
+import py.gov.mec.estructura.programa.Programa;
+import py.gov.mec.estructura.programa.ProgramaDAO;
+import py.gov.mec.presupuesto.anterproyecto.Anteproyecto;
 
 /**
  *
@@ -29,60 +35,18 @@ public class NewMain {
     public static void main(String[] args) throws Exception {
         // TODO code application logic here
         
-    /*  
-        CajaChicaEjecucionDAO dao = new CajaChicaEjecucionDAO();
-        
-        
-        List<Map<String, Object>> list =  dao.SaldoMesAnterior(20,4);
-        //dao.SaldoMesAnterior(20,13);
-        
-
-        
-        for (Map<String, Object> map : list) {
-            for (Map.Entry<String, Object> entry : map.entrySet()) 
-            {
-                if (entry.getKey().trim().equals("saldo_anterior") )
-                {
-                    System.out.println(entry.getValue());
-                }
-            }
-        }
-        */
-        
-        
-            CajaChicaDistribucion instancia = new CajaChicaDistribucion();
-            Persistencia persistencia = new Persistencia();
-                    
-            CajaChicaCertificacionDAO  certificacionDAO = new CajaChicaCertificacionDAO();  
+    
             
-
+        
+            Anteproyecto ante = new Anteproyecto();
+            Persistencia p = new Persistencia();
             
-                // se extrae el registro del plan financiero con sus valores pasados por formulario
-                
-                instancia = (CajaChicaDistribucion) persistencia.filtrarId(instancia, 3);
-                instancia.setPf4(15000666L);
-                
-      
-                
-                
-                boolean control;
-                control = certificacionDAO.actualizarSaldo(instancia );
-         
-                
-                
-                if (control == true){
-                    persistencia.update(instancia);
-                }
-                else
-                {
-                    throw new Exception("No se puede actualizar");
-                }
-
-                
-
-        
-        
-        
+            ante = (Anteproyecto) p.filtrarId(ante, 621);
+            p.delete(ante);
+            
+            //ante.setIdeal(108L);            
+            //p.insert(ante);
+   
     }
     
 }
