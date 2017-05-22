@@ -1,0 +1,149 @@
+
+<jsp:root version="2.0"
+    xmlns:jsp="http://java.sun.com/JSP/Page" 
+     xmlns:c="http://java.sun.com/jsp/jstl/core"
+     xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+    
+    
+        <table
+               id="anteobjpro_tabla"
+               class="tableE">
+                        
+                <thead>
+                    
+                    <tr>                       
+                        
+                        <th colspan="6"></th>
+                        <th style="width:120px;">vigente</th>
+                        <th style="width:120px;">ideal</th>
+                        <th style="width:120px;">diferencia</th>                        
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    
+                    <c:set var="linea_anterior" scope="page" value="${0}"/>                    
+                    <c:set var="suma_linea" scope="page" value="${0}"/>
+                    <c:set var="contador_linea" scope="page" value="${0}"/>                    
+
+                    
+                    <c:forEach items="${lista}" var ="lista" >
+
+                        <c:set var="linea_actual" scope="page" value="${lista.obj}${lista.ff}${lista.of}"/>
+                      
+                            <c:choose>
+                                <c:when test="${linea_anterior != 0}">                                    
+                        
+                                    <c:choose>
+                                        <c:when test="${linea_anterior != linea_actual}">                                    
+
+                                            <c:choose>
+                                                <c:when test="${contador_linea != 1}">                                    
+
+                                                    <tr
+                                                        data-linea_clase ="subtotal">                                
+                                                        
+                                                            <td colspan="6"></td>
+                                                            <td>${suma_linea}</td>
+                                                            <td>0</td>
+                                                            <td>0</td>
+
+                                                    </tr>         
+
+                                                </c:when>     
+                                            </c:choose>                                           
+
+                                        </c:when>     
+                                    </c:choose>                         
+                        
+                                </c:when>     
+                            </c:choose>                         
+                        
+                        
+                        
+                            <c:choose>
+                                <c:when test="${linea_anterior != linea_actual}">
+                                    
+                                    <c:set var="suma_linea" scope="page" value="${0}"/>                    
+                                    <c:set var="contador_linea" scope="page" value="${0}"/>                    
+                                    
+                                    <tr data-linea_clase ="vacio">
+                                        <td colspan="9"></td></tr>                                        
+                                    <tr data-linea_clase ="vacio">
+                                        <td colspan="9"></td></tr>                                        
+                                    
+                                    <tr 
+                                        data-linea_tp ="${lista.tp}"
+                                        data-linea_pg ="${lista.pg}"
+                                        data-linea_sp ="${lista.sp}"
+                                        data-linea_py ="${lista.py}"
+                                        data-linea_clase ="titulo_objeto"
+                                        >                                            
+                                            <td>${lista.obj}</td>
+                                            <td>${lista.ff}</td>
+                                            <td>${lista.of}</td>
+                                            <td colspan="6">${lista.objetos}</td>
+                                    </tr>         
+
+                                </c:when>     
+                            </c:choose>                        
+                        
+                                    <c:set var="contador_linea" scope="page" value="${contador_linea + 1}"/>                                                        
+                        
+                                    <tr 
+                                        data-linea_tp ="${lista.tp}"
+                                        data-linea_pg ="${lista.pg}"
+                                        data-linea_sp ="${lista.sp}"
+                                        data-linea_py ="${lista.py}"
+                                        data-linea_clase ="monto"
+                                        >                                            
+                                            <td colspan="2"></td>
+                                            <td colspan="2">${lista.producto}</td>
+                                            <td colspan="2">${lista.productos}</td>
+                                            
+                                            <td>${lista.vigente}</td>
+                                            <td>${lista.ideal}</td>
+                                            <td>${lista.diferencia}</td>                                            
+                                            
+                                    </tr>    
+             
+                                     
+                        
+                        <c:set var="linea_anterior" scope="page" value="${lista.obj}${lista.ff}${lista.of}"/>
+                        <c:set var="suma_linea" scope="page" value="${suma_linea + lista.vigente}"/>                    
+                        
+                    </c:forEach>
+                                    
+
+                                    
+                                                                                                                      
+
+                            <c:choose>
+                                <c:when test="${contador_linea != 1}">                                    
+
+                                    <tr
+                                      data-linea_clase ="subtotal">   
+
+                                            <td colspan="6"></td>
+                                            <td>${suma_linea}</td>
+                                            <td>0</td>
+                                            <td>0</td>
+
+                                    </tr>         
+
+                                </c:when>     
+                            </c:choose>                                           
+
+                                                    
+                                    
+                </tbody>
+                
+        </table>
+
+
+    
+    
+</jsp:root>
+                
+
+

@@ -216,6 +216,7 @@ label{
     vertical-align:top;
     width: 20%;
     background: inherit;
+    padding-top: 10px;
 }
 
 
@@ -434,7 +435,11 @@ ul#listaProcesos li .active {
     border: none; 
 }        
 
-    
+.tableE table, th, td {    
+    border: none;    
+    font-weight: normal;
+}
+        
 
 
 /*boton de enlace*/

@@ -81,17 +81,19 @@
                         </div>
                     </article>                      
                     
-                    
+
+
                    <article class = "botones-footer">
  
                         <div class ="commandbutton">
                             <a href="javascript:void(0);" 
                                class="botonEnlace"
-                               id ="prod_agregar">
-                                Agregar</a>
+                               id ="prod_consulta_objetos">
+                                Consulta objetos</a>
                         </div>                                
 
                    </article>                          
+                  
                      
                     
                 </section>

@@ -71,6 +71,40 @@ public class AnteproyectoDAO  {
 
 
 
+    public List<Map<String, Object>>  ObjetoProductoLista  ( Integer tp, Integer pg, Integer sp,
+            Integer py)
+            throws Exception {
+            
+                statement = conexion.getConexion().createStatement();         
+
+                
+                String sql = "   " +                        
+                "	SELECT  tp, pg, sp, py, presu.obj, ff, of, presu.producto, \n" +
+                "		productos.descripcion productos,\n" +
+                "		objetos.descripcion objetos,\n" +
+                "		sum(vigente) vigente, sum(ideal) ideal,\n" +
+                "		sum(vigente) -  sum(ideal) diferencia\n" +
+                "	FROM presupuesto.anteproyecto2017 presu\n" +
+                "	  inner join public.productos on \n" +
+                "	  (presu.producto = productos.producto)\n" +
+                "	  left join objetos on \n" +
+                "	  (presu.obj = objetos.obj)\n" +
+                "	WHERE tp = \n" + tp +
+                "	and pg = \n" + pg +
+                "	and sp = \n" + sp +
+                "	and py = \n" + py +
+                "	group by  tp, pg, sp, py, presu.obj, ff, of, presu.producto, productos.descripcion, objetos.descripcion\n" +
+                "	order by  tp, pg, sp, py, presu.obj, ff, of, presu.producto\n" +
+                " ";
+    
+                resultset = statement.executeQuery(sql);     
+                
+                return lista.resultsetToList(resultset ) ;
+             
+    }          
+           
+    
+    
     
     
     

@@ -1,42 +1,31 @@
+    
+    
+    
+    
+    
+    var id = 0;
+    var tp = 0;
+    var pg = 0;
+    var sp = 0;
+    var py = 0;
+
+
+
 
 window.onload = function() {
     
-    var id = getParametroValor("id");   
-    var tp = getParametroValor("tp");   
-    var pg = getParametroValor("pg");   
-    var sp = getParametroValor("sp");   
-    var py = getParametroValor("py");   
-    //var pr = getParametroValor("pr");   
     
     
-    AjaxPeticion('../../Estructura/Cabecera?tp='+tp+"&pg="+pg+"&sp="+sp+"&py="+py
-        ,'cabecera_body');              
+    id = getParametroValor("id");   
+    tp = getParametroValor("tp");   
+    pg = getParametroValor("pg");   
+    sp = getParametroValor("sp");   
+    py = getParametroValor("py");   
     
     
-    AjaxPeticion('../../Producto/Presupuesto/Lista?tp='+tp+"&pg="+pg+"&sp="+sp+"&py="+py
-        ,'tab_body');  
     
-    ProyectoPresupuesto_TablaRegistro();
-
-
-/*
-
-    var proy_agregar = document.getElementById('proy_agregar');
-    proy_agregar.addEventListener('click',
-        function() {   
-                    
-                mostrarVentana('capa_oscura');
-                mostrarVentana('capa_clara');                           
-                dimensionarVentana('capa_clara', 900, 250);                    
-                
-                AjaxPeticion( '../../Proyecto/jspf/agregar.jspx' , 'capa_clara' );     
-            
-                Proyecto_agregar (id, tp, pg, sp );
-                
-        },
-        false
-    );    
-    */
+    Producto_formulario();
+    
    
 };
 
@@ -95,3 +84,36 @@ function ProyectoPresupuesto_TablaRegistro_Formato (){
     }    
 }
 
+
+
+function Producto_formulario(){
+    
+    
+    AjaxPeticion('../../Estructura/Cabecera?tp='+tp+"&pg="+pg+"&sp="+sp+"&py="+py
+        ,'cabecera_body');              
+        
+    AjaxPeticion('../../Producto/Presupuesto/Lista?tp='+tp+"&pg="+pg+"&sp="+sp+"&py="+py
+        ,'tab_body');  
+    
+    ProyectoPresupuesto_TablaRegistro();
+
+
+
+
+    var prod_consulta_objetos = document.getElementById('prod_consulta_objetos');
+    prod_consulta_objetos.addEventListener('click',
+        function() {   
+              
+              
+            window.location = "../../Anteproyecto/Consulta/Objetos.jspx?tp="+tp
+                    +"&pg="+pg+"&sp="+sp+"&py="+py;  
+        },
+        false
+    );    
+
+    
+    
+    
+    
+    
+}
