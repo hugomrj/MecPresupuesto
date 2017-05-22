@@ -22,6 +22,7 @@ import py.gov.mec.aplicacion.estructura.EstructuraDAO;
 import py.gov.mec.estructura.programa.Programa;
 import py.gov.mec.estructura.programa.ProgramaDAO;
 import py.gov.mec.presupuesto.anterproyecto.Anteproyecto;
+import py.gov.mec.sistema.usuario.Usuario;
 
 /**
  *
@@ -38,12 +39,11 @@ public class NewMain {
     
             
         
-            Anteproyecto ante = new Anteproyecto();
-            Persistencia p = new Persistencia();
-            
-            ante = (Anteproyecto) p.filtrarId(ante, 621);
-            p.delete(ante);
-            
+        Usuario usuario = new Usuario();
+        usuario = Usuario.existeUsuario("hugo","");
+        
+        
+        System.out.println(usuario.getUsuario());
             //ante.setIdeal(108L);            
             //p.insert(ante);
    

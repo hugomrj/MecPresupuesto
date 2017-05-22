@@ -57,9 +57,11 @@ public class Documento_Coleccion_Lista extends HttpServlet {
         */
 
         Usuario usuario = new Usuario();
-        usuario.getSession(request);
+        usuario = usuario.getSession(request);
+        
+        
         if (usuario != null){
-          
+            
             DocumentoDAO documentos = new DocumentoDAO();   
             List<Map<String, Object>> rows = documentos.ListaEstado(strBuscar.toString().trim(),
                     usuario.getUsuario() );        

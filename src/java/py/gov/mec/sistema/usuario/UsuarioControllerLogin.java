@@ -71,6 +71,7 @@ public class UsuarioControllerLogin extends HttpServlet {
         else
         {
             
+            
             request.getSession().setAttribute("SessionUsuario", usuario);
                                    
             response.sendRedirect("../Menu/Indice.jspx");                     

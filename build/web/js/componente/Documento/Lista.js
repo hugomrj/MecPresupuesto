@@ -40,6 +40,8 @@ function Documento_tabla_lista ( ){
             AjaxPeticion('../Documento/Coleccion/Lista?buscar='
                 +document.getElementById('buscar').value 
                 ,'tab_body');          
+                
+                
             Documento_sub_Registro( );
             Formato_documento_lista_tabla();                
     

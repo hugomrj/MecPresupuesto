@@ -67,13 +67,19 @@ public class Usuario {
               
         Usuario u = new Usuario();
         u = (Usuario) request.getSession().getAttribute("SessionUsuario");
-      
-        if (u== null)
+        
+        
+        
+        if (u == null)
         {  
+
             return null;
         }
         else
         {
+System.out.println("get session usuario");            
+System.out.println(u.getUsuario());            
+            
             return u;
         }
 

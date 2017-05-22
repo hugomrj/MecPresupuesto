@@ -35,7 +35,8 @@ public class DocumentoDAO  {
     
     public List<Map<String, Object>>  ListaEstado ( String buscar, Integer usuario )
             throws Exception {
-            
+    
+
         
             String condicionBusqueda = "";
             
@@ -91,7 +92,7 @@ public class DocumentoDAO  {
 "  and ultimo.documento = documentos.id \n" +
 "  and ultimo.coddoc =  documentos_movimiento.id \n" +
 "  and sistema.usuarios.usuario = public.documentos_movimiento.usuario \n" +
-"  and sistema.usuarios.usuario  = 1\n" +
+"  and sistema.usuarios.usuario  = \n" + usuario +
 "  and (documentos_movimiento.estado = 1 or documentos_movimiento.estado = 2)\n" +
 "\n" +
 " union\n" +
