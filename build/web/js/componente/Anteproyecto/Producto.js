@@ -94,17 +94,17 @@ function ProyectoPresupuesto_TablaRegistro_Formato (){
         cell = table.rows[i].cells[2] ;                                  
         cell.innerHTML = formatoNumero_p(cell.innerHTML).trim(); 
         cell.className = "numero";
-        cell.style.fontWeight = "600";
+        
 
         cell = table.rows[i].cells[3] ;                                  
         cell.innerHTML = formatoNumero_p(cell.innerHTML).trim(); 
         cell.className = "numero";        
-        cell.style.fontWeight = "600";
+        
         
         cell = table.rows[i].cells[4] ;                                  
         cell.innerHTML = formatoNumero_p(cell.innerHTML).trim(); 
         cell.className = "numero";                
-        cell.style.fontWeight = "600";
+        
         
     }    
     

@@ -418,6 +418,17 @@ ul#listaProcesos li .active {
     font-size: 0.95rem;
 }
     
+.tableA tfoot tr td 
+{
+    font-weight: 600;
+    padding-top: 1rem;
+    border: 0px ;
+    border-top: 2px solid;
+}
+
+
+
+
 
 .tableD tfoot tr  td {    
     border-bottom: 1px solid ;
@@ -459,8 +470,16 @@ ul#listaProcesos li .active {
 .tableE tfoot tr td 
 {
     font-weight: 600;
-    
 }
+
+.tableE tfoot tr td 
+{
+    font-weight: 600;
+    padding-top: 1rem;
+    border-top: 1px solid;
+}
+
+
 
 
 

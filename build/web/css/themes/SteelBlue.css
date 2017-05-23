@@ -28,7 +28,8 @@ h1, h2,  h3, h4, h5, h6{
 }
 
 
-.tableC thead tr th {
+.tableC thead tr th
+{
     border-color: steelblue;
 }
 
@@ -56,10 +57,19 @@ h1, h2,  h3, h4, h5, h6{
 .tableB th,
 .tableB tfoot tr td, 
 .tableB tbody,
-.cc-border
+.cc-border,
+.tableE tfoot tr td,
+.tableA tfoot tr td
+
 {
     border-color: #315D81;
 }
+
+
+
+
+
+
 
 .tableA th {
     background: #315D81;
@@ -89,7 +99,9 @@ h1, h2,  h3, h4, h5, h6{
   background: #E4F0FB;
 }
 
-.tableA tbody tr, #pagination .active , .campoRelacionado,
+.tableA tbody tr, 
+#pagination .active , 
+.campoRelacionado,
 .tbusqueda tr,
 .botonEnlace2
 {
