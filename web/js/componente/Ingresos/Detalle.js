@@ -4,11 +4,22 @@ window.onload = function() {
     
     
     var idreg = getParametroValor("idreg");
+    datos_tabla_dite_tabla();
     
     // click en pestañas
         
-    var ingre_pf = document.getElementById('ingre_pf');
-    pestagnas(ingre_pf);         
+    var ingre_pf = document.getElementById('ingre_pf');    
+    pestagnas(ingre_pf); 
+    ingre_pf.addEventListener('click',
+        function() {                
+            pestagnas(ingre_pf);            
+            datos_tabla_dite_tabla();
+        },
+        false
+    );         
+    
+    
+    
     
         
     var ingre_certi = document.getElementById('ingre_certi');
@@ -33,7 +44,7 @@ window.onload = function() {
             
     
     
-    datos_tabla_dite_tabla();
+    //datos_tabla_dite_tabla();
     
     
 };

@@ -44,22 +44,19 @@ h1, h2,  h3, h4, h5, h6{
 */
 
 .tableD tfoot tr  td {
-    
-    border-bottom: 1px solid ;
-    /* border-top: 1px solid ; */
 
     border-bottom-color: steelblue ;
-    /*border-top-color: steelblue ; */
-    
-    padding: 0em ;
+
 }
 
 
 
 /*Color 2 color de base convinada */
 
-.tableB th, .tableB tfoot tr td,  .tableB tbody
-, .cc-border
+.tableB th,
+.tableB tfoot tr td, 
+.tableB tbody,
+.cc-border
 {
     border-color: #315D81;
 }
@@ -74,15 +71,12 @@ h1, h2,  h3, h4, h5, h6{
     border-top-color: #315D81;
 }
 
-.tbusqueda th
-, .tableD th{
+.tbusqueda th, 
+.tableD th,
+.tableE thead tr th 
+{
       color: #315D81;
 }
-
-
-
-
-
 
 
 
@@ -210,7 +204,8 @@ li a:hover {
 
 
 /* White*/
-.tableA th {
+.tableA th
+{
     color: white;
 }
 

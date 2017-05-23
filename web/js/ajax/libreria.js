@@ -556,7 +556,7 @@ function Busqueda_relacionada ( strObjeto, strPrefijo, strRetorno, servlet  )
     var busqueda_registro = function( strObjeto, strPrefijo, strRetorno, servlet )
     {
 
-        var buscar = document.getElementById('buscar');
+        var buscar = document.getElementById('busqueda_id');
         buscar.addEventListener('keyup',
             function(event) {
 

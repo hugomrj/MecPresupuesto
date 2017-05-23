@@ -391,8 +391,10 @@ ul#listaProcesos li .active {
         border-top: 2px solid ;
 }
 
-.tableA  th, .tableA td ,
-.tableD  th, .tableD td 
+.tableA  th, 
+.tableA td ,
+.tableD  th, 
+.tableD td 
 {
     border: 1px solid #eee;
     /*padding: 0.2em 30px;*/
@@ -416,13 +418,21 @@ ul#listaProcesos li .active {
     font-size: 0.95rem;
 }
     
-    
+
+.tableD tfoot tr  td {    
+    border-bottom: 1px solid ;
+    padding: 0em ;
+}
+
+
+
+
     
     
 .tableC table, th, td {    
     border: 1px solid black;    
 }
-    
+  
 .tableC {        
     border-collapse: collapse; 
 }    
@@ -435,11 +445,24 @@ ul#listaProcesos li .active {
     border: none; 
 }        
 
-.tableE table, th, td {    
+
+
+.tableE thead tr th,
+.tableE tbody tr td,
+.tableE tfoot tr td
+{   
     border: none;    
     font-weight: normal;
 }
-        
+
+.tableE thead tr th, 
+.tableE tfoot tr td 
+{
+    font-weight: 600;
+    
+}
+
+
 
 
 /*boton de enlace*/

@@ -55,7 +55,7 @@ function Anteproyecto_consulta_objetos_formato(){
          for (var i=0 ; i < rows.length; i++)
         {
             
-                linea_clase = tabla.rows[i].dataset.linea_clase;                                       
+             linea_clase = tabla.rows[i].dataset.linea_clase;                                       
                     
     
             if (linea_clase.toString().trim() ==  "monto"   )
@@ -80,26 +80,62 @@ function Anteproyecto_consulta_objetos_formato(){
                 cell = tabla.rows[i].cells[1] ;                                  
                 cell.innerHTML = formatoNumero_p(cell.innerHTML).trim(); 
                 cell.className = "numero";    
+                cell.style.fontWeight = "600";
                 
                 cell = tabla.rows[i].cells[2] ;                                  
                 cell.innerHTML = formatoNumero_p(cell.innerHTML).trim(); 
-                cell.className = "numero";                   
+                cell.className = "numero";       
+                cell.style.fontWeight = "600";
                 
                 cell = tabla.rows[i].cells[3] ;                                  
                 cell.innerHTML = formatoNumero_p(cell.innerHTML).trim(); 
-                cell.className = "numero";                                   
-                
-                
+                cell.className = "numero";   
+                cell.style.fontWeight = "600";
+                                
             }               
             
             
-             
-        }
- 
- 
-
-
-
+            if ( linea_clase.toString().trim() ==  "titulo_objeto"  )
+            {
+                
+                cell = tabla.rows[i].cells[0] ;                    
+                cell.style.fontStyle = "italic";                
+                
+                cell = tabla.rows[i].cells[1] ;                    
+                cell.style.fontStyle = "italic";
+                
+                cell = tabla.rows[i].cells[2] ;                    
+                cell.style.fontStyle = "italic";
+                
+                
+                cell = tabla.rows[i].cells[3] ;                    
+                cell.style.fontStyle = "italic";
+                
+            }               
+            
+        } 
+            
+        var tabla = document.getElementById( "anteobjpro_tabla" ).getElementsByTagName('tfoot')[0] ;    
+        var rows = tabla.getElementsByTagName('tr');
+        var cell ;            
+            
+         for (var i=0 ; i < rows.length; i++)
+        {
+                cell = tabla.rows[i].cells[1] ;                                  
+                cell.innerHTML = formatoNumero_p(cell.innerHTML).trim(); 
+                cell.className = "numero";    
+                
+                cell = tabla.rows[i].cells[2] ;                                  
+                cell.innerHTML = formatoNumero_p(cell.innerHTML).trim(); 
+                cell.className = "numero";       
+                
+                cell = tabla.rows[i].cells[3] ;                                  
+                cell.innerHTML = formatoNumero_p(cell.innerHTML).trim(); 
+                cell.className = "numero";   
+                                
+          }                 
+            
+          
 }
 
 

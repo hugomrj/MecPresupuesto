@@ -28,6 +28,13 @@
                     <c:set var="suma_ideal" scope="page" value="${0}"/>
                     <c:set var="suma_diferencia" scope="page" value="${0}"/>
                     
+                    <c:set var="total_suma_vigente" scope="page" value="${0}"/>
+                    <c:set var="total_suma_ideal" scope="page" value="${0}"/>
+                    <c:set var="total_suma_diferencia" scope="page" value="${0}"/>
+                    
+                    
+                    
+                    
                     <c:set var="contador_linea" scope="page" value="${0}"/>                    
 
                     
@@ -120,14 +127,16 @@
                         
                         <c:set var="suma_vigente" scope="page" value="${suma_vigente + lista.vigente}"/>                    
                         <c:set var="suma_ideal" scope="page" value="${suma_ideal + lista.ideal}"/>                    
-                        <c:set var="suma_diferencia" scope="page" value="${suma_diferencia + lista.diferencia}"/>                    
+                        <c:set var="suma_diferencia" scope="page" value="${suma_diferencia + lista.diferencia}"/>     
+                        
+                        <c:set var="total_suma_vigente" scope="page" value="${total_suma_vigente + lista.vigente}"/>                    
+                        <c:set var="total_suma_ideal" scope="page" value="${total_suma_ideal + lista.ideal}"/>                    
+                        <c:set var="total_suma_diferencia" scope="page" value="${total_suma_diferencia + lista.diferencia}"/>     
                         
                         
                     </c:forEach>
                                     
-
-                                    
-                                                                                                                      
+                                                                                    
 
                             <c:choose>
                                 <c:when test="${contador_linea != 1}">                                    
@@ -148,6 +157,20 @@
                                                     
                                     
                 </tbody>
+                
+                <tfoot>                    
+                        <tr
+                          data-linea_clase ="subtotal">   
+
+                                <td colspan="6"></td>
+                                <td>${total_suma_vigente}</td>
+                                <td>${total_suma_ideal}</td>
+                                <td>${total_suma_diferencia}</td>
+
+                        </tr>                                
+                </tfoot>
+                
+                
                 
         </table>
 

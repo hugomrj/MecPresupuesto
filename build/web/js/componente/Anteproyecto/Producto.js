@@ -82,6 +82,38 @@ function ProyectoPresupuesto_TablaRegistro_Formato (){
         cell.className = "numero";                
         
     }    
+    
+
+    var table = document.getElementById( "prod_tabla" ).getElementsByTagName('tfoot')[0] ;
+    var rows = table.rows.length;
+    var cell ;
+ 
+ 
+    for(i=0; i<rows; i++)
+    {      
+        cell = table.rows[i].cells[2] ;                                  
+        cell.innerHTML = formatoNumero_p(cell.innerHTML).trim(); 
+        cell.className = "numero";
+        cell.style.fontWeight = "600";
+
+        cell = table.rows[i].cells[3] ;                                  
+        cell.innerHTML = formatoNumero_p(cell.innerHTML).trim(); 
+        cell.className = "numero";        
+        cell.style.fontWeight = "600";
+        
+        cell = table.rows[i].cells[4] ;                                  
+        cell.innerHTML = formatoNumero_p(cell.innerHTML).trim(); 
+        cell.className = "numero";                
+        cell.style.fontWeight = "600";
+        
+    }    
+    
+    
+    
+    
+    
+    
+    
 }
 
 
