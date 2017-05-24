@@ -99,14 +99,16 @@ function Anteproyecto_consulta_objetos_formato(){
             {
                 
                 cell = tabla.rows[i].cells[0] ;                    
-                cell.style.fontStyle = "italic";                
+                cell.style.fontStyle = "italic";       
+                cell.style.paddingLeft = "1rem";       
                 
                 cell = tabla.rows[i].cells[1] ;                    
                 cell.style.fontStyle = "italic";
+                cell.style.paddingLeft = "1rem";       
                 
                 cell = tabla.rows[i].cells[2] ;                    
                 cell.style.fontStyle = "italic";
-                
+                cell.style.paddingLeft = "1rem";                       
                 
                 cell = tabla.rows[i].cells[3] ;                    
                 cell.style.fontStyle = "italic";
