@@ -85,6 +85,11 @@
                         </div>
                     </article>                      
                     
+                    <article>
+                        <div id="div_paginacion">                            
+                        </div>
+                    </article>                    
+                    
                     
                    <article class = "botones-footer">
  

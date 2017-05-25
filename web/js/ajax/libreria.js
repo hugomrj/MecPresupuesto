@@ -682,3 +682,48 @@ function Busqueda_relacionada ( strObjeto, strPrefijo, strRetorno, servlet  )
     botones_sub_paginacion ( strObjeto, strPrefijo, strRetorno, servlet );
 
 }
+
+
+
+    function paginacionajax ( fn )
+    {
+      
+        var listaUL = document.getElementById( "pagination" );
+        var uelLI = listaUL.getElementsByTagName('li');
+        
+        var paginaActual = listaUL.dataset.paginaactual;
+                
+        for (var i=0 ; i < uelLI.length; i++)
+        {
+            datapag = uelLI[i].dataset.pagina;     
+
+            if (!(datapag == "act"  || datapag == "det"  ))
+            {
+
+                uelLI[i].addEventListener ( 'click',
+                    function() {                                      
+                        
+                            switch (this.dataset.pagina)
+                            {
+                               case "sig": 
+                                   page = parseInt(paginaActual) +1;
+                                   break;
+
+                               case "ant": 
+                                   page = parseInt(paginaActual) - 1;
+                                    break;
+
+                               default:  
+                                    page = this.childNodes[0].innerHTML.toString().trim();
+                            }                            
+                            
+                            eval( fn );
+                            
+                        },
+                        false
+                    );                
+                
+            }            
+        }           
+            
+    }

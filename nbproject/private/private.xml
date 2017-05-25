@@ -3,13 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/css/themes/SteelBlue.css</file>
-            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/js/componente/Anteproyecto/Consulta/Objetos.js</file>
+            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/WEB-INF/jspf/paginacion.jspx</file>
+            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/src/java/py/gov/mec/aplicacion/documento/Documento_Coleccion_Lista.java</file>
+            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/Certificacion/Detalle.jspx</file>
+            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/src/java/nebuleuse/GUI/web/Paginacion.java</file>
             <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/Anteproyecto/jspf/ObjetoProductoLista.jspx</file>
-            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/Anteproyecto/Consulta/Objetos.jspx</file>
-            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/css/Media.css</file>
-            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/js/componente/Anteproyecto/Producto.js</file>
-            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/Producto/jspf/PresupuestoLista.jspx</file>
+            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/js/componente/Documento/Lista.js</file>
+            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/WEB-INF/jspf/pagination.jspf</file>
+            <file>file:/C:/Users/hugo/Documents/NetBeansProjects/MecPresupuesto/web/Documento/Lista.jspx</file>
         </group>
     </open-files>
 </project-private>

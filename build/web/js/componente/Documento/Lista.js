@@ -1,9 +1,16 @@
 
+var page = 1;
+
+
 
 window.onload = function() {
    
+
+   
+    page = getParametroValor('page'); 
+    
+    Documento_tabla_lista ( );
   
-  Documento_tabla_lista ( );
   
     // darle funcionalidad a buscar
     var buscar = document.getElementById('buscar');
@@ -32,18 +39,23 @@ function Documento_tabla_lista ( ){
         {
             session = session.toString().trim();
         }        
-
+           
         
-        
-
-
             AjaxPeticion('../Documento/Coleccion/Lista?buscar='
-                +document.getElementById('buscar').value 
+                +document.getElementById('buscar').value  
+                +"&page="+page
                 ,'tab_body');          
                 
+            // ´paginacion                                
+            var totalregistros = document.getElementById("doc_tabla").dataset.totalregistros;  
+            AjaxPeticion('../Paginacion?page='+page+"&totalregistros="+totalregistros
+                ,'div_paginacion');     
+                
+            paginacionajax ( "Documento_tabla_lista ( );"  );
                 
             Documento_sub_Registro( );
             Formato_documento_lista_tabla();                
+    
     
 }
 
@@ -120,34 +132,7 @@ function Formato_documento_lista_tabla (){
         cell = table.rows[i].cells[0] ;                                  
         cell.innerHTML = formatoNumero_p(cell.innerHTML); 
 
-/*        
-        cell = table.rows[i].cells[1] ;                                  
-        cell.innerHTML = formatoFecha(cell.innerHTML.toString().trim()); 
-*/
-
-
-//alert(rows[i].dataset.usuario);
-
-
     }    
     
-
-
-/*
-    //  obtener codigo de usuario
-    session = AjaxUrl ("../Usuario/Session") ;
-    if (session == null){
-        session = 0;
-    }        
-    else
-    {
-        session = session.toString().trim();
-    }
- */
-
-
-
-
-
 
 }

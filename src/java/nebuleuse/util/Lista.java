@@ -22,11 +22,14 @@ import nebuleuse.ORM.xml.Global;
 public class Lista {
 
     public Integer lineas ;
+    public Integer l = Integer.parseInt(new Global().getValue("lineasLista"));
         
     public Lista() throws IOException {
         
         Global global = new Global();                
         this.lineas = Integer.parseInt(global.getValue("lineasLista"));
+        
+        
         
     }
     

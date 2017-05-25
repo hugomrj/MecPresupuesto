@@ -72,14 +72,10 @@ public class Usuario {
         
         if (u == null)
         {  
-
             return null;
         }
         else
         {
-System.out.println("get session usuario");            
-System.out.println(u.getUsuario());            
-            
             return u;
         }
 

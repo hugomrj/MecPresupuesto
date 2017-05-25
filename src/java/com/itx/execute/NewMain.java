@@ -18,6 +18,7 @@ import py.gov.mec.aplicacion.cajachica_distribucion.CajaChicaDistribucion;
 import py.gov.mec.aplicacion.cajachica_distribucion.CajaChicaDistribucionDAO;
 import py.gov.mec.aplicacion.cajachica_ejecucion.CajaChicaEjecucionDAO;
 import py.gov.mec.aplicacion.documento.Documento;
+import py.gov.mec.aplicacion.documento.DocumentoDAO;
 import py.gov.mec.aplicacion.estructura.EstructuraDAO;
 import py.gov.mec.estructura.programa.Programa;
 import py.gov.mec.estructura.programa.ProgramaDAO;
@@ -37,13 +38,11 @@ public class NewMain {
         // TODO code application logic here
         
     
-            
+        DocumentoDAO doc = new DocumentoDAO();
         
-        Usuario usuario = new Usuario();
-        usuario = Usuario.existeUsuario("hugo","");
-        
-        
-        System.out.println(usuario.getUsuario());
+        doc.ListaEstado("", 1, 1);
+
+
             //ante.setIdeal(108L);            
             //p.insert(ante);
    

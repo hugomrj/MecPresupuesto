@@ -34,26 +34,38 @@ public class Documento_Coleccion_Lista extends HttpServlet {
             throws ServletException, IOException, Exception {
                 
         response.setContentType("text/html;charset=UTF-8");        
-                
+
+
+
+        // pagina        
+        Integer page = 1;
+        try {            
+            if (request.getParameter("page") != null){
+                page = Integer.parseInt( request.getParameter("page") );
+            }
+        } catch (NumberFormatException nfe){
+          page =  1;
+        }        
+        
+
+
+        
         // busqueda
         String strBuscar = "";
         strBuscar = (String) request.getParameter("buscar");        
-
-        
-        
-        if (strBuscar == null)
-        {
+               
+        if (strBuscar == null){
             strBuscar = "";        
         }
-
         strBuscar = strBuscar.toString().trim();
 
-        /*
         
+        
+        
+        /*        
         Secuencia<Documento> lista = new Secuencia<Documento>();         
         List<Documento> direcciones = new ArrayList<Documento>();  
-        direcciones = lista.buscarTodos(new Documento(), strBuscar);
-        
+        direcciones = lista.buscarTodos(new Documento(), strBuscar);        
         */
 
         Usuario usuario = new Usuario();
@@ -64,9 +76,11 @@ public class Documento_Coleccion_Lista extends HttpServlet {
             
             DocumentoDAO documentos = new DocumentoDAO();   
             List<Map<String, Object>> rows = documentos.ListaEstado(strBuscar.toString().trim(),
-                    usuario.getUsuario() );        
+                    usuario.getUsuario(), page );        
           
-            request.setAttribute("lista", rows);
+            request.setAttribute("lista", rows);            
+            request.setAttribute("totalRegistros", documentos.totalRegistros);
+            
         }
         
         request.getRequestDispatcher("/Documento/jspf/CollectionLista.jspx").include(request, response);                
