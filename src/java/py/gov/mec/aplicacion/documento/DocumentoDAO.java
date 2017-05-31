@@ -39,6 +39,11 @@ public class DocumentoDAO  {
     public List<Map<String, Object>>  ListaEstado ( String buscar, Integer usuario, Integer page )
             throws Exception {
     
+        
+            this.lineas = 10;
+        
+            
+            
             page = (page==0) ? 1 : page;
         
             page = (lineas * page) - lineas ;        

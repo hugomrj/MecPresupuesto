@@ -247,12 +247,18 @@ li a:hover {
 
 /*  capas  */
 /*  standard     opacity: 0.3;     opacity: 1;   */
-#capa_oscura, #capa_oscura_segunda
+#capa_oscura, 
+#capa_oscura_segunda,
+#capa_oscura3
 {
      background-color: rgba(47, 79, 79, .3);
 }
 
- #capa_busqueda, #capa_clara_primera, #capa_clara_segunda, #capa_clara
+ #capa_busqueda, 
+ #capa_clara_primera, 
+ #capa_clara_segunda, 
+ #capa_clara,
+ #capa_clara3
 {
  background-color: white;
 }

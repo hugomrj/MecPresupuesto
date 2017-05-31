@@ -331,6 +331,17 @@ function qcoma (strnumero){
     
 }
 
+function quitapunto (strnumero){
+    
+    var buscar="." 
+    var resultado = 0;
+    
+    resultado =  strnumero.replace(/[.]/gi,'');
+    return resultado;      
+    
+}
+
+
 
 
 function convertirFecha(str) {

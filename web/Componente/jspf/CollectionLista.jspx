@@ -1,0 +1,46 @@
+
+<jsp:root version="2.0"
+    xmlns:jsp="http://java.sun.com/JSP/Page" 
+     xmlns:c="http://java.sun.com/jsp/jstl/core">
+    
+    
+        <table class="tableA"
+               id="com_tabla">
+            
+            
+                <thead>
+                    <tr>
+                       
+                        <th>componente</th>
+                        <th style="width:350px;">descripcion</th>
+                        <th>ideal</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    
+                    <c:forEach items="${lista}" var ="lista" >
+
+                        <tr 
+                            data-linea_id ="${lista.componente}"
+                            data-linea_eje ="${lista.eje}"
+                            data-linea_com ="${lista.componente}"
+                            >     
+                            
+                            <td>${lista.componente}</td>
+                            <td> ${lista.descripcion} </td>         
+                            <td> ${lista.ideal} </td>         
+                            
+                        </tr>  
+                    </c:forEach>
+                </tbody>
+                
+        </table>
+
+
+    
+</jsp:root>
+                
+
+

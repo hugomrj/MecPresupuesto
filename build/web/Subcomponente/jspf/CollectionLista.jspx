@@ -1,0 +1,46 @@
+
+<jsp:root version="2.0"
+    xmlns:jsp="http://java.sun.com/JSP/Page" 
+     xmlns:c="http://java.sun.com/jsp/jstl/core">
+    
+    
+        <table class="tableA"
+               id="subcom_tabla">
+            
+            
+                <thead>
+                    <tr>
+                       
+                        <th>subcom</th>
+                        <th style="width:350px;">descripcion</th>
+                        <th>ideal</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    
+                    <c:forEach items="${lista}" var ="lista" >
+
+                        <tr 
+                            data-linea_id ="${lista.id}"
+                            data-linea_com ="${lista.componente}"
+                            data-linea_scom ="${lista.id}"
+                            >     
+                            
+                            <td>${lista.id}</td>
+                            <td> ${lista.descripcion} </td>         
+                            <td> ${lista.ideal} </td>         
+                            
+                        </tr>  
+                    </c:forEach>
+                </tbody>
+                
+        </table>
+
+
+    
+</jsp:root>
+                
+
+

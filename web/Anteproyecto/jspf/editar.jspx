@@ -78,7 +78,45 @@
 
                 </div> 
 
-            </article>    
+            </article>
+
+
+                    <article>
+        
+                        <div id="ingre_pf" style="display: inline-table; padding: 1rem; "> 
+                            Sub componentes
+                        </div>   
+                        
+
+                        <div id="distri_subcom">       
+                            d
+                        </div>        
+        
+
+                        <br/>
+
+
+                            <article class = "botones-footer">
+
+                               <div class ="commandbutton">
+                                   <a href="javascript:void(0);"
+                                   id = "antee_subcom"
+                                   class="botonEnlace2">Relacionar SubCom</a>
+                               </div>
+
+
+                                
+
+
+
+                            </article>                         
+
+
+                        
+        
+                </article>
+
+    
     
     
 </jsp:root>

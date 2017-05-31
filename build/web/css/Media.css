@@ -668,7 +668,9 @@ ul#tabs li .active {
 
 /*  formulario busqueda  */
 
-#capa_oscura, #capa_oscura_segunda
+#capa_oscura, 
+#capa_oscura_segunda,
+#capa_oscura3 
    {
        top: 0px;
        left: 0px;
@@ -684,7 +686,10 @@ ul#tabs li .active {
 }
 
 
- #capa_clara, #capa_clara_primera, #capa_clara_segunda
+ #capa_clara, 
+ #capa_clara_primera, 
+ #capa_clara_segunda,
+ #capa_clara3
  {
      display: none;
  }

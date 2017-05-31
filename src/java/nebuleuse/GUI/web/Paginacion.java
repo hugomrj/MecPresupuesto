@@ -7,10 +7,6 @@ package nebuleuse.GUI.web;
 
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -19,7 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import nebuleuse.ORM.xml.Global;
-import py.gov.mec.aplicacion.estructura.EstructuraDAO;
+
 
 /**
  *
@@ -49,8 +45,6 @@ public class Paginacion extends HttpServlet {
             response.setContentType("text/html;charset=UTF-8");
 //            PrintWriter out = response.getWriter();
             
-            
-            
             Integer pagina = 1;
             try {            
                 if (request.getParameter("page") != null){
@@ -71,18 +65,23 @@ public class Paginacion extends HttpServlet {
             } catch (NumberFormatException nfe){
               totalRegistros =  0;
             }                    
-            
-            
-            
-            
+    
             Integer lineas = Integer.parseInt(new Global().getValue("lineasLista"));
-            
+            try {            
+                if (request.getParameter("lineas") != null){
+                    lineas = Integer.parseInt( request.getParameter("lineas") );
+                }
+            } catch (NumberFormatException nfe){
+              lineas =  1;
+            }            
+
+
+//
+
             // este poner por configuracion
             final Integer BLOQUES = 12;
             Integer cantidadPaginas = totalRegistros / lineas ;            
             
-            
-
             if ((cantidadPaginas * lineas ) < totalRegistros)
             {
                 cantidadPaginas++;

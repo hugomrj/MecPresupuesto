@@ -45,13 +45,18 @@ function Documento_tabla_lista ( ){
                 +document.getElementById('buscar').value  
                 +"&page="+page
                 ,'tab_body');          
+                                
                 
-            // ´paginacion                                
+            // paginacion                                
             var totalregistros = document.getElementById("doc_tabla").dataset.totalregistros;  
             AjaxPeticion('../Paginacion?page='+page+"&totalregistros="+totalregistros
+                +"&lineas=10"
                 ,'div_paginacion');     
                 
-            paginacionajax ( "Documento_tabla_lista ( );"  );
+            paginacionajax ( "Documento_tabla_lista();"  );
+            
+            
+            
                 
             Documento_sub_Registro( );
             Formato_documento_lista_tabla();                

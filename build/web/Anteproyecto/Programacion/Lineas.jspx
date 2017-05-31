@@ -7,6 +7,7 @@
 
 
 
+
 <jsp:root version="2.0"
         xmlns:jsp="http://java.sun.com/JSP/Page"
           xmlns:c="http://java.sun.com/jsp/jstl/core"
@@ -30,6 +31,8 @@
             <jsp:include page="../../js/utilidad/funciones.js"/>
             <jsp:include page="../../js/componente/Anteproyecto/Programacion/Lineas.js"/>
             <jsp:include page="../../js/componente/Anteproyecto/jspf/editar.js"/>
+            <jsp:include page="../../js/componente/DistribucionSubcomponente/agregar.js"/>
+            <jsp:include page="../../js/componente/DistribucionSubcomponente/registro.js"/>
             
 
                 
@@ -120,6 +123,11 @@
                     </div>
                 </div>                    
 
+            
+                <div id="capa_oscura3">
+                    <div id="capa_clara3">
+                    </div>
+                </div>                  
 
         </body>
         

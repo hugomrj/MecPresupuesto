@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<root>
+    
+    <table 
+        name="estructura.subcomponentes">            
+        
+            <id name="id"/>
+            <column name="componente"/>             
+            <column name="descripcion"/>                        
+
+    </table>
+    
+</root>

@@ -63,10 +63,96 @@ function AnteproyectoObjeto_TablaRegistro_registro_editar ( id  ){
     );       
     
     
+
+        // aca traer subcomponentes relacionados
+        DistribucionSubcomponente_subtabla(id);
+    
+
+    
     
     
     
 }
+
+function DistribucionSubcomponente_subtabla(id)
+{
+
+        AjaxPeticion('../../DistribucionSubcomponente/Coleccion/Lista?id='+id,
+        'distri_subcom');   
+        
+        DistribucionSubcomponente_subtabla_Registro();
+        
+        
+        
+        var antee_subcom = document.getElementById("antee_subcom");
+        antee_subcom.addEventListener('click',
+            function() {   
+
+                    AjaxPeticion( '../../DistribucionSubcomponente/jspf/agregar.jspx' , 'capa_clara_segunda' );
+                    mostrarVentana('capa_oscura_segunda');
+                    mostrarVentana('capa_clara_segunda');                                                       
+                    dimensionarVentana('capa_clara_segunda', 900, 250);        
+                    
+                    DistribucionSubcomponente_agregar(id);
+            },
+            false
+        );               
+    
+}
+
+
+
+function  DistribucionSubcomponente_subtabla_Registro ( ){
+
+        var tabla_coleccion = document.getElementById( 'presusubcom_tabla' ).getElementsByTagName('tbody')[0];
+        var rows = tabla_coleccion.getElementsByTagName('tr');
+
+
+        for (var i=0 ; i < rows.length; i++)
+        {
+            rows[i].addEventListener ( 'click',
+                function() {                                        
+              
+                    registroid = this.dataset.linea_id;                                       
+                   
+                    AjaxPeticion( '../../DistribucionSubcomponente/jspf/registro.jspx' , 'capa_clara_segunda' );
+                    mostrarVentana('capa_oscura_segunda');
+                    mostrarVentana('capa_clara_segunda');                                                       
+                    dimensionarVentana('capa_clara_segunda', 900, 250);                   
+                
+                    DistribucionSubcomponente_registro ( registroid );
+                    
+                },
+                false
+            );
+        }
+        DistribucionSubcomponente_subtabla_Formato();
+        
+    }
+
+
+
+
+
+
+
+function DistribucionSubcomponente_subtabla_Formato (){
+
+    var table = document.getElementById( "presusubcom_tabla" ).getElementsByTagName('tbody')[0] ;
+    var rows = table.rows.length;
+    var cell ;
+ 
+    for(i=0; i<rows; i++)
+    {      
+        cell = table.rows[i].cells[2] ;                                  
+        cell.innerHTML = formatoNumero_p(cell.innerHTML);
+        cell.className = "numero";
+    }    
+}
+
+
+
+
 
 
 
@@ -93,6 +179,7 @@ function AnteproyectoJson(id)
 
 
 function AnteproyectoObjeto_TablaRegistro_registro_validacion(){
+    
     
     return true;
 }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<root>
+    
+    <table 
+        name="estructura.propositos">            
+        
+            <id name="id"/>
+            <column name="subcomponente"/>             
+            <column name="descripcion"/>                        
+
+    </table>
+    
+</root>

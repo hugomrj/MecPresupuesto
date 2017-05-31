@@ -25,33 +25,7 @@ window.onload = function() {
 
     AnteproyectoObjeto_funcionalidad();        
         
-    //AnteproyectoObjeto_TablaRegistro();
 
-/*
-    var linea_agregar = document.getElementById('linea_agregar');    
-    linea_agregar.style.display = 'none';
-   */
-  
-  
-   /* 
-    linea_agregar.addEventListener('click',
-        function() {   
-            
-                mostrarVentana('capa_oscura');
-                mostrarVentana('capa_clara');                           
-                dimensionarVentana('capa_clara', 900, 250);                    
-      
-      
-      
-                AjaxPeticion( '../../Proyecto/jspf/agregar.jspx' , 'capa_clara' );     
-                Proyecto_agregar (id, tp, pg, sp );
-      
-                
-        },
-        false
-    );    
-   */
-   
    
 };
 
@@ -69,22 +43,13 @@ function  AnteproyectoObjeto_TablaRegistro ( ){
                 function() {                                        
               
                     registroid = this.dataset.linea_id;                                       
-                    /*
-                    dtp = this.dataset.linea_tp;             
-                    dpg = this.dataset.linea_pg;                         
-                    dsp = this.dataset.linea_sp;                         
-                    dpy = this.dataset.linea_py;                         
-                    
-                    window.location = "../Estructura/Producto.jspx?id="+registroid
-                        +"&tp="+dtp+"&pg="+dpg+"&sp="+dsp+"&py="+dpy;                              
-                    */
                    
                 mostrarVentana('capa_oscura');
                 mostrarVentana('capa_clara');                         
                 AjaxPeticion( '../../Anteproyecto/jspf/editar.jspx' , 'capa_clara' );                                          
                 dimensionarVentana('capa_clara', 600, 450);                   
                 
-//                   CajachicaCertificacion_agregar( evt.target.uoc_id, evt.target.mes );           
+       
                 AnteproyectoObjeto_TablaRegistro_registro_editar(registroid);
                    
                 },
