@@ -1,8 +1,6 @@
 
 window.onload = function() {
           
-
-                
           
     
     var id = getParametroValor("id");   
@@ -63,4 +61,64 @@ function  Subprograma_sub_Registro ( ){
             );
         }
         
+        Subprograma_tabla_formato ( );
+        
+    }
+
+
+
+
+function  Subprograma_tabla_formato ( ){
+
+
+        var table = document.getElementById( 'subp_tabla' ).getElementsByTagName('tbody')[0];
+        var rows = table.getElementsByTagName('tr');
+
+
+        for (var i=0 ; i < rows.length; i++)
+        {
+    
+            cell = table.rows[i].cells[2] ;                                  
+            cell.innerHTML = formatoNumero_p(cell.innerHTML).trim(); 
+            cell.className = "numero";
+
+            cell = table.rows[i].cells[3] ;                                  
+            cell.innerHTML = formatoNumero_p(cell.innerHTML).trim(); 
+            cell.className = "numero";        
+
+            cell = table.rows[i].cells[4] ;                                  
+            cell.innerHTML = formatoNumero_p(cell.innerHTML).trim(); 
+            cell.className = "numero";       
+    
+        }
+      
+    
+    
+    
+    var table = document.getElementById( "subp_tabla" ).getElementsByTagName('tfoot')[0] ;
+    var rows = table.rows.length;
+    var cell ;
+ 
+ 
+    for(i=0; i<rows; i++)
+    {      
+        cell = table.rows[i].cells[2] ;                                  
+        cell.innerHTML = formatoNumero_p(cell.innerHTML).trim(); 
+        cell.className = "numero";
+        
+
+        cell = table.rows[i].cells[3] ;                                  
+        cell.innerHTML = formatoNumero_p(cell.innerHTML).trim(); 
+        cell.className = "numero";        
+        
+        
+        cell = table.rows[i].cells[4] ;                                  
+        cell.innerHTML = formatoNumero_p(cell.innerHTML).trim(); 
+        cell.className = "numero";                
+        
+        
+    }    
+           
+    
+    
     }

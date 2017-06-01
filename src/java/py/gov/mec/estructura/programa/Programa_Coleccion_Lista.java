@@ -49,14 +49,17 @@ public class Programa_Coleccion_Lista extends HttpServlet {
             tp = Integer.parseInt( request.getParameter("tp"));       
         }
                 
+        
         ProgramaDAO dao = new ProgramaDAO();
-        List<Programa> rows = new ArrayList<Programa>();  
-        rows = dao.Lista(tp);
+        List<Map<String, Object>> rows = dao.ListaSuma(tp);        
                 
+        
+        
         request.setAttribute("lista", rows);
         
         request.getRequestDispatcher("/Programa/jspf/CollectionLista.jspx").include(request, response);        
 
+      
         
     }
 

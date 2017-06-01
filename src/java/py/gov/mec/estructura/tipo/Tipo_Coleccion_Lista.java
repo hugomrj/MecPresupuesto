@@ -52,7 +52,7 @@ public class Tipo_Coleccion_Lista extends HttpServlet {
         
           
         TipoDAO tipo = new TipoDAO();   
-        List<Map<String, Object>> rows = tipo.Lista();        
+        List<Map<String, Object>> rows = tipo.ListaSuma();        
 
         request.setAttribute("lista", rows);
 

@@ -10,6 +10,7 @@ package py.gov.mec.estructura.proyecto;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -45,10 +46,10 @@ public class Proyecto_Coleccion_Lista extends HttpServlet {
             id = Integer.parseInt( request.getParameter("id"));       
         }
                 
+        
         ProyectoDAO dao = new ProyectoDAO();
-        List<Proyecto> rows = new ArrayList<Proyecto>();  
-        rows = dao.Lista(id);
-                
+        List<Map<String, Object>> rows = dao.ListaSuma(id);                
+        
         request.setAttribute("lista", rows);        
         request.getRequestDispatcher("/Proyecto/jspf/CollectionLista.jspx").include(request, response);        
         

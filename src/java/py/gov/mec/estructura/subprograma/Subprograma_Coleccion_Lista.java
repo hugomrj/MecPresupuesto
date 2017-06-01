@@ -11,6 +11,7 @@ package py.gov.mec.estructura.subprograma;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -47,9 +48,8 @@ public class Subprograma_Coleccion_Lista extends HttpServlet {
         }
                 
         SubprogramaDAO dao = new SubprogramaDAO();
-        List<Subprograma> rows = new ArrayList<Subprograma>();  
-        rows = dao.Lista(id);
-                
+        List<Map<String, Object>> rows = dao.ListaSuma(id);            
+                        
         request.setAttribute("lista", rows);
         
         request.getRequestDispatcher("/Subprograma/jspf/CollectionLista.jspx").include(request, response);        

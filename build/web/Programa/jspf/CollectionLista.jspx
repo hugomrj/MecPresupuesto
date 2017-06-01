@@ -4,6 +4,11 @@
      xmlns:c="http://java.sun.com/jsp/jstl/core">
     
     
+    <c:set var="suma_vigente" scope="page" value="${0}"/>  
+    <c:set var="suma_ideal" scope="page" value="${0}"/>  
+    <c:set var="suma_diferencia" scope="page" value="${0}"/>          
+    
+    
         <table class="tableA"
                id="prog_tabla">
             
@@ -13,6 +18,9 @@
                        
                         <th>programa</th>
                         <th style="width:350px;">descripcion</th>
+                        <th  style="width:100px;">vigente</th>                        
+                        <th  style="width:100px;">ideal</th>                        
+                        <th  style="width:100px;">diferencia</th>                               
                         
                     </tr>
                 </thead>
@@ -23,16 +31,39 @@
 
                         <tr 
                             data-linea_id ="${lista.id}"
-                            data-linea_tp ="${lista.tp.tipo}"
+                            data-linea_tp ="${lista.tp}"
                             data-linea_pg ="${lista.pg}"
                             >     
                             
                             <td>${lista.pg}</td>
-                            <td> ${lista.descripcion} </td>         
+                            <td> ${lista.descripcion} </td>        
+                            
+                            <td> ${lista.vigente} </td>         
+                            <td> ${lista.ideal} </td>         
+                            <td> ${lista.diferencia} </td>                                 
                             
                         </tr>  
+                        
+                        
+                        <c:set var="suma_vigente" scope="page" value="${ suma_vigente + lista.vigente}"/>  
+                        <c:set var="suma_ideal" scope="page" value="${ suma_ideal + lista.ideal}"/>  
+                        <c:set var="suma_diferencia" scope="page" value="${ suma_diferencia + lista.diferencia}"/>                          
+                        
+                        
                     </c:forEach>
                 </tbody>
+                
+                <tfoot>                    
+                    <tr>                                 
+                        <td></td>
+                        <td></td>                                    
+                        <td> ${suma_vigente} </td>         
+                        <td> ${suma_ideal} </td>         
+                        <td> ${suma_diferencia} </td>                                     
+                    </tr>  
+                </tfoot>                     
+                
+                
                 
         </table>
 

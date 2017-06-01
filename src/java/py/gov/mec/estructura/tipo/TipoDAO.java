@@ -14,6 +14,7 @@ import java.util.Map;
 import nebuleuse.ORM.Conexion;
 import nebuleuse.util.Lista;
 
+
 /**
  *
  * @author hugom_000
@@ -48,6 +49,22 @@ public class TipoDAO  {
              
     }              
 
+    
+    
+
+    public List<Map<String, Object>>  ListaSuma ()
+            throws Exception {
+               
+                statement = conexion.getConexion().createStatement();         
+                
+                String sql =  new TipoSQL().ListaSuma();
+                resultset = statement.executeQuery(sql);     
+                
+                return lista.resultsetToList(resultset ) ;
+             
+    }         
+    
+            
     
         
     

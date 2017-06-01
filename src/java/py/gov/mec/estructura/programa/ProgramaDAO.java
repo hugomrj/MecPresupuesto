@@ -15,6 +15,7 @@ import nebuleuse.ORM.Conexion;
 import nebuleuse.ORM.Secuencia;
 import nebuleuse.util.Lista;
 
+
 /**
  *
  * @author hugo
@@ -51,34 +52,17 @@ public class ProgramaDAO {
     }             
 
 
-    public boolean  isRegistroExiste  ( Integer registro)                    
+    public List<Map<String, Object>>  ListaSuma (Integer tp)
             throws Exception {
-                            
-        /*
-        
+               
                 statement = conexion.getConexion().createStatement();         
                 
-                String sql = 
-                    "  SELECT id, presupuesto_id, pf1, pf2, pf3, pf4, pf5, pf6, pf7, pf8, pf9, \n" +
-                    "       pf10, pf11, pf12\n" +
-                    "  FROM public.plan_financiero\n" +
-                    "  where presupuesto_id = " + registro +
-                    " ";
-
-                
+                String sql =  new ProgramaSQL().ListaSuma(tp);
                 resultset = statement.executeQuery(sql);     
-
-                if(resultset.next()) 
-                {    
-                    return true;          
-                }
-                else{
-                    return false;
-                }                
-           */  
-            return true;          
-        
-    }                  
+                
+                return lista.resultsetToList(resultset ) ;
+             
+    }         
         
     
     

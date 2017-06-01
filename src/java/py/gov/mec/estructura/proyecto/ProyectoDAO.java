@@ -53,6 +53,21 @@ public class ProyectoDAO {
 
 
     
+
+    public List<Map<String, Object>>  ListaSuma (Integer subprograma)
+            throws Exception {
+               
+                statement = conexion.getConexion().createStatement();         
+                
+                String sql =  new ProyectoSQL().ListaSuma(subprograma);
+                resultset = statement.executeQuery(sql);     
+                
+                return lista.resultsetToList(resultset ) ;
+             
+    }         
+            
+    
+    
         
     
 }

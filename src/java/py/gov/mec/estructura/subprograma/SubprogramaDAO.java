@@ -17,6 +17,7 @@ import nebuleuse.ORM.Conexion;
 import nebuleuse.ORM.Secuencia;
 import nebuleuse.util.Lista;
 
+
 /**
  *
  * @author hugo
@@ -53,6 +54,21 @@ public class SubprogramaDAO {
     }             
 
 
+
+    public List<Map<String, Object>>  ListaSuma (Integer programa)
+            throws Exception {
+               
+                statement = conexion.getConexion().createStatement();         
+                
+                String sql =  new SubprogramaSQL().ListaSuma(programa);
+                resultset = statement.executeQuery(sql);     
+                
+                return lista.resultsetToList(resultset ) ;
+             
+    }         
+        
+        
+    
     
         
     

@@ -50,6 +50,7 @@ window.onload = function() {
 
 function  Programa_sub_Registro ( ){
 
+
         var tabla_coleccion = document.getElementById( 'prog_tabla' ).getElementsByTagName('tbody')[0];
         var rows = tabla_coleccion.getElementsByTagName('tr');
 
@@ -68,5 +69,62 @@ function  Programa_sub_Registro ( ){
                 false
             );
         }
+        
+        Programa_tabla_formato ( );
+        
+    }
+
+
+
+
+function  Programa_tabla_formato ( ){
+
+        var table = document.getElementById( 'prog_tabla' ).getElementsByTagName('tbody')[0];
+        var rows = table.getElementsByTagName('tr');
+
+        for (var i=0 ; i < rows.length; i++)
+        {
+
+            cell = table.rows[i].cells[2] ;                                  
+            cell.innerHTML = formatoNumero_p(cell.innerHTML).trim(); 
+            cell.className = "numero";
+
+            cell = table.rows[i].cells[3] ;                                  
+            cell.innerHTML = formatoNumero_p(cell.innerHTML).trim(); 
+            cell.className = "numero";        
+
+            cell = table.rows[i].cells[4] ;                                  
+            cell.innerHTML = formatoNumero_p(cell.innerHTML).trim(); 
+            cell.className = "numero";   
+
+        }
+        
+
+    var table = document.getElementById( "prog_tabla" ).getElementsByTagName('tfoot')[0] ;
+    var rows = table.rows.length;
+    var cell ;
+ 
+ 
+    for(i=0; i<rows; i++)
+    {      
+        cell = table.rows[i].cells[2] ;                                  
+        cell.innerHTML = formatoNumero_p(cell.innerHTML).trim(); 
+        cell.className = "numero";
+        
+
+        cell = table.rows[i].cells[3] ;                                  
+        cell.innerHTML = formatoNumero_p(cell.innerHTML).trim(); 
+        cell.className = "numero";        
+        
+        
+        cell = table.rows[i].cells[4] ;                                  
+        cell.innerHTML = formatoNumero_p(cell.innerHTML).trim(); 
+        cell.className = "numero";                
+        
+        
+    }    
+            
+        
+        
         
     }
