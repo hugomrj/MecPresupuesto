@@ -48,7 +48,8 @@ public String  ListaEstado ( String buscar, Integer usuario)
                 "	sistema.usuarios.usuario, 	 \n" +
                 "	sistema.usuarios.cuenta, 	 \n" +
                 "	estado, \n" +
-                "	documentos_movimiento_estado.descripcion estado_descripcion \n" +
+                "	documentos_movimiento_estado.descripcion estado_descripcion, \n" +
+                "	1 as prioridad \n" +                
                 " FROM  \n" +
                 "  public.documentos,  \n" +
                 "  public.documentos_movimiento,  \n" +
@@ -85,7 +86,8 @@ public String  ListaEstado ( String buscar, Integer usuario)
                 "	sistema.usuarios.usuario, 	 \n" +
                 "	sistema.usuarios.cuenta, 	 \n" +
                 "	estado, \n" +
-                "	documentos_movimiento_estado.descripcion estado_descripcion \n" +
+                "	documentos_movimiento_estado.descripcion estado_descripcion, \n" +
+                "	2 as prioridad " +                
                 " FROM  \n" +
                 "  public.documentos,  \n" +
                 "  public.documentos_movimiento,  \n" +
@@ -105,9 +107,11 @@ public String  ListaEstado ( String buscar, Integer usuario)
                 "  and ultimo.documento = documentos.id \n" +
                 "  and ultimo.coddoc =  documentos_movimiento.id \n" +
                 "  and sistema.usuarios.usuario = public.documentos_movimiento.usuario   \n" +
+                "  and not ((sistema.usuarios.usuario  =   "+ usuario +" )\n" +                
+                "  and (documentos_movimiento.estado = 1 or documentos_movimiento.estado = 2)) \n" +                
                 condicionBusqueda +
                 " ) as nn\n" +
-                " order by fecha_documento desc  \n" +
+                " order by prioridad, fecha_documento desc  \n" +
                 "\n" +
                 " " ;
 

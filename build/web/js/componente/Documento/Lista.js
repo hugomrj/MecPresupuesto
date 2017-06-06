@@ -41,11 +41,14 @@ function Documento_tabla_lista ( ){
         }        
            
         
+        
             AjaxPeticion('../Documento/Coleccion/Lista?buscar='
                 +document.getElementById('buscar').value  
                 +"&page="+page
                 ,'tab_body');          
                                 
+                
+                
                 
             // paginacion                                
             var totalregistros = document.getElementById("doc_tabla").dataset.totalregistros;  
