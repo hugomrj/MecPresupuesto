@@ -31,8 +31,8 @@
             <jsp:include page="../../js/utilidad/funciones.js"/>
             <jsp:include page="../../js/componente/Anteproyecto/Programacion/Lineas.js"/>
             <jsp:include page="../../js/componente/Anteproyecto/jspf/editar.js"/>
-            <jsp:include page="../../js/componente/DistribucionSubcomponente/agregar.js"/>
-            <jsp:include page="../../js/componente/DistribucionSubcomponente/registro.js"/>
+            <jsp:include page="../../js/componente/DistribucionComponente/agregar.js"/>
+            <jsp:include page="../../js/componente/DistribucionComponente/registro.js"/>
             
 
                 

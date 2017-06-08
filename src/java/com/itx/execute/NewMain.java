@@ -22,6 +22,7 @@ import py.gov.mec.aplicacion.documento.DocumentoDAO;
 import py.gov.mec.aplicacion.estructura.EstructuraDAO;
 import py.gov.mec.estructura.programa.Programa;
 import py.gov.mec.estructura.programa.ProgramaDAO;
+import py.gov.mec.presupuesto.distribucion_componente.DistribucionComponenteDAO;
 import py.gov.mec.presupuesto.anterproyecto.Anteproyecto;
 import py.gov.mec.sistema.usuario.Usuario;
 
@@ -38,14 +39,10 @@ public class NewMain {
         // TODO code application logic here
         
     
-        DocumentoDAO doc = new DocumentoDAO();
-        
-        doc.ListaEstado("", 1, 1);
-
-
-            //ante.setIdeal(108L);            
-            //p.insert(ante);
-   
+            DistribucionComponenteDAO  dao = new DistribucionComponenteDAO();
+             List<Map<String, Object>>  lista = dao.Lista(1);
+             
+             
     }
     
 }

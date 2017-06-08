@@ -31,7 +31,7 @@ function  Componente_Tabla ( ){
                     registroid = this.dataset.linea_id;                                       
                     deje = this.dataset.linea_eje;             
                                         
-                    window.location = "../Estructura/Subcomponente.jspx?com="+registroid
+                    window.location = "../Estructura/Nivel.jspx?com="+registroid
                             +"&eje="+deje;                    
                 },
                 false

@@ -38,13 +38,13 @@ public class Proposito_Coleccion_Lista extends HttpServlet {
         // busqueda
                 
         
-        Integer scom = 0;
-        if (request.getParameter("scom") != null)
+        Integer ite = 0;
+        if (request.getParameter("ite") != null)
         {
-            scom = Integer.parseInt( request.getParameter("scom"));       
+            ite = Integer.parseInt( request.getParameter("ite"));       
         }
                 
-        List<Map<String, Object>> rows = new PropositoDAO().Lista(scom);        
+        List<Map<String, Object>> rows = new PropositoDAO().Lista(ite);        
         
         request.setAttribute("lista", rows);
         

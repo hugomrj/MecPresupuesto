@@ -17,7 +17,7 @@ package py.gov.mec.estructura.proposito;
 public class Proposito {
             
     private Integer id;    
-    private Integer subcomponente;
+    private Integer item;
     private String descripcion;
 
     public Integer getId() {
@@ -36,13 +36,15 @@ public class Proposito {
         this.descripcion = descripcion;
     }
 
-    public Integer getSubcomponente() {
-        return subcomponente;
+    public Integer getItem() {
+        return item;
     }
 
-    public void setSubcomponente(Integer subcomponente) {
-        this.subcomponente = subcomponente;
+    public void setItem(Integer item) {
+        this.item = item;
     }
+
+
 
 }
 

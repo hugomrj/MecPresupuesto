@@ -5,13 +5,14 @@ window.onresize = function() {
 };
 */
 
+
+
     var tp = 0
     var pg = 0
     var sp = 0
     var py = 0
     var pr = 0
     
-
 
 
 window.onload = function() {
@@ -22,10 +23,8 @@ window.onload = function() {
     py = getParametroValor("py");   
     pr = getParametroValor("pr");   
     
-
     AnteproyectoObjeto_funcionalidad();        
-        
-
+     
    
 };
 
@@ -62,6 +61,9 @@ function  AnteproyectoObjeto_TablaRegistro ( ){
 
 
 
+
+
+
 function AnteproyectoObjeto_TablaRegistro_Formato (){
 
     var table = document.getElementById( "anteobj_tabla" ).getElementsByTagName('tbody')[0] ;
@@ -90,8 +92,6 @@ function AnteproyectoObjeto_TablaRegistro_Formato (){
 function AnteproyectoObjeto_funcionalidad (){
 
         
-
-
     var linea_agregar = document.getElementById('linea_agregar');    
     linea_agregar.style.display = 'none';
 

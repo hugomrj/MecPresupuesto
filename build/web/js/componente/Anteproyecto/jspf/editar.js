@@ -65,7 +65,7 @@ function AnteproyectoObjeto_TablaRegistro_registro_editar ( id  ){
     
 
         // aca traer subcomponentes relacionados
-        DistribucionSubcomponente_subtabla(id);
+        DistribucionComponente_subtabla(id);
     
 
     
@@ -74,13 +74,13 @@ function AnteproyectoObjeto_TablaRegistro_registro_editar ( id  ){
     
 }
 
-function DistribucionSubcomponente_subtabla(id)
+function DistribucionComponente_subtabla(id)
 {
 
-        AjaxPeticion('../../DistribucionSubcomponente/Coleccion/Lista?id='+id,
+        AjaxPeticion('../../DistribucionComponente/Coleccion/Lista?id='+id,
         'distri_subcom');   
         
-        DistribucionSubcomponente_subtabla_Registro();
+        DistribucionComponente_subtabla_Registro();
         
         
         
@@ -88,12 +88,13 @@ function DistribucionSubcomponente_subtabla(id)
         antee_subcom.addEventListener('click',
             function() {   
 
-                    AjaxPeticion( '../../DistribucionSubcomponente/jspf/agregar.jspx' , 'capa_clara_segunda' );
+                    AjaxPeticion( '../../DistribucionComponente/jspf/agregar.jspx' , 'capa_clara_segunda' );
                     mostrarVentana('capa_oscura_segunda');
                     mostrarVentana('capa_clara_segunda');                                                       
                     dimensionarVentana('capa_clara_segunda', 900, 250);        
                     
-                    DistribucionSubcomponente_agregar(id);
+                    DistribucionComponente_agregar(id);
+                    
             },
             false
         );               
@@ -102,7 +103,7 @@ function DistribucionSubcomponente_subtabla(id)
 
 
 
-function  DistribucionSubcomponente_subtabla_Registro ( ){
+function  DistribucionComponente_subtabla_Registro ( ){
 
         var tabla_coleccion = document.getElementById( 'presusubcom_tabla' ).getElementsByTagName('tbody')[0];
         var rows = tabla_coleccion.getElementsByTagName('tr');
@@ -115,12 +116,12 @@ function  DistribucionSubcomponente_subtabla_Registro ( ){
               
                     registroid = this.dataset.linea_id;                                       
                    
-                    AjaxPeticion( '../../DistribucionSubcomponente/jspf/registro.jspx' , 'capa_clara_segunda' );
+                    AjaxPeticion( '../../DistribucionComponente/jspf/registro.jspx' , 'capa_clara_segunda' );
                     mostrarVentana('capa_oscura_segunda');
                     mostrarVentana('capa_clara_segunda');                                                       
                     dimensionarVentana('capa_clara_segunda', 900, 250);                   
                 
-                    DistribucionSubcomponente_registro ( registroid );
+                    DistribucionComponente_registro ( registroid );
                     
                 },
                 false

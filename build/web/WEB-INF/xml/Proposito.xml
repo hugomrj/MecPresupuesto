@@ -7,7 +7,7 @@
         name="estructura.propositos">            
         
             <id name="id"/>
-            <column name="subcomponente"/>             
+            <column name="item"/>             
             <column name="descripcion"/>                        
 
     </table>

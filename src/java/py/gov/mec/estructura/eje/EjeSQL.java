@@ -34,26 +34,27 @@ public class EjeSQL  {
                  
                 
                 String sql = " "+                        
-                "  	SELECT \n" +
-                "	  ejes.eje, \n" +
-                "	  ejes.descripcion, \n" +
-                "		CASE WHEN (sum(distribucion_subcomponente.monto) is null) \n" +
-                "		THEN 0\n" +
-                "		ELSE sum(distribucion_subcomponente.monto)\n" +
-                "		END as ideal\n" +
-                "	  \n" +
-                "	FROM \n" +
-                "	  estructura.ejes\n" +
-                "	  left join \n" +
-                "	  estructura.componentes on (ejes.eje = componentes.eje)\n" +
-                "	  left join\n" +
-                "	  estructura.subcomponentes on (componentes.componente = subcomponentes.componente)\n" +
-                "	  left join\n" +
-                "	  presupuesto.distribucion_subcomponente\n" +
-                "	  on (subcomponentes.id = distribucion_subcomponente.subcomponente)  \n" +
-                "	  group by ejes.eje, ejes.descripcion\n" +
-                "	  order by eje\n" +
-                "	     " ;
+"                    	SELECT  \n" +
+"                	  ejes.eje,  \n" +
+"                	  ejes.descripcion,  \n" +
+"                		CASE WHEN (sum(distribucion_componente.monto) is null)  \n" +
+"                		THEN 0 \n" +
+"                		ELSE sum(distribucion_componente.monto) \n" +
+"                		END as ideal \n" +
+"                	   \n" +
+"                	FROM  \n" +
+"                	  estructura.ejes \n" +
+"                	  left join  \n" +
+"                	  estructura.componentes on (ejes.eje = componentes.eje) \n" +
+"                	  left join \n" +
+"                	  estructura.niveles on (componentes.componente = niveles.componente) \n" +
+"                	  left join \n" +
+"		          estructura.items on (niveles.id = items.nivel)\n" +
+"		          left join \n" +
+"                	  presupuesto.distribucion_componente \n" +
+"                	  on (items.id = distribucion_componente.item)   \n" +
+"                	  group by ejes.eje, ejes.descripcion \n" +
+"                	  order by eje   " ;
                 
                 return sql ;
              

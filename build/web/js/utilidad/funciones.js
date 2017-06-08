@@ -55,11 +55,19 @@ function isNumberKey(evt)
 
 
 function formatoNumero_p(num) {
+    
+    
+// falta ver si es numero negativo    
 
     num = num.toString().trim();
 
     num = num.replace(/\./g,'');
-    if(!isNaN(num)){
+    if(!isNaN(num))
+    {
+        
+        // aca hay que controlar si es un numero negativo
+        
+        
         num = num.toString().split('').reverse().join('').replace(/(?=\d*\.?)(\d{3})/g,'$1.');
         num = num.split('').reverse().join('').replace(/^[\.]/,'');
         return num;

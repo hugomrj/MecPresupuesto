@@ -38,25 +38,26 @@ public class ComponenteSQL  {
                  
                 
                 String sql = " "+                        
-                " 	SELECT \n" +
-                "	  componentes.componente, \n" +
-                "	  componentes.eje, \n" +
-                "	  componentes.descripcion, \n" +
-                "		CASE WHEN (sum(distribucion_subcomponente.monto) is null) \n" +
-                "		THEN 0\n" +
-                "		ELSE sum(distribucion_subcomponente.monto)\n" +
-                "		END as ideal	  \n" +
-                "	FROM \n" +
-                "	  estructura.componentes \n" +
-                "	  left join\n" +
-                "	  estructura.subcomponentes on (componentes.componente = subcomponentes.componente)\n" +
-                "	  left join\n" +
-                "	  presupuesto.distribucion_subcomponente\n" +
-                "	  on (subcomponentes.id = distribucion_subcomponente.subcomponente)  \n" +
-                "	  where componentes.eje = \n" + eje +
-                "	  group by  componentes.componente, componentes.eje, componentes.descripcion\n" +
-                "	  order by componentes.componente\n" +
-                "	     " ;
+        "                  	SELECT  \n" +
+        "                	  componentes.componente,  \n" +
+        "                	  componentes.eje,  \n" +
+        "                	  componentes.descripcion,  \n" +
+        "                		CASE WHEN (sum(distribucion_componente.monto) is null)  \n" +
+        "                		THEN 0 \n" +
+        "                		ELSE sum(distribucion_componente.monto) \n" +
+        "                		END as ideal	   \n" +
+        "                	FROM  \n" +
+        "                	  estructura.componentes  \n" +
+        "                	  left join \n" +
+        "                	  estructura.niveles on (componentes.componente = niveles.componente) \n" +
+        "                	  left join \n" +
+        "                	  estructura.items on (niveles.id = items.nivel)   \n" +
+        "                	  left join \n" +
+        "                	  presupuesto.distribucion_componente on (items.id = distribucion_componente.item)   \n" +
+        "                	  \n" +
+        "                	  where componentes.eje =  \n" + eje +
+        "                	  group by  componentes.componente, componentes.eje, componentes.descripcion \n" +
+        "                	  order by componentes.componente  " ;
                  
                 return sql ;
              

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<root>
+    
+    <table 
+        name="estructura.items">            
+        
+            <id name="id"/>
+            <column name="nivel"/>             
+            <column name="descripcion"/>                        
+
+    </table>
+    
+</root>

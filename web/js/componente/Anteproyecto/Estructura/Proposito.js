@@ -1,17 +1,12 @@
 
 
-var scom = 0;   
+var ite = 0;   
 
 
 window.onload = function() {
               
-    scom = getParametroValor("scom");   
-        
-    /*
-    AjaxPeticion('../../Estructura/Cabecera?tp='+tp+"&pg="+pg
-        ,'cabecera_body');  
-    */    
-    
+    ite = getParametroValor("ite");   
+
     Proposito_formulario();
     
 };
@@ -21,7 +16,7 @@ window.onload = function() {
 function  Proposito_formulario ( ){
 
     
-    AjaxPeticion('../../Proposito/Coleccion/Lista?scom='+scom,'tab_body');  
+    AjaxPeticion('../../Proposito/Coleccion/Lista?ite='+ite,'tab_body');  
    // Proposito_tabla_Registro( "proposito_tabla");
 
 
@@ -35,7 +30,7 @@ function  Proposito_formulario ( ){
                                 
                 AjaxPeticion( '../../Proposito/jspf/agregar.jspx' , 'capa_clara' );     
             
-                Proposito_agregar( scom );
+                Proposito_agregar( ite );
                 
         },
         false

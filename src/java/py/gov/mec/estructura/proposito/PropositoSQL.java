@@ -22,9 +22,9 @@ public class PropositoSQL  {
                  
                 
                 String sql = " "+                        
-                "   SELECT id, subcomponente, descripcion\n" +
+                "   SELECT id, item, descripcion\n" +
                 "  FROM estructura.propositos\n" +
-                "  where subcomponente = \n" + scom +
+                "  where item = \n" + scom +
                 "  order by id" ;
                  
                 return sql ;

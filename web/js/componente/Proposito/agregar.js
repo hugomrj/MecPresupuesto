@@ -1,10 +1,10 @@
 
 
-function Proposito_agregar ( scom ){
+function Proposito_agregar ( ite ){
 
 
-    var metaa_subcomponente = document.getElementById('metaa_subcomponente');
-    metaa_subcomponente.value = scom;
+    var metaa_item = document.getElementById('metaa_item');
+    metaa_item.value = ite;
 
 
 

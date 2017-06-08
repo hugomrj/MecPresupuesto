@@ -30,8 +30,8 @@
 
                 
                 <input  TYPE="hidden"
-                            name="subcomponente"  
-                            id="metaa_subcomponente"
+                            name="item"  
+                            id="metaa_item"
                             value="0"
                             />                
                       

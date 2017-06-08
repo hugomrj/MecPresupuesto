@@ -35,12 +35,12 @@ public class PropositoDAO {
     }
         
 
-    public List<Map<String, Object>>  Lista (Integer scom)
+    public List<Map<String, Object>>  Lista (Integer ite)
             throws Exception {
                
                 statement = conexion.getConexion().createStatement();         
                 
-                String sql =  new PropositoSQL().Lista(scom);
+                String sql =  new PropositoSQL().Lista(ite);
                 resultset = statement.executeQuery(sql);     
                 
                 return lista.resultsetToList(resultset ) ;

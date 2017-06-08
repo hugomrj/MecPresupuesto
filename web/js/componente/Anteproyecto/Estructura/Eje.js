@@ -2,11 +2,10 @@
 
 window.onload = function() {
    
-   
     
     AjaxPeticion('../../Eje/Coleccion/PresupuestoLista','tab_body');                          
     Eje_Tabla();
-    //Tipo_tabla_formato();    
+ 
             
     
 };
