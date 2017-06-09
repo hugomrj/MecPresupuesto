@@ -40,7 +40,7 @@ public class AnteproyectoDAO  {
             
                 statement = conexion.getConexion().createStatement();         
 
-                
+/*                
                 String sql = "   " +                        
                 "	SELECT \n" +
                 "	  id, tp, pg, sp, py, ante.obj, \n" +
@@ -61,7 +61,49 @@ public class AnteproyectoDAO  {
                 "	 tp, pg, sp, py, ante.obj, \n" +
                 "	 ff, of, dpt, producto\n" +
                 "	  ";
-    
+   */ 
+                
+                
+
+                String sql = "   " +                        
+                "    SELECT  \n" +
+                "      id, tp, pg, sp, py, ante.obj,  \n" +
+                "      ff, of, dpt, producto, objetos.descripcion, \n" +
+                "      vigente, ideal ,  \n" +
+                "      (vigente - ideal ) diferencia ,\n" +                        
+                "             CASE\n" +
+                "              WHEN (ideal = 0) THEN '0' \n" +
+                "              WHEN (sumaitem is null) THEN '11' \n" +
+                "              ELSE (ideal - sumaitem)\n" +
+                "             END AS marca              	  \n" +
+                "\n" +
+                "    FROM  \n" +
+                "            public.objetos, \n" +
+                "            presupuesto.anteproyecto2017 ante\n" +
+                "            left join \n" +
+                "            (\n" +
+                "                    SELECT presupuesto, sum(monto) sumaitem\n" +
+                "                      FROM presupuesto.distribucion_componente\n" +
+                "                      group by presupuesto\n" +
+                "            ) as t on (ante.id = t.presupuesto)\n" +
+                "    WHERE  \n" +
+                "      objetos.obj = ante.obj \n" +
+                "      and tp =    \n" + tp +
+                "      and pg =   \n" + pg +
+                "      and sp =   \n" + sp +
+                "      and py =   \n" + py +
+                "          and producto = " +pr +                        
+                "    ORDER BY  \n" +
+                "     tp, pg, sp, py, ante.obj,  \n" +
+                "     ff, of, dpt, producto \n" +
+                "	";
+   
+                              
+                
+                
+                
+                
+                
                 resultset = statement.executeQuery(sql);     
                 
                 return lista.resultsetToList(resultset ) ;
@@ -77,7 +119,7 @@ public class AnteproyectoDAO  {
             
                 statement = conexion.getConexion().createStatement();         
 
-                
+             
                 String sql = "   " +                        
                 "	SELECT  tp, pg, sp, py, presu.obj, ff, of, presu.producto, \n" +
                 "		productos.descripcion productos,\n" +
@@ -96,7 +138,13 @@ public class AnteproyectoDAO  {
                 "	group by  tp, pg, sp, py, presu.obj, ff, of, presu.producto, productos.descripcion, objetos.descripcion\n" +
                 "	order by  tp, pg, sp, py, presu.obj, ff, of, presu.producto\n" +
                 " ";
-    
+
+
+  
+                
+
+                
+                
                 resultset = statement.executeQuery(sql);     
                 
                 return lista.resultsetToList(resultset ) ;

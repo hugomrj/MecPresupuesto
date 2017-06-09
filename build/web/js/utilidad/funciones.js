@@ -65,11 +65,22 @@ function formatoNumero_p(num) {
     if(!isNaN(num))
     {
         
-        // aca hay que controlar si es un numero negativo
+        auxNum = num;
         
+        // aca hay que controlar si es un numero negativo
+        if (auxNum < 0)
+        {
+            num = num * -1;
+        }
         
         num = num.toString().split('').reverse().join('').replace(/(?=\d*\.?)(\d{3})/g,'$1.');
         num = num.split('').reverse().join('').replace(/^[\.]/,'');
+        
+        if (auxNum < 0)
+        {
+            num = "-"+num;
+        }
+        
         return num;
     }
     else{ 

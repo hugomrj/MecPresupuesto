@@ -56,6 +56,7 @@ function AnteproyectoObjeto_TablaRegistro_registro_editar ( id  ){
     var antee_cerrar = document.getElementById('antee_cerrar');
     antee_cerrar.addEventListener('click',
         function() {    
+            AnteproyectoObjeto_funcionalidad();
             javascript:ocultarVentana('capa_oscura');
             javascript:ocultarVentana('capa_clara');
         },

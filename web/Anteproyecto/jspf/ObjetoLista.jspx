@@ -35,6 +35,7 @@
                             data-linea_sp ="${lista.sp}"
                             data-linea_py ="${lista.py}"
                             data-linea_pr ="${lista.producto}"
+                            data-marca ="${lista.marca}"
                             >     
              
                             

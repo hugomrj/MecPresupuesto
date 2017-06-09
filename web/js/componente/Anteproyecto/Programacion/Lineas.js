@@ -35,7 +35,6 @@ function  AnteproyectoObjeto_TablaRegistro ( ){
         var tabla_coleccion = document.getElementById( 'anteobj_tabla' ).getElementsByTagName('tbody')[0];
         var rows = tabla_coleccion.getElementsByTagName('tr');
 
-
         for (var i=0 ; i < rows.length; i++)
         {
             rows[i].addEventListener ( 'click',
@@ -55,6 +54,16 @@ function  AnteproyectoObjeto_TablaRegistro ( ){
                 false
             );
         }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         AnteproyectoObjeto_TablaRegistro_Formato ();
         
     }
@@ -76,13 +85,24 @@ function AnteproyectoObjeto_TablaRegistro_Formato (){
         cell.innerHTML = formatoNumero_p(cell.innerHTML);
         cell.className = "numero";
         
+        
+        if (table.rows[i].dataset.marca != "0"){            
+            table.rows[i].cells[6].style.color = 'DarkMagenta';  
+        }        
+        
+        
+        
         cell = table.rows[i].cells[6] ;                                  
         cell.innerHTML = formatoNumero_p(cell.innerHTML); 
         cell.className = "numero";
         
         cell = table.rows[i].cells[7] ;                                  
         cell.innerHTML = formatoNumero_p(cell.innerHTML); 
-        cell.className = "numero";        
+        cell.className = "numero";    
+        
+
+        
+        
         
     }    
 }
