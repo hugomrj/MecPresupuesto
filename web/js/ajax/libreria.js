@@ -517,6 +517,7 @@ function Busqueda_relacionada ( strObjeto, strPrefijo, strRetorno, servlet  )
 {
 
 
+
     var seleccionar_registro = function( strObjeto, strPrefijo, strRetorno, servlet )
     {
         
@@ -538,7 +539,10 @@ function Busqueda_relacionada ( strObjeto, strPrefijo, strRetorno, servlet  )
                     
                     asignarValor( strPrefijo+strObjeto.toLowerCase(), registroid );
 
-                    document.getElementById(strPrefijo+strObjeto.toLowerCase()).onblur();  
+
+//alert(strObjeto.toLowerCase() );
+
+                    document.getElementById( (strPrefijo+strObjeto.toLowerCase()).toLowerCase()  ).onblur();  
 
                     ocultarVentana('capa_oscura_segunda');
                     ocultarVentana('capa_clara_segunda');

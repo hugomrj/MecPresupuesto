@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<root>
+    
+    <table 
+        name="viatico_ditribucion_mensual">            
+                    
+            <id name="id"/>            
+            <column name="direccion"/>            
+            <column name="mes"/>      
+            <column name="monto"/>      
+                              
+    </table>
+    
+</root>
+
+

@@ -66,16 +66,20 @@ function valor_json_direccion ( elementoRetorno, valorcodigo )
         var direccion_descripcion = document.getElementById(elementoRetorno);        
         var jsonResponse = AjaxUrl( "../DireccionIngreso/Linea.json?idregistro="+valorcodigo.value );  
         
+        
         if (jsonResponse.toString().trim() != "[]")
         {
             var objetoJson = JSON.parse(jsonResponse);                
             direccion_descripcion.innerHTML = objetoJson[0].descripcion ;
         }
+        /*
         else
         {
             //var dima_direccion_descripcion = document.getElementById('dima_direccion_descripcion');        
             direccion_descripcion.innerHTML = "" ;
         }
         //zero( 'dima_direccion' );
-        
+   */
+
+    
 }    

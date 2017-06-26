@@ -20,6 +20,7 @@ import py.gov.mec.aplicacion.cajachica_ejecucion.CajaChicaEjecucionDAO;
 import py.gov.mec.aplicacion.documento.Documento;
 import py.gov.mec.aplicacion.documento.DocumentoDAO;
 import py.gov.mec.aplicacion.estructura.EstructuraDAO;
+import py.gov.mec.aplicacion.viatico_distribucion_mensual.ViaticoDistribucionMensual;
 import py.gov.mec.estructura.programa.Programa;
 import py.gov.mec.estructura.programa.ProgramaDAO;
 import py.gov.mec.presupuesto.distribucion_componente.DistribucionComponenteDAO;
@@ -37,11 +38,19 @@ public class NewMain {
      */
     public static void main(String[] args) throws Exception {
         // TODO code application logic here
+
         
-    
-            DistribucionComponenteDAO  dao = new DistribucionComponenteDAO();
-             List<Map<String, Object>>  lista = dao.Lista(1);
-             
+        ViaticoDistribucionMensual v = new ViaticoDistribucionMensual();
+        Persistencia p = new Persistencia();
+        
+        
+        v.setId(0);
+        v.setDireccion(2);
+        v.setMonto(12345L);
+        
+        v = (ViaticoDistribucionMensual) p.insert(v);
+        
+        
              
     }
     

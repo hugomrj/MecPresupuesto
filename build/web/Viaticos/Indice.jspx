@@ -29,7 +29,6 @@
             <jsp:include page="../js/utilidad/funciones.js"/>
                 
             <jsp:include page="../js/componente/Viaticos/Indice.js"/>
-                
             <jsp:include page="../js/componente/PresupuestoVigente/CollectionLista.js"/>                
             
         </script>
@@ -75,7 +74,18 @@
                         </div>
                     </article>                      
                 
-                    
+
+
+                    <article class="botones-footer">
+                        <div class="commandbutton">
+                            <a class="botonEnlace" 
+                               id="vi_direcciones" 
+                               href="javascript:void(0);">
+                                Direcciones
+                            </a>
+                        </div>
+                    </article>                        
+
 
                 </section>
                 

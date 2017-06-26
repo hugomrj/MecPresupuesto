@@ -1,0 +1,111 @@
+
+<jsp:root version="2.0"
+    xmlns:jsp="http://java.sun.com/JSP/Page" 
+    xmlns:c="http://java.sun.com/jsp/jstl/core">
+    
+        
+        
+            <article>
+                <h4>Interior</h4>
+            </article>            
+        
+        
+        <article>
+
+            <form 
+                action="../ViaticoDistribucionMensual/Controlador/Editar" 
+                method="post" 
+                id="vdma_form" 
+                name='vdma_form'
+                style="width: 100%;"
+                >
+
+                <input  TYPE="hidden"
+                            name="id"  
+                            id="vdma_id"
+                            value="0"
+                            />                
+
+                
+                <input  TYPE="hidden"
+                            name="mes"  
+                            id="vdma_mes"
+                            value="0"
+                            />                     
+                
+                
+                    <div class = "SinEnfoque">                                
+                        <label for="direccion_viatico">Direccion:</label> 
+                        <div class ="textbox">
+                            <input TYPE="TEXT" 
+                                   id ="vdma_direccion"
+                                   name="direccion" 
+                                   size ="10"
+                                   class = "campoFK"
+                                   value ="0"
+                                   />      
+                            <div class="botonBusqueda">                                        
+                                &#160;
+                                <a 
+                                    href="javascript:void(0);"
+                                    id="vdma_qry_direccion"
+                                    class = "botonCampo"
+                                    >buscar</a>                    
+                                 &#160;                                
+                             
+                                 
+                            </div>                                    
+                            <output 
+                                    class="campoRelacionado" 
+                                    id="vdma_direccion_descripcion">
+                            </output>
+                        </div>   
+                    </div>                       
+
+
+                    <div class = "SinEnfoque">
+                        <label for="monto">Monto:</label> 
+                        <input TYPE="text" 
+                                name="monto" 
+                                id="vdma_monto"                                     
+                                class="right-aling"
+                                value ="0"
+                                />
+                    </div>                       
+                
+                
+                
+
+                <br/>
+
+            </form>
+            
+        </article>
+
+    
+
+            <article class = "botones-footer">
+
+                <div id="busqueda_footer">
+
+                    <div class ="commandbutton">
+                        <a href="javascript:void(0);" 
+                           id ="vdma_aceptar"
+                           class="botonEnlace" >Aceptar</a>
+                    </div>                                
+
+                    <div class ="commandbutton">
+                        <a href="javascript:void(0);" 
+                           id ="vdma_cerrar"
+                           class="botonEnlace" >Cerrar</a>
+                    </div>                                
+
+                </div> 
+
+            </article>    
+    
+    
+</jsp:root>
+                
+
+
