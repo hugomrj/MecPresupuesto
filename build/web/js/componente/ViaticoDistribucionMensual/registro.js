@@ -29,6 +29,14 @@ function ViaticoDistribucionMensual_registro (  registro ){
     vdma_monto.onblur();
     
     
+    var vdma_certificado = document.getElementById( 'vdma_certificado');
+    vdma_certificado.onblur  = function() {        
+        vdma_certificado.value  = formatoNumero_p(vdma_certificado.value).trim();         
+    };     
+    vdma_certificado.onblur();
+        
+    
+    
     var vdma_qry_direccion = document.getElementById( 'vdma_qry_direccion');
     vdma_qry_direccion.addEventListener('click',
         function()

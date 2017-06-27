@@ -12,7 +12,7 @@ package py.gov.mec.aplicacion.viatico_distribucion_mensual;
  */
 public class ViaticoDistribucionMensualSQL  {
         
-    
+ /*   
     public String  ListaMes (Integer mes)
             throws Exception {
                
@@ -73,8 +73,40 @@ public class ViaticoDistribucionMensualSQL  {
              
     }              
 
+    */
+
     
-   
+    
+    public String  ListaMes (Integer mes)
+            throws Exception {
+               
+                 
+                
+        String sql = " "+                        
+            "  SELECT \n" +
+            "  viatico_ditribucion_mensual.id, \n" +
+            "  viatico_ditribucion_mensual.direccion, \n" +
+            "  viatico_ditribucion_mensual.mes, \n" +
+            "  viatico_ditribucion_mensual.monto, \n" +
+            "  viatico_ditribucion_mensual.certificado, \n" +
+            "  direcciones.descripcion, \n" +
+            "  (monto - certificado) as diferencia\n" +
+            "   FROM \n" +
+            "  public.viatico_ditribucion_mensual, \n" +
+            "  public.direcciones\n" +
+            "   WHERE \n" +
+            "  direcciones.id = viatico_ditribucion_mensual.direccion\n" +
+            "  and mes = \n" + mes  +
+            "  order by direccion" ;
+
+        
+        
+        return sql ;
+             
+    }              
+    
+    
+    
     
 }
 

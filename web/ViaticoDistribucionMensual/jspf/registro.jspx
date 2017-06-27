@@ -76,6 +76,18 @@
                 
                 
 
+                    <div class = "SinEnfoque">
+                        <label for="certificado">Certificado:</label> 
+                        <input TYPE="text" 
+                                name="certificado" 
+                                id="vdma_certificado"                                     
+                                class="right-aling"
+                                value ="0"
+                                />
+                    </div>                       
+                                
+                
+
                 <br/>
 
             </form>

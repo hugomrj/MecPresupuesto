@@ -12,16 +12,13 @@ package py.gov.mec.aplicacion.viatico_distribucion_mensual;
  */
 
 
-
-
-
-
 public class ViaticoDistribucionMensual {
     
     private Integer id; 
     private Integer direccion; 
     private Integer mes ;
     private Long monto;
+    private Long certificado;
 
     public Integer getId() {
         return id;
@@ -53,6 +50,14 @@ public class ViaticoDistribucionMensual {
 
     public void setMonto(Long monto) {
         this.monto = monto;
+    }
+
+    public Long getCertificado() {
+        return certificado;
+    }
+
+    public void setCertificado(Long certificado) {
+        this.certificado = certificado;
     }
     
     

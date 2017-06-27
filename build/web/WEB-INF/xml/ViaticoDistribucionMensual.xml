@@ -10,6 +10,7 @@
             <column name="direccion"/>            
             <column name="mes"/>      
             <column name="monto"/>      
+            <column name="certificado"/>      
                               
     </table>
     
