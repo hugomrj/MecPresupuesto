@@ -74,6 +74,39 @@
                             >
 
                             
+                            
+                            
+                            
+                            <div class = "SinEnfoque" 
+                                id="i00">                                
+                                <label for="obj">Objejo.:</label> 
+                                <div class ="textbox">
+                                    
+                                    
+                                    <input TYPE="TEXT" 
+                                        id="obj"
+                                        name="obj"                                                                                   
+                                        value="0"
+                                        disabled="disabled"
+                                        size ="10"   
+                                        />    
+                                    
+                                    <input TYPE="TEXT" 
+                                        id="objd"
+                                        name="objd"                                                                                                                           
+                                        disabled="disabled"
+                                        size ="70"   
+                                        />                                        
+                                    
+                                    
+                                </div>            
+                            </div>                                           
+                            
+                            
+                                                        
+                            
+                            
+                            
                             <input  TYPE="TEXT" 
                                 name="id"
                                 id = "cdpa_id" 

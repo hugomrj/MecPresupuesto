@@ -2,6 +2,33 @@
 
 window.onload = function() {
 
+
+
+
+    // objeto
+    var objeto = getParametroValor("obj");   
+   
+    var jsonResponse = AjaxUrl( "../Objeto/Linea.json?obj="+objeto);    
+   
+    if (jsonResponse.toString().trim() != "[]")
+    {
+        var objetoJson = JSON.parse(jsonResponse);              
+        
+        var obj = document.getElementById('obj');
+        obj.value = objetoJson[0].obj ;        
+        
+        var objd = document.getElementById('objd');
+        objd.value = objetoJson[0].descripcion ;        
+        
+    }   
+
+
+
+
+
+
+
+
     var idreg = getParametroValor("idreg");   
     CdpJson();
     

@@ -34,7 +34,7 @@
                             <td> ${lista.pg} </td>         
                             <td>  ${lista.sp} </td>         
                             <td>  ${lista.py} </td>         
-                            <td>  ${lista.obj} </td>         
+                            <td id="cl_obj">  ${lista.obj} </td>         
                             <td> ${lista.ff} </td>         
                             <td>  ${lista.of} </td>         
                             <td>  ${lista.dpt} </td>               

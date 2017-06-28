@@ -72,6 +72,41 @@
                             >
 
                             
+                                                        
+                            
+                            <div class = "SinEnfoque" 
+                                id="i00">                                
+                                <label for="obj">Objejo.:</label> 
+                                <div class ="textbox">
+                                    
+                                    
+                                    <input TYPE="TEXT" 
+                                        id="obj"
+                                        name="obj"                                                                                   
+                                        value="0"
+                                        disabled="disabled"
+                                        size ="10"   
+                                        />    
+                                    
+                                    <input TYPE="TEXT" 
+                                        id="objd"
+                                        name="objd"                                                                                                                           
+                                        disabled="disabled"
+                                        size ="70"   
+                                        />                                        
+                                    
+                                    
+                                </div>            
+                            </div>                                           
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
                             <input  TYPE="TEXT" 
                                 name="id"
                                 id = "cdpa_id" 
@@ -96,6 +131,7 @@
                                         name="unr"   
                                         size ="10"                                         
                                         value="0"
+                                        class="right-aling"
                                         />                                
                                 </div>            
                             </div>                            
@@ -108,6 +144,7 @@
                                         id="cdpa_pac_numero"
                                         name="pac_numero"     
                                         value="0"
+                                        class="right-aling"
                                         />                                
                                 </div>            
                             </div>                            
@@ -147,6 +184,7 @@
                                         id="cdpa_certificacion_actual"
                                         name="certificacion_actual"  
                                         value="0"
+                                        class="right-aling"
                                         />                                
                                 </div>            
                             </div>            
@@ -170,6 +208,7 @@
                                         id="cdpa_cdp_numero"
                                         name="cdp_numero"  
                                         value="0"
+                                        class="right-aling"
                                         />                                
                                 </div>            
                             </div>          

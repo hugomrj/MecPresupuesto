@@ -11,9 +11,12 @@ window.onload = function() {
     AjaxPeticion('../Cdp/Coleccion/Lista?registro='+registro,'tab_body');     
     //fomato_tabla();        
 
+    var cl_obj = document.getElementById('cl_obj').innerHTML;
+    cl_obj = cl_obj.toString().trim() ;
  
     var vinculo ="";
-    vinculo = "../Cdp/Registro.jspx?idreg="+registro+"&id=";              
+    vinculo = "../Cdp/Registro.jspx?obj="+cl_obj+"&idreg="+registro+"&id=";              
+    
     Cdp_Coleccion_Lista_registro(vinculo);
  
  
@@ -21,7 +24,7 @@ window.onload = function() {
     cdpd_agregar.addEventListener('click',
         function()
         {            
-            window.location = "../Cdp/Agregar.jspx?idreg="+registro;
+            window.location = "../Cdp/Agregar.jspx?idreg="+registro+"&obj="+cl_obj;
         },
         false
     );        

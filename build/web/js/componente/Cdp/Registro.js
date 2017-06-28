@@ -2,6 +2,30 @@
 
 window.onload = function() {
 
+
+
+
+    // objeto
+    var objeto = getParametroValor("obj");   
+   
+    var jsonResponse = AjaxUrl( "../Objeto/Linea.json?obj="+objeto);    
+   
+    if (jsonResponse.toString().trim() != "[]")
+    {
+        var objetoJson = JSON.parse(jsonResponse);              
+        
+        var obj = document.getElementById('obj');
+        obj.value = objetoJson[0].obj ;        
+        
+        var objd = document.getElementById('objd');
+        objd.value = objetoJson[0].descripcion ;        
+        
+    }   
+
+
+
+
+
     var idreg = getParametroValor("idreg");   
     var id = getParametroValor("id");   
     CdpJson();
@@ -12,7 +36,7 @@ window.onload = function() {
     editar.addEventListener('click',
         function()
         {            
-            window.location = "../Cdp/Editar.jspx?idreg="+idreg+"&id="+id;
+            window.location = "../Cdp/Editar.jspx?idreg="+idreg+"&id="+id+"&obj="+objeto;
         },
         false
     );      
@@ -23,7 +47,7 @@ window.onload = function() {
     borrar.addEventListener('click',
         function()
         {    
-            window.location = "../Cdp/Borrar.jspx?idreg="+idreg+"&id="+id;
+            window.location = "../Cdp/Borrar.jspx?idreg="+idreg+"&id="+id+"&obj="+objeto;
         },
         false
     );      
