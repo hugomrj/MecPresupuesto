@@ -6,7 +6,6 @@
 package py.gov.mec.aplicacion.cajachica_certificacion;
 
 
-import py.gov.mec.aplicacion.viatico_certificacion.*;
 import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;

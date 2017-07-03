@@ -58,12 +58,6 @@ function  AnteproyectoObjeto_TablaRegistro ( ){
         
         
         
-        
-        
-        
-        
-        
-        
         AnteproyectoObjeto_TablaRegistro_Formato ();
         
     }

@@ -98,7 +98,7 @@ public class CajaChicaCertificacionDAO  {
 "                      CASE WHEN (ej11 IS NULL) THEN pf12 else ((pf11 - ej11)+ pf12) END AS sl12                      \n" +
 "                       FROM cajachica_distribucion left join cajachica_ejecucion \n" +
 "                       on (cajachica_distribucion.uoc_id = cajachica_ejecucion.uoc_id ) \n" +
-"                       where cajachica_distribucion.uoc_id = 20 \n" +
+"                       where cajachica_distribucion.uoc_id = \n" + uoc_id +
 "		)\n" +
 "                                  cajachica_saldo  \n" +
 "                                  left join  \n" +
