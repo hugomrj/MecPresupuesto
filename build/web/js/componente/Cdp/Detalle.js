@@ -68,7 +68,46 @@ function Cdp_Coleccion_Lista_registro(link)
 
     }
 
+    AnteproyectoObjeto_TablaRegistro_Formato();
+
 };
+
+
+
+
+
+
+function AnteproyectoObjeto_TablaRegistro_Formato (){
+
+    var table = document.getElementById( "cdpcl_tabla" ).getElementsByTagName('tbody')[0] ;
+    var rows = table.rows.length;
+    var cell ;
+ 
+    for(i=0; i<rows; i++)
+    {      
+
+        cell = table.rows[i].cells[0] ;                                  
+        cell.innerHTML = formatoNumero_p(cell.innerHTML); 
+        cell.className = "numero";
+
+        cell = table.rows[i].cells[1] ;                                  
+        cell.innerHTML = formatoNumero_p(cell.innerHTML); 
+        cell.className = "numero";
+
+
+
+        cell = table.rows[i].cells[4] ;                                  
+        cell.innerHTML = formatoNumero_p(cell.innerHTML); 
+        cell.className = "numero";
+
+        cell = table.rows[i].cells[6] ;                                  
+        cell.innerHTML = formatoNumero_p(cell.innerHTML); 
+        cell.className = "numero";
+        
+
+    }    
+}
+
 
 
 

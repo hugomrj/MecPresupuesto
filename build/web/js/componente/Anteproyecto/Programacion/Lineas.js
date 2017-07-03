@@ -95,9 +95,6 @@ function AnteproyectoObjeto_TablaRegistro_Formato (){
         cell.className = "numero";    
         
 
-        
-        
-        
     }    
 }
 
@@ -105,16 +102,16 @@ function AnteproyectoObjeto_TablaRegistro_Formato (){
 
 function AnteproyectoObjeto_funcionalidad (){
 
-        
+        /*
     var linea_agregar = document.getElementById('linea_agregar');    
     linea_agregar.style.display = 'none';
-
+    */
 
     AjaxPeticion('../../Estructura/Cabecera?tp='+tp+"&pg="+pg+"&sp="+sp
             +"&py="+py+"&pr="+pr
         ,'cabecera_body');              
     
-    
+  
     AjaxPeticion('../../Anteproyecto/Objeto/Lista?tp='+tp+"&pg="+pg+"&sp="+sp
             +"&py="+py+"&pr="+pr
         ,'tab_body');  

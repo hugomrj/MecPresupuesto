@@ -39,18 +39,10 @@ public class NewMain {
     public static void main(String[] args) throws Exception {
         // TODO code application logic here
 
+        CajaChicaCertificacionDAO dao = new CajaChicaCertificacionDAO();
         
-        ViaticoDistribucionMensual v = new ViaticoDistribucionMensual();
-        Persistencia p = new Persistencia();
-        
-        
-        v.setId(0);
-        v.setDireccion(2);
-        v.setMonto(12345L);
-        
-        v = (ViaticoDistribucionMensual) p.insert(v);
-        
-        
+        System.out.println( dao.UltimaLinea(20, 3) );
+
              
     }
     

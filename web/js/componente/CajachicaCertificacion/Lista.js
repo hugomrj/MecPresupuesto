@@ -7,15 +7,10 @@ window.onload = function() {
     var uoc_id = getParametroValor("uoc_id");  
          
          
-         
-         
-         
     // cabecera
     Cajachica_CabeceraLinea(uoc_id);    
    
     
-    
-   
    // cuadricula
    var path = "../CajaChicaCertificacion/Coleccion/ListaMes?mes="+mes+"&uoc_id="+uoc_id;      
    AjaxPeticion(path,'tab_body');         
@@ -96,6 +91,34 @@ window.onload = function() {
                                                                 evt.target.mes );                                                                
     }
         
+    
+    
+    
+        var vci_borrarlinea = document.getElementById('vci_borrarlinea');
+        vci_borrarlinea.addEventListener('click',
+            function() {            
+
+
+                AjaxUrl( "../CajaChicaCertificacion/Controlador/Borrarlinea?uoc_id="+uoc_id
+                        +"&mes="+mes ); 
+                
+
+                // cuadricula
+                var path = "../CajaChicaCertificacion/Coleccion/ListaMes?mes="+mes+"&uoc_id="+uoc_id;      
+                AjaxPeticion(path,'tab_body');         
+                CajachicaDistribucion_listaMes_tabla( mes, uoc_id );                
+
+
+
+            },
+            false
+        );  
+        
+        
+    
+    
+    
+    
     
 };
 

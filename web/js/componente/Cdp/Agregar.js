@@ -89,7 +89,16 @@ window.onload = function() {
 
     
     
+    var cdpa_pac_numero = document.getElementById('cdpa_pac_numero');          
+    cdpa_pac_numero.value = 0;
     
+           
+    cdpa_pac_numero.onblur  = function() {        
+        cdpa_pac_numero.value = formatoNumero_p(cdpa_pac_numero.value);     
+    };                  
+           
+           
+           
     
     
            
@@ -99,16 +108,23 @@ window.onload = function() {
         function() 
         {
 
-            var form = document.getElementById("cdpa_form");            
-            var accion =  form.getAttribute('action') ; 
-            var control = AjaxPeticionURL( accion, getDataForm(form) );                
 
-            if (control == null){                
-                window.location = "../Cdp/Detalle.jspx?idreg="+cdpa_estructura_id.value;                      
-            }
-            else{                    
-                alerta_error(control);
-            }
+
+            if (CDPagregar_validacion()){
+
+                    var form = document.getElementById("cdpa_form");            
+                    var accion =  form.getAttribute('action') ; 
+                    var control = AjaxPeticionURL( accion, getDataForm(form) );                
+
+                    if (control == null){                
+                        window.location = "../Cdp/Detalle.jspx?idreg="+cdpa_estructura_id.value;                      
+                    }
+                    else{                    
+                        alerta_error(control);
+                    }
+
+            }               
+            
         }, 
         false
     );  
@@ -130,4 +146,22 @@ window.onload = function() {
 
 
 
+}
+
+
+
+
+
+
+function CDPagregar_validacion (  ){
+    
+    var cdpa_pac_numero = document.getElementById('cdpa_pac_numero');        
+    if (cdpa_pac_numero.value == 0) {
+        alerta_error("Falta pac numero");
+        document.getElementById('cdpa_pac_numero').focus();
+        return false;
+    }       
+    
+    
+    return true;
 }

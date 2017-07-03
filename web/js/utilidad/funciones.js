@@ -55,7 +55,10 @@ function isNumberKey(evt)
 
 
 function formatoNumero_p(num) {
-    
+
+    if (num.toString().trim().length == 0){
+        return 0;
+    }
     
 // falta ver si es numero negativo    
 
@@ -65,6 +68,9 @@ function formatoNumero_p(num) {
     if(!isNaN(num))
     {
         
+        
+        
+
         auxNum = num;
         
         // aca hay que controlar si es un numero negativo
@@ -84,6 +90,8 @@ function formatoNumero_p(num) {
         return num;
     }
     else{ 
+        
+
         //alert('Solo se permiten numeros');
         //input.value = input.value.replace(/[^\d\.]*/g,'');
         return 0;

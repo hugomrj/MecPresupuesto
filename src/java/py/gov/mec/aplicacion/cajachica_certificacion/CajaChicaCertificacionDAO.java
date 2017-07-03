@@ -373,6 +373,68 @@ public class CajaChicaCertificacionDAO  {
     
     
     
+
+    
+    public Integer  UltimaLinea  ( Integer uoc_id, Integer mes )
+            throws Exception {
+            
+                statement = conexion.getConexion().createStatement();         
+                
+                //falta arreglar este sql left join
+                
+                String sql = "   "+
+                    "                  SELECT max(cajachica_certificacion.id) as ultimo \n" +
+                    "                  FROM cajachica_certificacion,  direcciones \n" +
+                    "                  where cajachica_certificacion.direccion = direcciones.id \n" +
+                    "                  and uoc_id =    \n" +  uoc_id +
+                    "                  and mes =   \n" + mes +
+                    "    " ;
+                
+                resultset = statement.executeQuery(sql);     
+                
+                //return lista.resultsetToList(resultset ) ;
+                
+                
+                if (resultset.next()){
+                    return resultset.getInt("ultimo");                
+                }
+                else{
+                    return 0;
+                }
+                
+                
+             
+    }          
+    
+          
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
 }

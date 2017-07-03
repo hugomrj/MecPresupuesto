@@ -116,6 +116,14 @@
                                    class="botonEnlace" >Agregar</a>
                             </div>                                
 
+                            
+                            
+                            <div class ="commandbutton">
+                                <a href="javascript:void(0);" 
+                                   id ="vci_borrarlinea"
+                                   class="botonEnlace" >Borrar ult linea</a>
+                            </div>                                
+                            
                         </div> 
 
                     </article>    
