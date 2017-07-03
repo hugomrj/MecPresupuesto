@@ -1,8 +1,7 @@
 
 function IngresoCertificacion_agregar ( plan_id ){
     
-       
-       
+
        
 
     var incea_direccion = document.getElementById( 'incea_direccion');
@@ -15,6 +14,14 @@ function IngresoCertificacion_agregar ( plan_id ){
         
         Ingreso_Distribucion_Meses( "incea_planfinanciero", plan_id, this.value, incea_mes.value  )  ;        
         Ejecucion_Mes_Saldo ( "incea_saldomesanterior", plan_id, this.value, incea_mes.value  )  ;        
+        
+        var incea_planfinanciero = document.getElementById( 'incea_planfinanciero');    
+        incea_planfinanciero.value = formatoNumero_p(incea_planfinanciero.value); 
+    
+
+        var incea_saldomesanterior = document.getElementById( 'incea_saldomesanterior');    
+        incea_saldomesanterior.value = formatoNumero_p(incea_saldomesanterior.value);         
+                
             
         
     };
@@ -44,7 +51,16 @@ function IngresoCertificacion_agregar ( plan_id ){
         zero( 'incea_mes' );
                         
         Ingreso_Distribucion_Meses( "incea_planfinanciero", plan_id, incea_direccion.value, this.value  )  ;        
-        Ejecucion_Mes_Saldo ( "incea_saldomesanterior", plan_id, incea_direccion.value, this.value  )  ;        
+        Ejecucion_Mes_Saldo ( "incea_saldomesanterior", plan_id, incea_direccion.value, this.value  )  ;   
+        
+        
+        var incea_planfinanciero = document.getElementById( 'incea_planfinanciero');    
+        incea_planfinanciero.value = formatoNumero_p(incea_planfinanciero.value); 
+    
+
+        var incea_saldomesanterior = document.getElementById( 'incea_saldomesanterior');    
+        incea_saldomesanterior.value = formatoNumero_p(incea_saldomesanterior.value);         
+        
                 
     };
    
@@ -61,6 +77,20 @@ function IngresoCertificacion_agregar ( plan_id ){
         },
         false
     );
+
+
+
+
+    var incea_certificacion = document.getElementById( 'incea_certificacion');    
+    incea_certificacion.onblur  = function() {        
+        incea_certificacion.value = formatoNumero_p(incea_certificacion.value);   
+    };      
+    
+    
+
+
+
+
 
 
     var incea_certificacion = document.getElementById( 'incea_certificacion');
@@ -87,7 +117,6 @@ function IngresoCertificacion_agregar ( plan_id ){
                 pestagnas(ingre_certi);
                 document.getElementById('ingre_certi').click();
                 incea_cerrar.click();
-                
     
             }
             

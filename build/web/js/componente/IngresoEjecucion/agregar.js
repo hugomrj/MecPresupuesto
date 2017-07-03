@@ -15,6 +15,9 @@ function IngresoEjecucion_agregar ( plan_id ){
         
         Ingreso_Distribucion_Meses( "ineja_certificacion", plan_id, this.value,
             ineja_mes.value  )  ;        
+            
+        var ineja_certificacion = document.getElementById( 'ineja_certificacion');    
+        ineja_certificacion.value = formatoNumero_p(ineja_certificacion.value);                   
         
     };
    
@@ -45,6 +48,8 @@ function IngresoEjecucion_agregar ( plan_id ){
         
         Ingreso_Ejecucion_Meses( "ineja_certificacion", plan_id, ineja_direccion.value, this.value  )  ;        
         
+        var ineja_certificacion = document.getElementById( 'ineja_certificacion');    
+        ineja_certificacion.value = formatoNumero_p(ineja_certificacion.value);         
         
     };
    
@@ -65,6 +70,15 @@ function IngresoEjecucion_agregar ( plan_id ){
 
     var ineja_certificacion = document.getElementById( 'ineja_certificacion');
     ineja_certificacion.value = 0;
+
+
+    var ineja_ejecucion = document.getElementById( 'ineja_ejecucion');    
+    ineja_ejecucion.onblur  = function() {        
+        ineja_ejecucion.value = formatoNumero_p(ineja_ejecucion.value);   
+    };      
+    
+    
+
 
 
 
