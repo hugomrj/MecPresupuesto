@@ -51,6 +51,36 @@ public class CdpDAO  {
              
     }          
            
+                
+
+    public List<Map<String, Object>>  ConsolidadoObjeto  ( )
+            throws Exception {
+            
+                statement = conexion.getConexion().createStatement();         
+                
+                String sql = " " +
+                    " SELECT \n" +
+                    "  estructura.obj, \n" +
+                    "  objetos.descripcion, sum(cdp.certificacion_actual) suma_certificacion_actual\n" +
+                    " FROM \n" +
+                    "  public.estructura, \n" +
+                    "  public.cdp, \n" +
+                    "  public.objetos\n" +
+                    " WHERE \n" +
+                    "  cdp.estructura_id = estructura.id AND\n" +
+                    "  objetos.obj = estructura.obj\n" +
+                    "\n" +
+                    "  group by estructura.obj, \n" +
+                    "  objetos.descripcion\n" +
+                    "\n" +
+                    "  order by obj  " ;
+
+                resultset = statement.executeQuery(sql);     
+                
+                return lista.resultsetToList(resultset ) ;
+             
+    }          
+           
 
         
     

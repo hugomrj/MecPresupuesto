@@ -137,7 +137,7 @@ window.onload = function() {
         function()
         {
             
-            window.location = "../Cdp/Detalle.jspx?idreg="+cdpa_estructura_id.value;
+            window.location = "../Cdp/ConsolidadoObjetos.jspx";
         },
         false
     );        

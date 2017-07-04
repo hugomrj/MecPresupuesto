@@ -198,6 +198,18 @@
                     </article>                      
                     
                     
+                   <article class = "botones-footer">
+ 
+                        <div class ="commandbutton">
+                            <a href="javascript:void(0);" 
+                               class="botonEnlace" 
+                               id="cdp_objetos"
+                               >Consol Obj</a>
+                        </div>                                
+
+                   </article> 
+                    
+                    
 
                 </section>
                 

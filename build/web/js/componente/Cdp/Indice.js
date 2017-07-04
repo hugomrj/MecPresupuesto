@@ -6,7 +6,7 @@ window.onload = function() {
 
 
 
-    AjaxPeticion('../Estructura/Coleccion/Lista','tab_body');     
+    AjaxPeticion('../Estructura/Coleccion/Lista?tipo1=-5','tab_body');     
     fomato_tabla();        
 
 
@@ -144,6 +144,26 @@ window.onload = function() {
 
 
 
+
+    
+    var cdp_objetos = document.getElementById('cdp_objetos');
+    cdp_objetos.addEventListener('click',
+        function()
+        {
+            
+            window.location = "../Cdp/ConsolidadoObjetos.jspx";
+            
+        },
+        false
+    );        
+
+
+
+
+
+
+
+
     
 };
 
@@ -187,6 +207,10 @@ function datos_tabla (){
         vinculo = "../UocCertificacion/Detalle.jspx?idreg=";                        
         funcion_tabla_presupuesto_registro(vinculo);        
    */     
+
+
+
+
 
     
 }
