@@ -92,6 +92,8 @@ window.onload = function() {
                 var accion =  form.getAttribute('action') ; 
                 var control = AjaxPeticionURL( accion, getDataForm(form) );                
                 // si es numero es codigo id para ir a registro
+                
+                
                 if (!(isNaN(control)))
                 {   
                    //alert("es numero");                        

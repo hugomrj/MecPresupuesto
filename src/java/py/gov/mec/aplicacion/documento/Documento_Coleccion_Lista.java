@@ -60,6 +60,20 @@ public class Documento_Coleccion_Lista extends HttpServlet {
         strBuscar = strBuscar.toString().trim();
 
         
+        /*
+        // año        
+        Integer aaaa = 0;
+        try {            
+            if (request.getParameter("aa") != null){
+                aaaa = Integer.parseInt( request.getParameter("aa") );
+            }
+        } catch (NumberFormatException nfe){
+          aaaa =  0;
+        }        
+           */     
+        
+        
+        
         
         
         /*        

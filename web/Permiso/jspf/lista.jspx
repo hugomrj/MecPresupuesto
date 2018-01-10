@@ -13,6 +13,7 @@
         
                             <li
                                 data-registro_id ="${lista.id}"                                
+                                id="li_id_${lista.id}"
                                 >
                                 
                                 <a href="${lista.path}">

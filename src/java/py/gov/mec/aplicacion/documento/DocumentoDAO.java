@@ -36,7 +36,7 @@ public class DocumentoDAO  {
     }
 
     
-    public List<Map<String, Object>>  ListaEstado ( String buscar, Integer usuario, Integer page )
+    public List<Map<String, Object>>  ListaEstado ( String buscar, Integer usuario, Integer page)
             throws Exception {
     
         

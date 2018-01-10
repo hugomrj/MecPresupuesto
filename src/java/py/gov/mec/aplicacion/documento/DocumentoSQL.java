@@ -36,6 +36,10 @@ public String  ListaEstado ( String buscar, Integer usuario)
                     "   ) ";
                 
             }
+            else
+            {            
+                condicionBusqueda = " and  EXTRACT(YEAR FROM fecha_documento) = EXTRACT(YEAR FROM current_date)  " ;
+            }
 
                 
         sql = " "+                        
@@ -110,11 +114,13 @@ public String  ListaEstado ( String buscar, Integer usuario)
                 "  and not ((sistema.usuarios.usuario  =   "+ usuario +" )\n" +                
                 "  and (documentos_movimiento.estado = 1 or documentos_movimiento.estado = 2)) \n" +                
                 condicionBusqueda +
-                " ) as nn\n" +
+                " ) as nn\n " +
                 " order by prioridad, fecha_documento desc  \n" +
                 "\n" +
                 " " ;
 
+        
+//System.out.println(sql);
 
                 return sql ;
              
